@@ -20,7 +20,7 @@ ABM is a two-sided marketplace application where people can sell and buy second-
 
 Before starting this project, I researched on the existing websites on the market. When it comes to selling goods, the first idea comes to people's mind would be websites like Gumtree, eBay and Amazon. However, these websites do not only focus on makeups and are not intended for building a beauty community. Therefore, the target audience would be different from ABM. 
 
-Many social platforms also provide a similar functionality (i.e. online forum) for people to sell makeups. For example, there is a social group 'MAKEUP BUY, SELL, GIVEAWAY AND SWAP AUSTRALIA AND NEW ZEALAND (https://www.facebook.com/groups/894975940585690/)' on Facebook. The drawbacks of this kind of marketplace on socail platform is that people must have Facebook accounts in order to use this service. As many people use Facebook to share their personal lives with their family and friends, there are many sensitive personal information on their Facebook profile. Some people (like me) are hesitated to use Facebook groups to buy and sell goods as we are afraid that our personal information will be comprised without our acknowledgment.
+Many social platforms also provide a similar functionality (i.e. online forum) for people to sell makeups. For example, there is a social group 'MAKEUP BUY, SELL, GIVEAWAY AND SWAP AUSTRALIA AND NEW ZEALAND (https://www.facebook.com/groups/894975940585690/)' on Facebook. The drawbacks of this kind of marketplace on social platform is that people must have Facebook accounts in order to use this service. As many people use Facebook to share their personal lives with their family and friends, there are many sensitive personal information on their Facebook profile. Some people (like me) are hesitated to use Facebook groups to buy and sell goods as we are afraid that our personal information will be comprised without our acknowledgment.
 
 There is another website called Glambot (https://www.glambot.com/) on the market. However, this is not a direct two-sided marketplace as buyers and sellers cannot trade with each other directly. This website servers as a medium to firstly collect used makeups from sellers (they pay the sellers), and re-sell the products to product buyers.  
 
@@ -76,16 +76,18 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 <!-- Detail any third-party services that your app will use
 [briefly describe how to install & briefly describe what each gem does. can copy from gem description] -->
 
-<!-- #### Ruby gems
+#### Ruby gems
 - __[R3] Devise__ (https://rubygems.org/gems/devise): Devise helps with easier authentication process with Rails.
 
 - __Faker__ (https://rubygems.org/gems/faker/versions/1.6.3): Faker is gem that helps people to generate fake data, like names, addresses, emails, etc.
 
 - __Httparty__ (https://rubygems.org/gems/httparty): Httparty is gem that allows people to write Ruby code to retrieve http response.
 
+- __Simple form (https://rubygems.org/gems/simple_form/versions/3.5.0)__: Simple Form is a gem that helps to smooth the Rails form generating process.
+
 - __Ultrahook__
 - __Down__
-- __Simple form__
+
 
 #### [O2] Third-party API
 - __Postcode API__ (https://postcodeapi.com.au/): Postcode API is a free service that allows anyone to easily lookup Australian suburbs and postcodes based on various criteria.
@@ -101,13 +103,20 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 
 #### Colour Scheme
 
-#### Mood board -->
+https://color.adobe.com/search?q=autumn
 
-<!-- Mood board for this site can also be found on Pinterest: [Marketplace - Mood Board]()
+#### Mood board
 
-![Theme](./docs/mood_board/pinterest_theme.JPG)
+Mood board for this site can also be found on Pinterest: [Marketplace - Mood Board](https://www.pinterest.com.au/elliechenetc/abm/)
 
-![Layout](./docs/mood_board/pinterest_layout.JPG) -->
+![Makeup](./docs/mood_board/pinterest_makeup.JPG)
+
+![Autumn](./docs/mood_board/pinterest_autumn.JPG)
+
+
+
+
+
 
 <!-- #### [R12] User Stories -->
 
@@ -148,10 +157,21 @@ __28-Oct | Day 4 Backend Coding & Database Testing__
 - Added normalize CSS
 - Completed seeds file (80% - 'Q&A' to do)
 
-__29-Oct | Day 5 Backend Coding__ 
-- rebuilt project from scratch
+__29-Oct | Day 5 Backend Coding & Frontend Design__ 
+- Scrapped the project & rebuilt it from scratch
+- Worked out relationship between routes/views/controllers for all the webpages
+- Decided colour scheme & tested (by creating _variables.scss & 5 divs in index.html.erb)
+- Completed moodboard (Pinterest)
+- Decided fonts: 1 special font(Gochi Hand), regular font(Roboto, Source Sans Pro)  
+- Completed HTML/CSS layout design
 
-__30-Oct | Day 6 Frontend Design__
+__30-Oct | Day 6 Backend Coding & Frontend Design__ [Plan]
+
+- Redo Listings (all routes, all methods in controller, all views), decided to use simple form or not
+- Create partial html component (nav)
+- Create partial html component (footer)
+- Modify sign up, log in, forgot password pages (originally created by Devise)
+
 
 __31-Oct | Day 7 Frontend Design__ (refer to Trello screenshots)
 
@@ -205,7 +225,6 @@ Users
 •	Username: string 
 •	Email: string
 •	encrypted_password: encrypted???
-•	reset_password_token???
 •	Bio: text
 •	Skin_type: integer (enum: 0 Oily, 1 Normal, 2 Dry, 3 Combo)
 
@@ -236,12 +255,12 @@ Answers
 •	Body: text
 
 
-Transactions
+Purchases
 •	Id – integer (automatically created)
 •	Listing_id: integer
 •	User_id: integer
 •	Stripe_id: string
-•	Transation_date: date
+•	Purchase_date: date
 Active Storage (images)
 •	Id – integer (automatically created)
 •	Name: string
@@ -256,7 +275,7 @@ Active Storage (images)
 <!-- Describe your projects models in terms of the relationships (active record associations) they have with each other -->
 
 <!-- ####  [R18] Database -->
-<!-- Discuss the database relations to be implemented in your application [remember to mention postgresql R2]-->
+<!-- Discuss the database relations to be implemented in your application [remember to mention PostgreSQL R2]-->
 
 <!-- ####  [R19] Database Schema Design -->
 <!-- Provide your database schema design -->

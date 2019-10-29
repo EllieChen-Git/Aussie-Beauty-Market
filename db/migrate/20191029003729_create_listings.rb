@@ -1,0 +1,15 @@
+class CreateListings < ActiveRecord::Migration[5.2]
+  def change
+    create_table :listings do |t|
+      t.string :title
+      t.string :brand
+      t.integer :price
+      t.text :description
+      t.integer :category
+      t.references :user, foreign_key: true
+      t.references :location, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end

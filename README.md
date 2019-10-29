@@ -10,6 +10,7 @@ Aussie Beauty Market (ABM) is a two-sided Rails marketplace application that all
 
 
 <!-- ## [R7][R8] Problem Identification & Solution -->
+<!-- 
 Identification of the problem you are trying to solve by building this particular marketplace app.)
 Why is it a problem that needs solving?
 
@@ -148,7 +149,7 @@ __28-Oct | Day 4 Backend Coding & Database Testing__
 - Completed seeds file (80% - 'Q&A' to do)
 
 __29-Oct | Day 5 Backend Coding__ 
-
+- rebuilt project from scratch
 
 __30-Oct | Day 6 Frontend Design__
 

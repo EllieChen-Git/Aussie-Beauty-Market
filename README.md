@@ -169,28 +169,32 @@ __28-Oct | Day 4 Backend Coding & Database Testing__
 - Completed seeds file
 
 __29-Oct | Day 5 Backend Coding & Frontend Design__ 
-- Scrapped the project & rebuilt it from scratch
+- Scrapped the whole project & rebuilt it from scratch
 - Worked out relationship between routes/views/controllers for all the webpages
 - Decided colour scheme & tested (by creating _variables.scss & 5 divs in index.html.erb)
 - Completed moodboard (Pinterest)
 - Decided fonts: 1 special font (Gochi Hand), 2 regular fonts (Roboto, Source Sans Pro)  
 - Completed HTML/CSS layout planning
+- Completed all routes
 
-__30-Oct | Day 6 Backend Coding & Frontend Design__ [Plan]
+__30-Oct | Day 6 Backend Coding & Frontend Coing__
 - Added Gem (simple_form, normalize-rails, down)
+- Modified views: user_signup
+- Added views: landing page, show_listing, new_listing, _form_partial
+
+__31-Oct | Day 7 Frontend Coing__ 
+
+plan to complete restful listings
 
 
-- Re-do Listings (all routes, all methods in controller, all views), decided to use simple form or not
+__01-Nov | Day 8 Frontend Coding__ (refer to Trello screenshots)
+
+
+
+<!-- - Modify sign up, log in, forgot password pages (originally created by Devise) -->
+__02-Nov | Day 9 Frontend Coding__ 
 - Create partial html component (nav)
 - Create partial html component (footer)
-- Modify sign up, log in, forgot password pages (originally created by Devise)
-
-
-__31-Oct | Day 7 Frontend Design__ (refer to Trello screenshots)
-
-__01-Nov | Day 8 Frontend Coding__ 
-
-__02-Nov | Day 9 Frontend Coding__ 
 
 __03-Nov | Day 10 Frontend Coding__
 

@@ -13,7 +13,7 @@ for i in 1..10
 end
 
 # Create random locations
-for i in 1..10
+for i in 1..5
     while true
         postcode = rand(2000..7799)
         response = HTTParty.get("http://v0.postcodeapi.com.au/suburbs/#{postcode}.json")

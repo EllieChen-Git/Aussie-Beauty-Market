@@ -83,7 +83,7 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 
 - __Httparty__ (https://rubygems.org/gems/httparty): Httparty is gem that allows people to write Ruby code to retrieve http response.
 
-- __Simple form__ (https://rubygems.org/gems/simple_form/versions/3.5.0): Simple Form is a gem that helps to smooth the Rails form generating process.
+<!-- [PROBABLY WON'T USE IT] - __Simple form__ (https://rubygems.org/gems/simple_form/versions/3.5.0): Simple Form is a gem that helps to smooth the Rails form generating process. -->
 
 - __Normalize-rails__ (https://rubygems.org/gems/normalize-rails): Normalize.css is an alternative to CSS resets.
 

@@ -1,0 +1,83 @@
+<!--
+
+<%= simple_form_for :listing do |f| %>
+    <%= f.input :title, label: 'Listing', error: 'title is mandatory, please specify one' %>
+    <%= f.input :brand, hint: 'No special characters.' %>
+    <%= f.input :title, label: 'Listing', placeholder: 'user@domain.com' %>
+    <%= f.input :brand, inline_label: 'Yes, remember me' %>
+  <%= f.button :submit %>
+<% end %>
+-->
+ 
+<%= form_with(model: listing, local: true) do |form| %>
+  <% if listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+      <ul>
+      <% listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div class="field">
+
+<%= form.label :category %>
+<%= form.number_field :category %>
+
+<!--
+<%= form.label :category %>
+<%= form.select(:breed_id, @breeds.map{|b| [b.name, b.id]}) %>
+ <%= form.radio_button :category, option %>
+<%= form.label "category_#{option}".to_sym, option %>
+-->
+
+
+  </div>
+
+
+<% for option in @sexes %>
+    <div>
+        <%= form.radio_button :sex, option %>
+        <%= form.label "sex_#{option}".to_sym, option %>
+    </div>
+<% end %>
+
+
+
+  <div class="field">
+    <%= form.label :price, "Price (in cents)" %>
+    <%= form.number_field :price, min: 0 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_id %>
+    <%= form.text_field :location_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+    <div>
+        <%= form.label :pic %>
+        <%= form.file_field :pic, accept: "image/png,image/gif,image/jpeg,image/jpg" %>
+    </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

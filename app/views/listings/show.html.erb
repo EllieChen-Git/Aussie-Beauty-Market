@@ -1,0 +1,35 @@
+<h1>Show a listing</h1>
+
+<p>
+  <span>Title:</span>
+  <%= @listing.title %>
+</p>
+
+<p>
+  <span>Brand:</span>
+  <%= @listing.brand %>
+</p>
+
+<p>
+  <span>Username:</span>
+<%= @listing.user[:username] %>
+</p>   
+
+<p>
+  <span>Location:</span>
+    <%= @suburb %>, <%= @postcode%>, <%= @state %>
+</p>
+
+<p>
+  <span>Price:</span>
+  <%= number_to_currency(@listing.price) %>
+</p>
+
+<p>
+  <span>Description:</span>
+  <%= @listing.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

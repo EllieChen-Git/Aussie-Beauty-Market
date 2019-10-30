@@ -45,14 +45,14 @@ listings = [
 
 
 # Create random makeup listing
-    for element in listings
+    # for element in listings
         listing = Listing.create(
             title:  element[:title],
             brand: element[:brand],
             description: element[:description],
             category: element[:category],
             price: rand(5..200),
-            location_id: rand(0..10),
+            location_id: rand(1..10),
             user_id: rand(1..20)
         )
 
@@ -60,7 +60,7 @@ listings = [
         listing.pic.attach(io: temp_listing_pic, filename: File.basename(temp_listing_pic.path))
     
         puts "created makeup #{listing.title}"
-    end
+    # end
 
 
 

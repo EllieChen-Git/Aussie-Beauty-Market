@@ -177,7 +177,7 @@ __29-Oct | Day 5 Backend Coding & Frontend Design__
 - Completed HTML/CSS layout planning
 
 __30-Oct | Day 6 Backend Coding & Frontend Design__ [Plan]
-- Added Gem (simple_form, normalize-rails , down)
+- Added Gem (simple_form, normalize-rails, down)
 
 
 - Re-do Listings (all routes, all methods in controller, all views), decided to use simple form or not

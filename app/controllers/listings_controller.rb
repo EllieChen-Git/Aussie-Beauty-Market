@@ -26,6 +26,9 @@ class ListingsController < ApplicationController
 
 
     def show
+      @suburb = @listing.location[:suburb]
+      @postcode = @listing.location[:postcode]
+      @state = @listing.location[:state]
     end
 
     def edit

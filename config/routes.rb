@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # Routes - automatically created by Devise
+  # Routes - Devise (automatically created)
   devise_for :users
  
   # Routes - Listings
@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   put "/listings/:id", to: "listings#update"
   patch "/listings/:id", to: "listings#update"
   delete "/listings/:id", to: "listings#destroy"
-  
+
+  # Do I need to crate 2 routes for answer?
+  post "/listings/:id/anser", to: "listings#answer", as: "answer_listing"
+
   # Routes - Pages
   get "/", to: "pages#home", as: "root"
   get "*path", to: "pages#not_found"     

@@ -83,14 +83,24 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 
 - __Httparty__ (https://rubygems.org/gems/httparty): Httparty is gem that allows people to write Ruby code to retrieve http response.
 
-- __Simple form (https://rubygems.org/gems/simple_form/versions/3.5.0)__: Simple Form is a gem that helps to smooth the Rails form generating process.
+- __Simple form__ (https://rubygems.org/gems/simple_form/versions/3.5.0): Simple Form is a gem that helps to smooth the Rails form generating process.
+
+- __Normalize-rails__ (https://rubygems.org/gems/normalize-rails): Normalize.css is an alternative to CSS resets.
+
+- __Down__ (https://rubygems.org/gems/down/versions/1.1.0): Robust file download from URL using open-uri.
+
 
 - __Ultrahook__
-- __Down__
+
 
 
 #### [O2] Third-party API
 - __Postcode API__ (https://postcodeapi.com.au/): Postcode API is a free service that allows anyone to easily lookup Australian suburbs and postcodes based on various criteria.
+- __[to use?] Makeup API__ (https://makeup-api.herokuapp.com/): 
+endpoint: http://makeup-api.herokuapp.com/api/v1/products.json
+
+<!-- response = HTTParty.get("http://makeup-api.herokuapp.com/api/v1/products.json")
+p response.parsed_response[0]["name"] -->
 
 #### [R16] Third-party Service
 - __[R6] Heroku__
@@ -103,15 +113,17 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 
 #### Colour Scheme
 
-https://color.adobe.com/search?q=autumn
+Colour palette for this site can also be found on Adobe Color: [Marketplace - Colour Palette](https://color.adobe.com/search?q=autumn)
+
+![Colours](./docs/colour_scheme.JPG)
 
 #### Mood board
 
 Mood board for this site can also be found on Pinterest: [Marketplace - Mood Board](https://www.pinterest.com.au/elliechenetc/abm/)
 
-![Makeup](./docs/mood_board/pinterest_makeup.JPG)
+![Makeup](./docs/moodboard_makeup.JPG)
 
-![Autumn](./docs/mood_board/pinterest_autumn.JPG)
+![Autumn](./docs/moodboard_autumn.JPG)
 
 
 
@@ -122,7 +134,7 @@ Mood board for this site can also be found on Pinterest: [Marketplace - Mood Boa
 
 #### [R13] Wireframes
 
-[!Marketplace - Wireframes]()
+[Marketplace - Wireframes](./docs/Wireframes_ABM.pdf)
 
 <!-- [挑一下6-8張，3個螢幕size的就好，不要每一頁都截圖。重點挑有listings的，因為只有那幾張才有大變化XD]
 The complete wireframes (9 pages for 3 different screen sizes: desktop, tablet & mobile) of the marketplace can also be viewed on GitHub: [Marketplace - Wireframes]() -->
@@ -151,23 +163,24 @@ __27-Oct | Day 3 Project Design & Research__
 - Created project development flow
 
 __28-Oct | Day 4 Backend Coding & Database Testing__
-- Set up database (80% - 'Transactions' table to do)
+- Set up database (80% - 'Purchases' table to do)
 - Set up associations in Models
 - Completed simple database testing in Rails console
-- Added normalize CSS
-- Completed seeds file (80% - 'Q&A' to do)
+- Completed seeds file
 
 __29-Oct | Day 5 Backend Coding & Frontend Design__ 
 - Scrapped the project & rebuilt it from scratch
 - Worked out relationship between routes/views/controllers for all the webpages
 - Decided colour scheme & tested (by creating _variables.scss & 5 divs in index.html.erb)
 - Completed moodboard (Pinterest)
-- Decided fonts: 1 special font(Gochi Hand), regular font(Roboto, Source Sans Pro)  
-- Completed HTML/CSS layout design
+- Decided fonts: 1 special font (Gochi Hand), 2 regular fonts (Roboto, Source Sans Pro)  
+- Completed HTML/CSS layout planning
 
 __30-Oct | Day 6 Backend Coding & Frontend Design__ [Plan]
+- Added Gem (simple_form, normalize-rails , down)
 
-- Redo Listings (all routes, all methods in controller, all views), decided to use simple form or not
+
+- Re-do Listings (all routes, all methods in controller, all views), decided to use simple form or not
 - Create partial html component (nav)
 - Create partial html component (footer)
 - Modify sign up, log in, forgot password pages (originally created by Devise)
@@ -204,8 +217,8 @@ Submission (2200 Due) -->
 ## Database Planning & Structure
 
 #### [R14] ERD (80% completed)
-1. will do 'transactions' table after implementing Stripe, 
-2. will add notation after 'transactions' table)
+1. will do 'purchases' table after implementing Stripe, 
+2. will add notation after 'purchases' table)
 
 ![Marketplace - ERD](./docs/ERD_temp.jpg)
 

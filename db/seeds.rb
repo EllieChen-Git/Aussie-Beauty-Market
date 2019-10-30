@@ -29,9 +29,7 @@ for i in 1..20
     )
 end
 
-# •	category: integer (enum: 0 face, 1 eyes , 2 lips , 3 accessories) [filte
-# http://makeup-api.herokuapp.com/api/v1/products.json
-
+# category: integer (enum: 0 face, 1 eyes , 2 lips , 3 accessories)
 listings = [
     { title: "Colourpop lip liner - brand new", brand: "colourpop" , description: "Lippie Pencil A long-wearing and high-intensity lip pencil that glides on easily and prevents feathering. Many of our Lippie Stix have a coordinating Lippie Pencil designed to compliment it perfectly, but feel free to mix and match!", category: 2 }, #1048
     { title: "Glossier Stretch Concealer - brought back from States. Suitable for people with dark skin", brand: "Glossier" , description: "A traditional concealer sets to a stiff, flat, dry finish—a dead giveaway that you’re wearing it. Ours is a new type of concealer with elastic micro waxes that move with your face instead of caking on top of it, and nourishing oils that give a dewy, glowing finish. The buildable formula covers everything from dark circles to redness and blemishes. In five shades painstakingly developed to enhance, brighten, and—most importantly—completely disappear into the widest range of skin tones.", category: 0 }, #1004
@@ -47,22 +45,24 @@ listings = [
 
 
 # Create random makeup listing
-for i in 1..3
-    for listing in listings
-    listing = Listing.create(
-        title:  listing[:title],
-        brand: listing[:brand],
-        description: listing[:description],
-        category: listing[:category],
-        price: rand(5..200),
-        location_id: rand(0..10),
-        user_id: rand(1..20)
-    )
-    end
-end
+    for element in listings
+        listing = Listing.create(
+            title:  element[:title],
+            brand: element[:brand],
+            description: element[:description],
+            category: element[:category],
+            price: rand(5..200),
+            location_id: rand(0..10),
+            user_id: rand(1..20)
+        )
 
-# response = HTTParty.get("http://makeup-api.herokuapp.com/api/v1/products.json")
-# p response.parsed_response[0]["name"]
+        temp_listing_pic = Down.download(Faker::LoremPixel.image + "?random=" + rand(1..1000).to_s)
+        listing.pic.attach(io: temp_listing_pic, filename: File.basename(temp_listing_pic.path))
+    
+        puts "created makeup #{listing.title}"
+    end
+
+
 
 
 

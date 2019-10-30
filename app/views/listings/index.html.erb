@@ -1,9 +1,45 @@
-<h1>All Listings</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Aussie Beauty Market</title>
+    </head>
 
-<%= @listings %>
+    <body id="index">
+        <div class="main">
+            <header>
+                <h1>All Makeup Listings</h1>
+            </header>
 
-<div class="div1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-<div class="div2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-<div class="div3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-<div class="div4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-<div class="div5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
+<!-- search button -->
+            <form action="<%= listings_path %>" method="GET">
+                <input type="search" name="search" />
+            </form>
+
+
+                <section class="container">
+<!-- <div></div>   
+div-one for Filters & Sort by: need to decide id or class later -->
+
+<!-- div-two: show all the listing -->
+                    <div> 
+                  <% @listings.each do |listing| %>
+                            <%= link_to(listing) do %>
+                                <div>
+                                    <%= image_tag listing.pic if listing.pic.attached? %>
+                                    <p><%= listing.title %></p>
+                                    <p><%= number_to_currency(listing.price) %></p>
+                                </div>
+                            <% end %>
+                        <% end %>
+         
+
+                    </div>
+                </section>
+        </div>
+    </body>
+</html>
+
+

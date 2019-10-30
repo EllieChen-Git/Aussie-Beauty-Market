@@ -9,6 +9,21 @@
   </div>
 
   <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autocomplete: "username" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skin_type %><br />
+    <%= f.select(:skin_type, [["Oily Skin", "oily"], ["Normal Skin", "normal"], ["Dry Skin", "dry"], ["Combo Skin", "combo"]]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_area :bio, autocomplete: "bio" %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

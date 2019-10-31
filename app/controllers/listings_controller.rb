@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
     # before_action :authenticate_user!
-    before_action :set_listing, only: [:show, :edit, :update, :destroy, :answer]
+    before_action :set_listing, only: [:show, :edit, :update, :destroy]
     # before_action :set_user_listing, only: [:edit, :update]
 
     def index
@@ -14,7 +14,6 @@ class ListingsController < ApplicationController
     end
 
     def new
-        # @listing = Listing.new
         @listing = current_user.listings.new # [code when activate user authentication]
         @listing.build_location
     end
@@ -32,6 +31,7 @@ class ListingsController < ApplicationController
       @suburb = @listing.location[:suburb]
       @postcode = @listing.location[:postcode]
       @state = @listing.location[:state]
+
       @question = Question.new
     end
 
@@ -41,7 +41,7 @@ class ListingsController < ApplicationController
 
     def update
           if @listing.update(listing_params)
-            redirect_to listing_path(@listing)    #if update successfully
+            redirect_to listing_path(@listing)  
           else
             render "edit"
         end

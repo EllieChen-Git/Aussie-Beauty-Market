@@ -42,11 +42,10 @@
 <div>
   <h2>Q & A </h2>
    <% @listing.questions.each do |question| %>
-    <p>Question: <%= question.body %> </p>
-    <p>Answer: <%= question.answer.body %></p>
+    <p><span>Question</span>: <%= question.body %> </p>
+    <p><span>Answer</span>: <%= question.answer.body if question.answer %></p>
     <% end %>
 </div>
-
 
 <%= form_with(model: @question, local: true) do |form| %>
     <div class="field">
@@ -65,9 +64,6 @@
     <div class="actions">
     <%= form.submit "Submit your question"%>
   </div>
-
-
-
 <% end %>
 
 </div>

@@ -32,31 +32,28 @@
   </div>
 
   <div class="field">
-   <%= form.fields_for :location do |l| %>
-    <div class="sub-field">
+    <p>Location</p>
+    <%= form.fields_for :location do |l| %>
       <%= l.label :suburb %>
       <%= l.text_field :suburb %>
-    </div>
-    <div class="sub-field">
-      <%= l.label :state %>
-      <%= l.text_field :state %>
-    </div>
-    <div class="sub-field">
+
       <%= l.label :postcode %>
       <%= l.text_field :postcode %>
-    </div>
+
+      <%= l.label :state %>
+      <%= l.text_field :state %>
     <% end %>
-   </div>
+  </div>
   
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
 
-    <div>
-        <%= form.label :pic %>
-        <%= form.file_field :pic, accept: "image/png, image/gif, image/jpeg, image/jpg, image/JPG" %>
-    </div>
+  <div>
+      <%= form.label :pic, "Upload picture" %>
+      <%= form.file_field :pic, accept: "image/png, image/gif, image/jpeg, image/jpg, image/JPG" %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

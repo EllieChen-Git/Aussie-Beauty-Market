@@ -11,10 +11,19 @@ Rails.application.routes.draw do
   patch "/listings/:id", to: "listings#update"
   get "/listings/:id/edit", to: "listings#edit", as: "edit_listing"
   delete "/listings/:id", to: "listings#destroy"
-
-  # Do I need to crate 2 routes for answer?
-  post "/listings/:id/anser", to: "listings#answer", as: "answer_listing"
-
+  
   # Routes - Pages
   get "/", to: "pages#home", as: "root"
+
+  # Routes - question (only 1 route for create, get/form will be shown on show_listing)
+  # post "/listings/:listing_id/questions", to: "questions#create", as: "questions"
+
+  # post "/listings/:id/question", to: "questions#create", as: "questions"
+
+  post "/questions", to: "questions#create", as: "questions"
+
+  # Routes - answer (only 1 route for create, get/form will be shown on show_listing)
+  post "/questions/:id/answer", to: "answers#create", as: "answers"
+
+
 end

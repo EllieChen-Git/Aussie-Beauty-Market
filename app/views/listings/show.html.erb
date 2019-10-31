@@ -2,25 +2,29 @@
 <div id="listing-show">
   <h1>Show a listing</h1>
 
+  <%= image_tag @listing.pic if @listing.pic.attached? %>
+
   <p>
-    <span>Title:</span>
-    <%= @listing.title %>
+    <span><%= @listing.brand %></span>
   </p>
 
   <p>
-    <span>Brand:</span>
-    <%= @listing.brand %>
+    <span><%= @listing.title %></span>
   </p>
 
-  <p>
-    <span>Username:</span>
-  <%= @listing.user[:username] %>
-  </p>   
 
   <p>
-    <span>Location:</span>
-      <%= @suburb %>, <%= @postcode%>, <%= @state %>
+    <span>Posted by:</span>
+    <%= @listing.user[:username] %>
   </p>
+  
+  <p> 
+    <%= @suburb %>, <%= @postcode%>, <%= @state %>
+  </p>
+
+  <%= button_to 'Edit', edit_listing_path(@listing), method: :get %>
+  
+  <%= button_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
 
   <p>
     <span>Price:</span>
@@ -31,8 +35,39 @@
     <span>Description:</span>
     <%= @listing.description %>
   </p>
-
   <%= link_to 'Back to Home', listings_path %>
-  <%= button_to 'Edit', edit_listing_path(@listing), method: :get %>
-  <%= button_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
+
+   <h1>Have a qeustions?</h1>
+
+<div>
+  <h2>Q & A </h2>
+   <% @listing.questions.each do |question| %>
+    <p>Question: <%= question.body %> </p>
+    <p>Answer: <%= question.answer.body %></p>
+    <% end %>
+</div>
+
+
+<%= form_with(model: @question, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :body, "Ask a question" %>
+      <%= form.text_area :body %>
+    </div>
+
+    <div class="field">
+      <%= form.hidden_field :listing_id, value: @listing.id %>
+    </div>
+
+        <div class="field">
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+
+    <div class="actions">
+    <%= form.submit "Submit your question"%>
+  </div>
+
+
+
+<% end %>
+
 </div>

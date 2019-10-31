@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
     # before_action :authenticate_user!
-    before_action :set_listing, only: [:show, :edit, :update, :destroy]
+    before_action :set_listing, only: [:show, :edit, :update, :destroy, :answer]
     # before_action :set_user_listing, only: [:edit, :update]
 
     def index
@@ -28,12 +28,11 @@ class ListingsController < ApplicationController
       end
     end
 
-
-
     def show
       @suburb = @listing.location[:suburb]
       @postcode = @listing.location[:postcode]
       @state = @listing.location[:state]
+      @question = Question.new
     end
 
     def edit
@@ -51,10 +50,6 @@ class ListingsController < ApplicationController
     def destroy
         @listing.destroy
         redirect_to(listings_path)
-    end
-
-    def answewr
-         # do it later
     end
 
     private

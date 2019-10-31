@@ -1,31 +1,32 @@
-
-        <div class="main">
-            <header>
-                <h1>All Makeup Listings</h1>
-            </header>
+<div id="listing-index">
+<!-- do I do another div class main under div id??? -->
+    <div class="main"> 
+        <header>
+            <h1>All Makeup Listings</h1>
+        </header>
 
 <!-- search button -->
-            <form action="<%= listings_path %>" method="GET">
-                <input type="search" name="search" />
-            </form>
+        <form action="<%= listings_path %>" method="GET">
+            <input type="search" name="search" />
+        </form>
 
 
-                <section class="container">
+        <section class="container">
 <!-- <div></div>   
 div-one for Filters & Sort by: need to decide id or class later -->
 
 <!-- div-two: show all the listing -->
-                    <div> 
-                        <% @listings.each do |listing| %>
-                            <%= link_to(listing) do %>
-                                <div>
-                                    <%= image_tag listing.pic if listing.pic.attached? %>
-                                    <p><%= listing.title %></p>
-                                    <p><%= number_to_currency(listing.price) %></p>
-                                </div>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </section>
-        </div>
-   
+            <div> 
+                <% @listings.each do |listing| %>
+                    <%= link_to(listing) do %>
+                        <div>
+                            <%= image_tag listing.pic if listing.pic.attached? %>
+                            <p><%= listing.title %></p>
+                            <p><%= number_to_currency(listing.price) %></p>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </section>
+    </div>
+</div>

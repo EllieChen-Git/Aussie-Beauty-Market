@@ -17,5 +17,4 @@ Rails.application.routes.draw do
 
   # Routes - Pages
   get "/", to: "pages#home", as: "root"
-  # get "*path", to: "pages#not_found"     
 end

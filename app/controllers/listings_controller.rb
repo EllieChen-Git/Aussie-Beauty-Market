@@ -33,6 +33,7 @@ class ListingsController < ApplicationController
       @state = @listing.location[:state]
 
       @question = Question.new
+      @answer = Answer.new
     end
 
     def edit

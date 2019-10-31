@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
         if @question.errors.any?
             render plain: "not working"  
         else
-            render "show"
+            redirect_to listing_path
         end
     end
 end

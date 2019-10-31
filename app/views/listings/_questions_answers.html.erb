@@ -1,0 +1,46 @@
+ <h1>Have a qeustions?</h1>
+
+<div>
+  <h2>Q & A </h2>
+   <% @listing.questions.each do |question| %>
+    <p><span>Question <%= question.id %></span>: <%= question.body %> </p>
+    <p><span>Answer</span>: <%= question.answer.body if question.answer %></p>
+    <% end %>
+</div>
+
+<%= form_with(model: @question, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :body, "Ask a question" %>
+      <%= form.text_area :body %>
+    </div>
+
+    <div class="field">
+      <%= form.hidden_field :listing_id, value: @listing.id %>
+    </div>
+
+        <div class="field">
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+
+    <div class="actions">
+    <%= form.submit "Submit your question"%>
+  </div>
+<% end %>
+
+<%= form_with(model: @answer, local: true) do |form| %>
+
+    <div class="field">
+        <%= form.label :question_id, "Please indicate the question number" %>
+        <%= form.text_field :question_id %>
+    </div>
+
+    <div class="field">
+        <%= form.label :body, "Answer a question" %>
+        <%= form.text_area :body %>
+    </div>
+
+
+    <div class="actions">
+    <%= form.submit "Submit your answer"%>
+  </div>
+<% end %>

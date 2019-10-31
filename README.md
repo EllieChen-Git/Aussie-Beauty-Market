@@ -121,12 +121,9 @@ Colour palette for this site can also be found on Adobe Color: [Marketplace - Co
 
 Mood board for this site can also be found on Pinterest: [Marketplace - Mood Board](https://www.pinterest.com.au/elliechenetc/abm/)
 
-![Makeup](./docs/moodboard_makeup.JPG)
+![Makeups](./docs/moodboard/makeups.JPG)
 
-![Autumn](./docs/moodboard_autumn.JPG)
-
-
-
+![Autumn](./docs/moodboard/autumn.JPG)
 
 
 
@@ -144,6 +141,13 @@ The complete wireframes (9 pages for 3 different screen sizes: desktop, tablet &
 (too many days, probably a screenshot for every 3 days) -->
 
 Trello board for this site can be found here: [Marketplace - Project Management](https://trello.com/b/YCQRqyra/marketplace-abm)
+
+- Trello screenshot on 26 Oct
+![26_oct](./docs/trello/26_oct.JPG)
+
+- Trello screenshot on 31 Oct
+![31_oct](./docs/trello/31_oct.JPG)
+
 
 
 __25-Oct | Day 1 Project Design__ 
@@ -170,50 +174,60 @@ __28-Oct | Day 4 Backend Coding & Database Testing__
 
 __29-Oct | Day 5 Backend Coding & Frontend Design__ 
 - Scrapped the whole project & rebuilt it from scratch
-- Worked out relationship between routes/views/controllers for all the webpages
 - Decided colour scheme & tested (by creating _variables.scss & 5 divs in index.html.erb)
 - Completed moodboard (Pinterest)
 - Decided fonts: 1 special font (Gochi Hand), 2 regular fonts (Roboto, Source Sans Pro)  
 - Completed HTML/CSS layout planning
 - Completed all routes
 
-__30-Oct | Day 6 Backend Coding & Frontend Coing__
-- Added Gem (simple_form, normalize-rails, down)
+__30-Oct | Day 6 Backend Coding__
+- Added Gem (simple_form, normalize-rails, down), but later decided not to use simple_form
 - Modified views: user_signup
-- Added views: landing page, show_listing, new_listing, _form_partial
+- Added views: landing page, show_listing, new_listing, form_partial
 
-__31-Oct | Day 7 Frontend Coing__ 
-- Completed views (new_listing, edit_listing) & delete button
+__31-Oct | Day 7 Backend Coding__ (refer to Trello screenshots)
+- Completed views: new_listing (nested_attributes_for: location), edit_listing, show_listing (incl. delete button)
 - Added wireframe: edit_listing
-- Working on Q&A session on show_listing: Q&A routes, Q&A controllers, Q&A form
+- Completed Q&A section on show_listing: Q&A routes, Q&A controllers, Q&A form_partial
+
+__01-Nov | Day 8 Backend Coding__ 
+plan to 
+Back-end: User profile
+whitelisted params for all field
+Back-end (all_listing): 1. Search, 2. Sort by 3. Filter
 
 
-__01-Nov | Day 8 Frontend Coding__ (refer to Trello screenshots)
 
-
-
-<!-- - Modify sign up, log in, forgot password pages (originally created by Devise) -->
 __02-Nov | Day 9 Frontend Coding__ 
+plan to 
 - Create partial html component (nav)
 - Create partial html component (footer)
+- landing page
 
-__03-Nov | Day 10 Frontend Coding__
+__03-Nov | Day 10 Backend & Frontend Coding__
+plan to 
+Back-end (devise): sign up, log in, forgot pw
+<!-- - Modify sign up, log in, forgot password pages (originally created by Devise) -->
 
-__04-Nov | Day 11 Frontend Coding__
+__04-Nov | Day 11 Backend Coding__
+plan to 
+Back-end (show): Buy function on show_listing, model (purchases table), set up Stripe (& save data from Stripe in database), ERD: purchases (& notation)
 
-__05-Nov | Day 12 Payment setup & deployment__ (refer to Trello screenshots)
+__05-Nov | Day 12 Backend Coding__ (refer to Trello screenshots)
+plan to
+Back-end (devise): user authentication
 
-__06-Nov | Day 13 Payment setup & deployment__
+__06-Nov | Day 13 Frontend Coding (Styling )__
 
-__07-Nov | Day 14 Documentation__
+__07-Nov | Day 14 Frontend Coding (Styling )__
 
-__08-Nov | Day 15 Documentation__
+__08-Nov | Day 15 Documentation & deployment__
 <!-- !! Fix all the major issues (basically do not change any code after this day) -->
 
-__09-Nov | Day 16 Presentation Preparation__ (refer to Trello screenshots)
+__09-Nov | Day 16 Documentation__ (refer to Trello screenshots)
 <!-- !! Last day of actual coding (only fix minor coding issues) -->
 
-__10-Nov | Day 17 Final Check__
+__10-Nov | Day 17 Presentation Preparation & Final Check__
 <!-- Final check: spelling check on README, spelling check on code comment (html/CSS), all images need to have alt text, accessibility test
 slides & presentation preparation 
 Submission (2200 Due) -->

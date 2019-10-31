@@ -1,17 +1,16 @@
-
 <div id="listing-show">
   <h1>Show a listing</h1>
 
   <%= image_tag @listing.pic if @listing.pic.attached? %>
 
   <p>
-    <span><%= @listing.brand %></span>
-  </p>
-
-  <p>
     <span><%= @listing.title %></span>
   </p>
 
+  <p>
+    <span>Brand:</span>
+    <%= @listing.brand %>
+  </p>
 
   <p>
     <span>Posted by:</span>
@@ -19,6 +18,7 @@
   </p>
   
   <p> 
+   <span>Location:</span>
     <%= @suburb %>, <%= @postcode%>, <%= @state %>
   </p>
 
@@ -37,33 +37,7 @@
   </p>
   <%= link_to 'Back to Home', listings_path %>
 
-   <h1>Have a qeustions?</h1>
-
-<div>
-  <h2>Q & A </h2>
-   <% @listing.questions.each do |question| %>
-    <p><span>Question</span>: <%= question.body %> </p>
-    <p><span>Answer</span>: <%= question.answer.body if question.answer %></p>
-    <% end %>
-</div>
-
-<%= form_with(model: @question, local: true) do |form| %>
-    <div class="field">
-      <%= form.label :body, "Ask a question" %>
-      <%= form.text_area :body %>
-    </div>
-
-    <div class="field">
-      <%= form.hidden_field :listing_id, value: @listing.id %>
-    </div>
-
-        <div class="field">
-      <%= form.hidden_field :user_id, value: current_user.id %>
-    </div>
-
-    <div class="actions">
-    <%= form.submit "Submit your question"%>
-  </div>
-<% end %>
+<!-- Created 'questions_answers' partial view to render Q & A section-->
+  <%= render 'questions_answers', listing: @listing %>
 
 </div>

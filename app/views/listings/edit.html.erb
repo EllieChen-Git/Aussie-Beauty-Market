@@ -1,9 +1,7 @@
 <div id="listing-edit">
     <h1>Edit Listing</h1>
-
-    <%= render 'shared/form', listing: @listing %>
-
+<!-- Created 'form' partial view to render new form & edit form -->
+    <%= render 'form', listing: @listing %>
     <%= link_to 'Back to Listing', @listing %> |
     <%= link_to 'Back to Home', listings_path %>
-
 </div>

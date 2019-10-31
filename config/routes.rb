@@ -22,7 +22,6 @@ Rails.application.routes.draw do
 
   # Routes - answer (only 1 route for create, get/form will be shown on show_listing)
   post "/questions/:id/answers", to: "answers#create", as: "answers"
-
   # anwers or answer?
 
 end

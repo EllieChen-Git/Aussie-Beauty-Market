@@ -1,3 +1,4 @@
+
 <div id="listing-show">
   <h1>Show a listing</h1>
 
@@ -31,7 +32,7 @@
     <%= @listing.description %>
   </p>
 
-
-  <%= link_to 'Edit', edit_listing_path(@listing) %> |
-  <%= link_to 'Back', listings_path %>
+  <%= link_to 'Back to Home', listings_path %>
+  <%= button_to 'Edit', edit_listing_path(@listing), method: :get %>
+  <%= button_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
 </div>

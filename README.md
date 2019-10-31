@@ -183,8 +183,7 @@ __30-Oct | Day 6 Backend Coding & Frontend Coing__
 - Added views: landing page, show_listing, new_listing, _form_partial
 
 __31-Oct | Day 7 Frontend Coing__ 
-
-plan to complete restful listings
+- Completed views (new_listing, edit_listing) & delete button: plan to complete restful listings
 
 
 __01-Nov | Day 8 Frontend Coding__ (refer to Trello screenshots)

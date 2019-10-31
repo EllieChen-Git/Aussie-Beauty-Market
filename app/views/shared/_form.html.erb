@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-<%= form.label :category %>
-<%= form.select(:category, [["Face", "face"], ["Eyes", "eyes"], ["Lips", "lips"], ["Accessories", "accessories"]]) %>
+    <%= form.label :category %>
+    <%= form.select(:category, [["Face", "face"], ["Eyes", "eyes"], ["Lips", "lips"], ["Accessories", "accessories"]]) %>
   </div>
 
   <div class="field">
@@ -32,28 +32,22 @@
   </div>
 
   <div class="field">
-    <%= form.label :location_id %>
-    <%= form.text_field :location_id %>
-  </div>
-<!--
-    <div>
-        <%= form.label :suburb %>
-        <%= form.text_field :suburb %>
+   <%= form.fields_for :location do |l| %>
+    <div class="sub-field">
+      <%= l.label :suburb %>
+      <%= l.text_field :suburb %>
     </div>
-    <div>
-        <%= form.label :state %>
-        <%= form.text_field :state %>
+    <div class="sub-field">
+      <%= l.label :state %>
+      <%= l.text_field :state %>
     </div>
-        <div>
-        <%= form.label :postcode %>
-        <%= form.text_field :postcode %>
+    <div class="sub-field">
+      <%= l.label :postcode %>
+      <%= l.text_field :postcode %>
     </div>
--->
-
-
-
-
-
+    <% end %>
+   </div>
+  
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>

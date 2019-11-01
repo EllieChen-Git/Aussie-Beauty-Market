@@ -14,7 +14,7 @@
 
   <p>
     <span>Posted by:</span>
-    <%= @listing.user[:username] %>
+    <%= link_to @listing.user[:username], profile_path(@listing.user_id) %>
   </p>
   
   <p> 

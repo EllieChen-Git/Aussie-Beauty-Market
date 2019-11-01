@@ -23,6 +23,8 @@
     <%= f.text_area :bio, autocomplete: "bio" %>
   </div>
 
+
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
@@ -36,6 +38,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+      <%= f.label :pic, "Upload picture" %>
+      <%= f.file_field :pic, accept: "image/png, image/gif, image/jpeg, image/jpg, image/JPG" %>
+  </div>
+  
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

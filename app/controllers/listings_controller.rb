@@ -5,7 +5,6 @@ class ListingsController < ApplicationController
 
     def index
         @listings = Listing.all
-
         if params[:search] && !params[:search].empty?
           @listings = Listing.where(title: params[:search])
       else
@@ -56,7 +55,7 @@ class ListingsController < ApplicationController
     private
  
     def listing_params
-      params.require(:listing).permit(:title, :brand, :price, :description, :category, :user_id, :pic, location_attributes: [:suburb, :postcode, :state])
+      params.require(:listing).permit(:title, :brand, :price, :description, :category, :user_id, :pic, :search, location_attributes: [:suburb, :postcode, :state])
     end
 
     def set_listing

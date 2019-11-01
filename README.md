@@ -195,6 +195,10 @@ __01-Nov | Day 8 Backend Coding__
  master
 - Modified user_signup (added user image uploading fuction), user_login, user_forgot pw pages
 - Whitelisted & validated params for all fields in new_listing, question, answer
+- Added user images to seeds file
+
+
+
 
 __02-Nov | Day 9 Frontend Coding__ 
 plan to 
@@ -204,7 +208,6 @@ plan to
 
 __03-Nov | Day 10 Backend & Frontend Coding__
 plan to 
-Back-end (devise): 
 
 
 __04-Nov | Day 11 Backend Coding__

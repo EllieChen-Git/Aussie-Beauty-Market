@@ -9,6 +9,9 @@ for i in 1..10
         skin_type: rand(0..3) #(enum: 0 Oily, 1 Normal, 2 Dry, 3 Combo)
     )
 
+    temp_user_pic = Down.download(Faker::LoremPixel.image + "?random=" + rand(1..1000).to_s)
+    user.pic.attach(io: temp_user_pic, filename: File.basename(temp_user_pic.path))
+
     puts "created #{i} user - #{user.errors.messages}"
 end
 

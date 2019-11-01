@@ -2,7 +2,6 @@
 
 Aussie Beauty Market (ABM) is a two-sided Rails marketplace application that allows people to buy and sell second-hand makeup in Australia.
 
-
 ## Links
 
 - __[R9] Live Website__:
@@ -195,8 +194,7 @@ __01-Nov | Day 8 Backend Coding__
 - Added links to user profile on show_listing & added links to individual listing on show_profile page
  master
 - Modified user_signup (added user image uploading fuction), user_login, user_forgot pw pages
-
-
+- Whitelisted & validated params for all fields in new_listing, question, answer
 
 __02-Nov | Day 9 Frontend Coding__ 
 plan to 
@@ -207,7 +205,7 @@ plan to
 __03-Nov | Day 10 Backend & Frontend Coding__
 plan to 
 Back-end (devise): 
-<!-- - Modify sign up, log in, forgot password pages (originally created by Devise) -->
+
 
 __04-Nov | Day 11 Backend Coding__
 plan to 

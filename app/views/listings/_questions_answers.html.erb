@@ -9,10 +9,9 @@
 </div>
 
 <%= form_with(model: @question, local: true) do |form| %>
-
   <% if @question.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this answer from being saved:</h2>
 
       <ul>
       <% @question.errors.full_messages.each do |message| %>
@@ -43,6 +42,18 @@
 
 <%= form_with(model: @answer, local: true) do |form| %>
 
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <div class="field">
         <%= form.label :question_id, "Please indicate the question number" %>
         <%= form.text_field :question_id %>
@@ -52,7 +63,6 @@
         <%= form.label :body, "Answer a question" %>
         <%= form.text_area :body %>
     </div>
-
 
     <div class="actions">
     <%= form.submit "Submit your answer"%>

@@ -191,10 +191,10 @@ __31-Oct | Day 7 Backend Coding__ (refer to Trello screenshots)
 - Completed Q&A section on show_listing: Q&A routes, Q&A controllers, Q&A form_partial
 
 __01-Nov | Day 8 Backend Coding__ 
-plan to 
-Back-end: User profile
-whitelisted params for all field
-Back-end (all_listing): 1. Search, 2. Sort by 3. Filter
+- Completed user_profile page (route, profiles controller, show_profile view)
+- Added links to user profile on show_listing & added links to individual listing on show_profile page
+ master
+- Modified user_signup (added user image uploading fuction), user_login, user_forgot pw pages
 
 
 
@@ -206,7 +206,7 @@ plan to
 
 __03-Nov | Day 10 Backend & Frontend Coding__
 plan to 
-Back-end (devise): sign up, log in, forgot pw
+Back-end (devise): 
 <!-- - Modify sign up, log in, forgot password pages (originally created by Devise) -->
 
 __04-Nov | Day 11 Backend Coding__

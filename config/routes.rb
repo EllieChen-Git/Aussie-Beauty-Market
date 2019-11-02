@@ -43,4 +43,8 @@ Rails.application.routes.draw do
   post "/searches", to: "searches#create", as: "searches"
   get "/searches/new", to: "searches#new", as: "new_search"
   get "/searches/:id", to: "searches#show", as: "search"
+
+  # Routes - Payment
+  get "/payments/success", to: "payments#success", as: "success_payment"
+  post "/payments/webhook", to: "payments#webhook", as: "webhook_payment"
 end

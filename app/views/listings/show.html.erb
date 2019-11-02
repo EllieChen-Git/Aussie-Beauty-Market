@@ -33,13 +33,27 @@
 
 
   <%= button_to 'Edit', edit_listing_path(@listing), method: :get %>
-  
+  <%# link_to "edit", edit_milkshake_path(@milkshake) if current_user.id == @milkshake.user_id %>
   <%= button_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
+  <%# link_to "Delete", edit_milkshake_path(@milkshake) if current_user.id == @milkshake.user_id %>
 
+<!-- Stripe: Purchase button -->
   <p>
     <span>Price:</span>
     <%= number_to_currency(@listing.price) %>
+    <button data-stripe="payment">Purchase</button>
   </p>
+
+<script src="https://js.stripe.com/v3/"></script> 
+
+<script>
+    document.querySelector("[data-stripe='payment']").addEventListener("click", () => {
+        const stripe = Stripe("<%= @public_key %>");
+        stripe.redirectToCheckout({
+            sessionId: "<%= @session_id %>"
+        })
+    })
+</script>
 
   <p>
     <span>Description:</span>

@@ -88,11 +88,11 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 
 - __Down__ (https://rubygems.org/gems/down/versions/1.1.0): Robust file download from URL using open-uri.
 
-
 - __aws-sdk-s3__ (https://rubygems.org/gems/aws-sdk-s3/versions/1.0.0.rc2): Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3). This gem is part of the AWS SDK for Ruby.
 
+- __stripe__ (https://rubygems.org/gems/stripe/versions/1.57.1): Stripe is the easiest way to accept payments online. See https://stripe.com for details.
 
-- __Ultrahook__
+- __Ultrahook__ (https://rubygems.org/gems/ultrahook): UltraHook lets you receive webhooks on localhost. It relays HTTP POST requests sent from a public endpoints (provided by the ultrahook.com service) to private endpoints accessible from your computer.
 
 
 
@@ -188,7 +188,7 @@ __30-Oct | Day 6 Backend Coding__
 - Added views: landing page, show_listing, new_listing, form_partial
 
 __31-Oct | Day 7 Backend Coding__ (refer to Trello screenshots)
-- Completed views: new_listing (nested_attributes_for: location), edit_listing, show_listing (incl. delete button)
+- Completed views: new_listing (nested_attributes_for: location), edit_listing, show_listing (incl. ‘delete’ button)
 - Added wireframe: edit_listing
 - Completed Q&A section on show_listing: Q&A routes, Q&A controllers, Q&A form_partial
 
@@ -196,17 +196,17 @@ __01-Nov | Day 8 Backend Coding__
 - Completed user_profile page (route, profiles controller, show_profile view)
 - Added links to user profile on show_listing & added links to individual listing on show_profile page
  master
-- Modified user_signup (added user image uploading fuction), user_login, user_forgot pw pages
+- Modified user_signup (added user image uploading function), user_login, user_forgot_password pages
 - Whitelisted & validated params for all fields in new_listing, question, answer
 - Added user images to seeds file
 
 __02-Nov | Day 9 Backend Coding__ 
-- Completed simple search form (fuzzy search, case insentitive) on landing, all_listings, show_listing pages by creating ssf partial & search method on listing model
+- Completed simple search form (fuzzy search, case insensitive) on landing, all_listings, show_listing pages by creating simple search form partial & search method on listing model
 - Completed advanced search function (search: routes, controller, model, views)
 - Completed AWS S3 & IAM set up and switched images storage from local to cloud
- 
+- Added 'logout/login' button based on login status in view/layout/application 
+- Set up Stripe & Buy function on show_listing: install gems (stripe, ultrahook), payments (routes, controller, successful_payment view)
 
-(show): Buy function on show_listing & set up Stripe 
 
 __03-Nov | Day 10 Frontend Coding__
 plan to 
@@ -218,6 +218,7 @@ __04-Nov | Day 11 Backend Coding__
 plan to 
 Back-end (show): Buy function [[[Later: model (purchases table), save data from Stripe in database), ERD: purchases (& notation)]]]
 Back-end (devise): user authentication
+
 
 __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
 plan to

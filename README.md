@@ -199,9 +199,8 @@ __01-Nov | Day 8 Backend Coding__
 
 __02-Nov | Day 9 Backend Coding__ 
 - Completed simple search form (fuzzy search, case insentitive) on landing, all_listings, show_listing pages by creating ssf partial & search method on listing model
+- Completed advanced search function (search: routes, controller, model, views)
 
-plan to Back-end 
-Advanced search function
 (show): Buy function on show_listing & set up Stripe 
 active storage to AWS S3
 

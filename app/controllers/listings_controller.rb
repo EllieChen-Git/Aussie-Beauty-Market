@@ -7,10 +7,9 @@ class ListingsController < ApplicationController
       @listings = Listing.search(params[:search])
     end
 
-
-
     def new
-        @listing = current_user.listings.new # [code when activate user authentication]
+        @listing = Listing.new 
+        #@listing = current_user.listings.new [code when activate user authentication]
         @listing.build_location
     end
 

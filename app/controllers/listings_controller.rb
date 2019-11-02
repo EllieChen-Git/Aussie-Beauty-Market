@@ -4,12 +4,8 @@ class ListingsController < ApplicationController
     # before_action :set_user_listing, only: [:edit, :update]
 
     def index
-      @listings = Listing.all
-      if params[:search] && !params[:search].empty?
-          @listings = Listing.where(["lower(title) LIKE ?", "%#{params[:search].downcase}%"])
-      else
-        @listings = Listing.all
-      end
+      # @listings = Listing.all
+      @listings = Listing.search(params[:search])
     end
 
 

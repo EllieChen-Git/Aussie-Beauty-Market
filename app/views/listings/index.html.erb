@@ -5,7 +5,7 @@
             <h1>All Makeup Listings</h1>
         </header>
 
-<!-- search button: case insensitive, simple fuzzy search -->
+<!-- Search button - simple search: case insensitive, simple fuzzy search -->
 <%= form_tag(listings_path, method: :get) do %>
     <%= label_tag(:search, "Please enter keywords:") %>
     <%= text_field_tag(:search, params[:search]) %>

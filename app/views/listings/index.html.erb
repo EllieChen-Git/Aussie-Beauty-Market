@@ -5,9 +5,12 @@
             <h1>All Makeup Listings</h1>
         </header>
 
-<!-- Simple search button -->
+<!-- Simple search form -->
   <%= render "listings/simple_search", listing: @listing %>
 
+
+<!-- Advanced search form -->
+<%= link_to "Advanced Search", new_search_path %>
 
 
         <section class="container">
@@ -17,15 +20,12 @@ div-one for Filters & Sort by: need to decide id or class later -->
 <!-- div-two: show all the listing -->
             <div> 
                 <% @listings.each do |listing| %>
-                    <%= link_to(listing) do %>
-                        <div>
-                            <%= image_tag listing.pic if listing.pic.attached? %>
-                            <p><%= listing.title %></p>
+                            <p><%= image_tag listing.pic if listing.pic.attached? %></p>
+                            <%= link_to "#{listing.title}", listing_path(listing.id) %>
                             <p><%= number_to_currency(listing.price) %></p>
-                        </div>
-                    <% end %>
                 <% end %>
             </div>
         </section>
     </div>
+
 </div>

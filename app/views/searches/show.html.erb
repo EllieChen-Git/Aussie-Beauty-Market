@@ -1,0 +1,18 @@
+<h1>Advanced Search Results</h1>
+
+
+<div>
+    <% if @search.search_listings.empty? %>
+        <p>No Listings Found<p>
+    <% else %>
+        <% @search.search_listings.each do |search| %>
+            <%= image_tag search.pic if search.pic.attached? %>
+            <p><%= link_to "#{search.title}", listing_path(search.id) %></p>
+            <p>Brand: <%= search.brand %></p>
+            <p>Category: <%= search.category %></p>
+            <p>Price: <%= number_to_currency(search.price) %></p>
+        <% end %>
+    <% end %>
+</div>
+
+<%= link_to "Back to advanced search", new_search_path %>

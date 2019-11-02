@@ -40,4 +40,15 @@ Rails.application.routes.draw do
 
   # Routes - Profile (:id here is the id column in User table)
   get "/profiles/:id", to: "profiles#show", as: "profile"
+
+  # Routes - Advanced Searches
+  resources :searches
+#    searches GET    /searches(.:format)              searches#index
+#            POST    /searches(.:format)              searches#create
+#  new_search GET    /searches/new(.:format)          searches#new
+# edit_search GET    /searches/:id/edit(.:format)     searches#edit
+#      search GET    /searches/:id(.:format)          searches#show
+#           PATCH    /searches/:id(.:format)          searches#update
+#             PUT    /searches/:id(.:format)          searches#update
+#         DELETE     /searches/:id(.:format)          searches#destroy
 end

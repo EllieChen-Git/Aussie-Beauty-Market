@@ -1,0 +1,27 @@
+<h1>Advanced Search</h1>
+
+<%= form_with(model: @search, local: true) do |f| %>
+
+<div class="field">
+<%= f.label :brand, "Search for brand" %>
+<%= f.text_field :brand %>
+</div>
+
+<div class="field">
+<%= f.label :category %>
+<%= f.select(:category, [["Face", "face"], ["Eyes", "eyes"], ["Lips", "lips"], ["Accessories", "accessories"]]) %>
+</div>
+
+
+<div class="field">
+<%= f.label :min_price, "Price Range" %>
+<%= f.text_field(:min_price, size: 10) %>
+to
+<%= f.text_field(:max_price, size: 10) %>
+</div>
+
+<div class="actions"><%= f.submit "Search"%><div>
+
+<% end %>
+
+<%= link_to "Back", listings_path %>

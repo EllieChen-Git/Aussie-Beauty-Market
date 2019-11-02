@@ -197,26 +197,28 @@ __01-Nov | Day 8 Backend Coding__
 - Whitelisted & validated params for all fields in new_listing, question, answer
 - Added user images to seeds file
 
+__02-Nov | Day 9 Backend Coding__ 
+- Completed simple search form (fuzzy search, case insentitive) on landing, all_listings, show_listing pages by creating ssf partial & search method on listing model
 
+plan to Back-end 
+Advanced search function
+(show): Buy function on show_listing & set up Stripe 
+active storage to AWS S3
 
-
-__02-Nov | Day 9 Frontend Coding__ 
+__03-Nov | Day 10 Frontend Coding__
 plan to 
 - Create partial html component (nav)
 - Create partial html component (footer)
 - landing page
 
-__03-Nov | Day 10 Backend & Frontend Coding__
-plan to 
-
-
 __04-Nov | Day 11 Backend Coding__
 plan to 
-Back-end (show): Buy function on show_listing, model (purchases table), set up Stripe (& save data from Stripe in database), ERD: purchases (& notation)
-
-__05-Nov | Day 12 Backend Coding__ (refer to Trello screenshots)
-plan to
+Back-end (show): Buy function [[[Later: model (purchases table), save data from Stripe in database), ERD: purchases (& notation)]]]
 Back-end (devise): user authentication
+
+__05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
+plan to
+
 
 __06-Nov | Day 13 Frontend Coding (Styling )__
 

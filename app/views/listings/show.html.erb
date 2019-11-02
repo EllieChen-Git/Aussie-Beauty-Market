@@ -2,12 +2,14 @@
   <h1>Show a listing</h1>
 
   <%= render "listings/simple_search", listing: @listing %>
-  
+
   <%= image_tag @listing.pic if @listing.pic.attached? %>
 
   <p>
     <span><%= @listing.title %></span>
   </p>
+
+
 
   <p>
     <span>Brand:</span>
@@ -23,6 +25,12 @@
    <span>Location:</span>
     <%= @suburb %>, <%= @postcode%>, <%= @state %>
   </p>
+ 
+  <p>
+      <span>Last updated:</span>
+      <%= @listing.updated_at.strftime("%d-%m-%Y") %>
+  </p>
+
 
   <%= button_to 'Edit', edit_listing_path(@listing), method: :get %>
   

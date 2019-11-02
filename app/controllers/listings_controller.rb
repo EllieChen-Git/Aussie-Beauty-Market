@@ -8,13 +8,16 @@ class ListingsController < ApplicationController
     end
 
     def new
-        @listing = Listing.new 
-        #@listing = current_user.listings.new [code when activate user authentication]
+        #@listing = Listing.new 
+        @listing = current_user.listings.new 
+        #[code when user logged in]
         @listing.build_location
     end
 
     def create
-        @listing = current_user.listings.create(listing_params)
+      #@listing = Listing.create(listing_params)
+        @listing = current_user.listings.create(listing_params) 
+           #[code when user logged in]
       if @listing.errors.any?
           render "new"
       else 

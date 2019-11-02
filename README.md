@@ -89,6 +89,9 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 - __Down__ (https://rubygems.org/gems/down/versions/1.1.0): Robust file download from URL using open-uri.
 
 
+- __aws-sdk-s3__ (https://rubygems.org/gems/aws-sdk-s3/versions/1.0.0.rc2): Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3). This gem is part of the AWS SDK for Ruby.
+
+
 - __Ultrahook__
 
 
@@ -200,6 +203,7 @@ __01-Nov | Day 8 Backend Coding__
 __02-Nov | Day 9 Backend Coding__ 
 - Completed simple search form (fuzzy search, case insentitive) on landing, all_listings, show_listing pages by creating ssf partial & search method on listing model
 - Completed advanced search function (search: routes, controller, model, views)
+- Completed AWS S3 & IAM set up and switched images from local to cloud storage 
 
 (show): Buy function on show_listing & set up Stripe 
 active storage to AWS S3

@@ -72,3 +72,5 @@ gem "simple_form", "~> 5.0"
 gem "normalize-rails", "~> 4.1"
 
 gem "down", "~> 5.0"
+
+gem "aws-sdk-s3", "~> 1.53"

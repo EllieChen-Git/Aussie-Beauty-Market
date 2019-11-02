@@ -4,7 +4,6 @@ class ListingsController < ApplicationController
     # before_action :set_user_listing, only: [:edit, :update]
 
     def index
-      # @listings = Listing.all
       @listings = Listing.search(params[:search])
     end
 
@@ -25,6 +24,7 @@ class ListingsController < ApplicationController
     end
 
     def show
+      @listings = Listing.search(params[:search])
       @suburb = @listing.location[:suburb]
       @postcode = @listing.location[:postcode]
       @state = @listing.location[:state]

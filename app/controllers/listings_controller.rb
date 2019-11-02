@@ -4,13 +4,15 @@ class ListingsController < ApplicationController
     # before_action :set_user_listing, only: [:edit, :update]
 
     def index
-        @listings = Listing.all
-        if params[:search] && !params[:search].empty?
-          @listings = Listing.where(title: params[:search])
+      @listings = Listing.all
+      if params[:search] && !params[:search].empty?
+          @listings = Listing.where(["lower(title) LIKE ?", "%#{params[:search].downcase}%"])
       else
         @listings = Listing.all
       end
     end
+
+
 
     def new
         @listing = current_user.listings.new # [code when activate user authentication]

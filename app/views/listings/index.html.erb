@@ -5,11 +5,14 @@
             <h1>All Makeup Listings</h1>
         </header>
 
-<!-- search button -->
+<!-- search button: case insensitive, simple fuzzy search -->
 <%= form_tag(listings_path, method: :get) do %>
-  <%= text_field_tag(:search, params[:search]) %>
-  <%= submit_tag 'Search a makeup' %>
+    <%= label_tag(:search, "Please enter keywords:") %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag "Search" %>
 <% end %>
+
+
 
         <section class="container">
 <!-- <div></div>   

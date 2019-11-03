@@ -95,7 +95,8 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 - __Ultrahook__ (https://rubygems.org/gems/ultrahook): UltraHook lets you receive webhooks on localhost. It relays HTTP POST requests sent from a public endpoints (provided by the ultrahook.com service) to private endpoints accessible from your computer.
 
 <!-- - __PrettyUsers__ (https://rubygems.org/gems/prettyusers): Generate pretty users for your tests. -->
-
+<!-- font-awesome-rails
+https://rubygems.org/gems/font-awesome-rails/versions/4.6.3.1 -->
 
 
 #### [O2] Third-party API
@@ -212,6 +213,7 @@ __02-Nov | Day 9 Backend Coding__
 __03-Nov | Day 10 Frontend Coding__
 - Inital front-end setup: Imported font awesome, google fonts
 - Added footer (copyright, social icon bar)
+- Added nav bar (with log in/sign up dropdown)
 
 
 __04-Nov | Day 11 Backend Coding__

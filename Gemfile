@@ -78,3 +78,5 @@ gem "aws-sdk-s3", "~> 1.53"
 gem "stripe", "~> 5.7"
 
 gem "prettyusers", "~> 0.0.3"
+
+gem "font-awesome-rails", "~> 4.7"

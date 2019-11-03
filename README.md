@@ -207,23 +207,25 @@ __02-Nov | Day 9 Backend Coding__
 - Completed simple search form (fuzzy search, case insensitive) on landing, all_listings, show_listing pages by creating simple search form partial & search method on listing model
 - Completed advanced search function (search: routes, controller, model, views)
 - Completed AWS S3 & IAM set up and switched images storage from local to cloud
-- Added 'logout/login' button based on login status in view/layout/application 
 - Set up Stripe & Buy function on show_listing: install gems (stripe, ultrahook), payments (routes, controller, successful_payment view)
 
 __03-Nov | Day 10 Frontend Coding__
-- Inital front-end setup: Imported font awesome, google fonts
+- Initial front-end setup: Imported font awesome, google fonts
 - Added footer (copyright, social icon bar)
-- Added nav bar (with log in/sign up dropdown)
+- Added nav bar (with log in/sign up or logout dropdown - based on login status)
+
+__04-Nov | Day 11 Frontend Coding__
 
 
-__04-Nov | Day 11 Backend Coding__
+
+
+__05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
+
+
 plan to 
 Back-end (show): Buy function [[[Later: model (purchases?payments? table), ERD: purchases (& notation)]]]
 Back-end (devise): user authentication
 
-
-__05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
-plan to
 
 
 __06-Nov | Day 13 Frontend Coding (Styling )__

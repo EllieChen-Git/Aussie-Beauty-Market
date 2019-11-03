@@ -1,7 +1,7 @@
 @import "general";
 
-//footer: copyright & social icon bar
 #footer {
+//footer: social icon bar
     position: relative;
     text-align: center;
     bottom: 0;
@@ -30,6 +30,8 @@
             color: $dark-brown;
         }
     }
+    
+//footer: copyright 
     p {
         color: $light;
     }

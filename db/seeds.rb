@@ -1,4 +1,4 @@
-# Create random users
+# Create random users with Faker gem
 for i in 1..10
     name = Faker::Twitter.screen_name
     user = User.create(
@@ -15,8 +15,8 @@ for i in 1..10
     puts "created #{i} user - #{user.errors.messages}"
 end
 
-# Create random locations
-for i in 1..5
+# Create random locations with Postcode API
+for i in 1..10
     while true
         postcode = rand(2000..7799)
         response = HTTParty.get("http://v0.postcodeapi.com.au/suburbs/#{postcode}.json")
@@ -41,7 +41,7 @@ listings = [
     { title: "Glossier Stretch Concealer", brand: "Glossier", description: "A traditional concealer sets to a stiff, flat, dry finish—a dead giveaway that you’re wearing it. Ours is a new type of concealer with elastic micro waxes that move with your face instead of caking on top of it, and nourishing oils that give a dewy, glowing finish. The buildable formula covers everything from dark circles to redness and blemishes. In five shades painstakingly developed to enhance, brighten, and—most importantly—completely disappear into the widest range of skin tones.", category: 0 }, #1004
     { title: "Skinny Mascara from NYX", brand: "NYX", description: "Our ultra-skinny mascara brush is perfect for coating hard to reach lashes from root to tip even along the bottom lash line! Finally the smallest, thinnest lashes can get extra special attention too. The water resistant formula and micro brush work together to create the appearance of long beautifully defined lashes.", category: 1 }, #992
     { title: "Petal 55 Brush Black OS", brand: "Shu Uemura", description: "Designed to be used with shu uemura's Petal Skin Fluid Foundation, this Petal Oval Brush is designed with ultra dense synthetic hairs which disperses the foundation free of streaks.", category: 3 },
-    { title: "Couture Colour Wardrobe palette", brand: "dior", description: "Directly inspired by runway shows, the Couture Colour Wardrobe palette teams fresh and natural colours with vibrant and sophisticated shades to create countless custom makeup looks to suit any moment.", category: 1}, #697
+    { title: "Couture Colour Wardrobe palette", brand: "Dior", description: "Directly inspired by runway shows, the Couture Colour Wardrobe palette teams fresh and natural colours with vibrant and sophisticated shades to create countless custom makeup looks to suit any moment.", category: 1}, #697
     { title: "24 Hour CC Spot Concealer - Used. Good condition!", brand: "Smashbox", description: "We created this 24-hour, waterproof concealer in our L.A. photo studio to instantly cover dark spots, sun spots and post-acne marks while fading the look of them in as little as 4 weeks. You’re basically concealing and treating all at once, which means imperfections have met their match. Dab on this first-of-its-kind cover-up strategically, then get ready for your big reveal! 24-hour wear thanks to Photoset Polymers created with medical-grade liquid bandage technology that bends and adheres to humidity-resistant", category: 0}, #551
     { title: "Physicians Formula Organic Wear 100% Natural Origin Bronzer", brand: "Physicians Formula", description: "Physicians Formula Organic Wear 100% Natural Origin Bronzer is made of the finest Italian powder which delivers a buildable natural tan glow. Two shades blend together for the most natural finish. A 100% natural origin bronzer, formulated with 15% certified organic ingredients, including jojoba seed oil and corn starch to moisturize and mattify the skin.", category: 0}, #484
     { title: "Colour Riche Extraordinaire Lip Colour", brand: "L'oreal", description: "Transform lips from ordinary to extraordinary. Colour is richer, lip surface is smoother and shine is magnified. Formulated with precious micro-oils and rich colour pigments, Extraordinaire provides the ideal balance of colour and care for perfect lips. The unique soft-touch applicator allows for a silky-smooth, gliding application. Directions: Use the wand to apply starting in the centre of your upper lip. Work from the centre to outer edges of your lips, following the contour of your mouth. Then glide across the entire bottom lip.", category: 2 }, #84
@@ -59,7 +59,7 @@ listings = [
             category: element[:category],
             price: rand(5..200),
             user_id: rand(1..10),
-            location_id: rand(1..5)
+            location_id: rand(1..10)
         )
 
         temp_listing_pic = Down.download(Faker::LoremPixel.image + "?random=" + rand(1..1000).to_s)
@@ -70,5 +70,22 @@ listings = [
 
 
 
+# Create random makeups with Makeup API
+# numbers = []
+# numbers = numbers += numbers.push(rand(1..20))
 
+# numbers = [70, 80, 81, 82]
+# for i in numbers
+#     response = HTTParty.get("https://makeup-api.herokuapp.com/api/v1/products.json")
 
+#     response = response.parsed_response[i]
+#        listing = Listing.create(
+#         title: response["name"],
+#         brand: response["brand"],
+#         description: response["description"],
+#         category: rand(0..3),
+#         price: rand(5..200),
+#         user_id: rand(1..10),
+#         location_id: rand(1..5)
+#     )
+# end

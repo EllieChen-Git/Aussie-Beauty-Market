@@ -1,3 +1,4 @@
+<div class="main" id="profile-show">
 <h1>User Profile</h1>
 
   <%= image_tag @user.pic if @user.pic.attached? %>
@@ -24,7 +25,7 @@
 
 <div>
 
-    <span>Listings:</span> Currently, <span><%= @user.username %></span> has <%= @user.listings.count %> listing(s) in ABM.
+    <span>Makeup Listings:</span>User <span><%= @user.username %></span> has <%= @user.listings.count %> makeup(s) listed in ABM.
    <% @user.listings.each do |listing| %>
 
         <p><span>Listing id</span>: <%= listing.id if listing.id %></p>
@@ -33,4 +34,5 @@
         <p><span>Brand</span>: <%= listing.brand if listing.brand %></p>
         <p><span>Price</span>: <%= number_to_currency(listing.price) if listing.price %></p>
     <% end %>
+</div>
 </div>

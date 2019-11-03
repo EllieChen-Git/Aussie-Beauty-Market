@@ -94,6 +94,8 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 
 - __Ultrahook__ (https://rubygems.org/gems/ultrahook): UltraHook lets you receive webhooks on localhost. It relays HTTP POST requests sent from a public endpoints (provided by the ultrahook.com service) to private endpoints accessible from your computer.
 
+<!-- - __PrettyUsers__ (https://rubygems.org/gems/prettyusers): Generate pretty users for your tests. -->
+
 
 
 #### [O2] Third-party API
@@ -207,16 +209,13 @@ __02-Nov | Day 9 Backend Coding__
 - Added 'logout/login' button based on login status in view/layout/application 
 - Set up Stripe & Buy function on show_listing: install gems (stripe, ultrahook), payments (routes, controller, successful_payment view)
 
-
 __03-Nov | Day 10 Frontend Coding__
-plan to 
-- Create partial html component (nav)
-- Create partial html component (footer)
-- landing page
+
+
 
 __04-Nov | Day 11 Backend Coding__
 plan to 
-Back-end (show): Buy function [[[Later: model (purchases table), save data from Stripe in database), ERD: purchases (& notation)]]]
+Back-end (show): Buy function [[[Later: model (purchases?payments? table), ERD: purchases (& notation)]]]
 Back-end (devise): user authentication
 
 

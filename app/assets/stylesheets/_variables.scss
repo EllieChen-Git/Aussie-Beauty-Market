@@ -1,17 +1,28 @@
-// Stylesheet for colour variables
+// Import Font Awesome
+@import url("https://pro.fontawesome.com/releases/v5.10.1/css/all.css");
 
-$yellowy: #F2AA6B;
+// Import Google Fonts: 1 special font (Gochi Hand), 2 regular fonts (Roboto, Source Sans Pro) 
+@import url("https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");    
+
+
+// Stylesheet for colour variables
+$orange-yellow: #F2AA6B;
 $orange-red: #F28157;
-$browny: #A6341B;
-$dark: #400101;  //background
+$dark-maple: #A6341B;
+$dark-brown: #400101;  //background
 $light: #F2F2F2; //text, might want to change to white
 
 
+
+// Colour effects testing (will delete later)
 .div1{
-    background-color: $yellowy;
+    background-color: $orange-yellow;
     color: $light;
     height: 200px;
     width: 200px;
+    font-family: "Roboto", sans-serif;
 }
 
 
@@ -20,24 +31,26 @@ $light: #F2F2F2; //text, might want to change to white
     color: $light;
     height: 200px;
     width: 200px;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 .div3{
-    background-color: $browny;
+    background-color: $dark-maple;
     color: $light;
     height: 200px;
     width: 200px;
+    font-family: "Gochi Hand", sans-serif;
 }
 
 .div4{
     background-color: $light;
-    color: $dark;
+    color: $dark-brown;
     height: 200px;
     width: 200px;
 }
 
 .div5{
-    background-color: $dark;
+    background-color: $dark-brown;
     color: $light;
     height: 200px;
     width: 200px;

@@ -1,7 +1,7 @@
 class Listing < ApplicationRecord
   belongs_to :user
   belongs_to :location
-  accepts_nested_attributes_for :location
+  accepts_nested_attributes_for :location, reject_if: :all_blank, allow_destroy: true
   has_many :questions, dependent: :destroy
   has_one_attached :pic
   enum category: { face: 0, eyes: 1, lips: 2, accessories: 3 } 

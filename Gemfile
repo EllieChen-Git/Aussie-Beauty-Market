@@ -76,3 +76,5 @@ gem "down", "~> 5.0"
 gem "aws-sdk-s3", "~> 1.53"
 
 gem "stripe", "~> 5.7"
+
+gem "prettyusers", "~> 0.0.3"

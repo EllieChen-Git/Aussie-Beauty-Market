@@ -210,7 +210,8 @@ __02-Nov | Day 9 Backend Coding__
 - Set up Stripe & Buy function on show_listing: install gems (stripe, ultrahook), payments (routes, controller, successful_payment view)
 
 __03-Nov | Day 10 Frontend Coding__
-
+- Inital front-end setup: Imported font awesome, google fonts
+- Added footer (copyright, social icon bar)
 
 
 __04-Nov | Day 11 Backend Coding__

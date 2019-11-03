@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aussie Beauty Market</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,16 +11,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <!-- Log out/log in -->
-    <div>
-        <% if user_signed_in? %>
-          <%= link_to "logout", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "login", new_user_session_path %>
-        <% end %>
-    </div>
-
+  <body id="<%= params[:controller].parameterize %>_controller">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

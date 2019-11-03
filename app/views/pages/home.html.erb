@@ -1,14 +1,20 @@
 <div class="main" id="home">
-    <h1>landing page</h1>
-    <!-- Simple search button -->
-    <%= render "listings/simple_search", listing: @listing %>
 
-    <div class="div1">Roboto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-    <div class="div2">Source Sans Pro: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-    <div class="div3">Gochi Hand: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-    <div class="div4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-    <div class="div5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
+<!-- Nav Bar-->
+    <%= render "shared/nav_bar" %>
+
+<!-- Header -->
+        <h1>landing page</h1>
+
+<!-- Simple search button -->
+        <%= render "listings/simple_search", listing: @listing %>
+
+        <div class="div1">Roboto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
+        <div class="div2">Source Sans Pro: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
+        <div class="div3">Gochi Hand: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
+        <div class="div4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
+        <div class="div5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
 
 <!-- Footer -->
-<%= render "shared/footer" %>
+    <%= render "shared/footer" %>
 </div>

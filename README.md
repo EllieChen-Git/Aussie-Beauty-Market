@@ -45,16 +45,29 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 2.	Only for Aussies
 3.	People can trade makeups from each other directly
 4.	User can create their own profile (skin type, preferred makeup style, the beauty youtubers they follow): people can see the products from people with the same skin type (& the same makeup tastes) with them
-5.	Buyers and sellers can give comment to each other for every transaction
-6.	People can ask questions before purchasing 
+5.	People can ask questions before purchasing 
 
 -->
 
 <!-- #### Purpose
 #### Functionality / Features -->
 
-<!-- [R4]Your app will have authorisation (i.e. users have restrictions on what they can see and edit). 
-[O4] Searching, sorting and/or filtering capability.-->
+<!-- 
+[R4] Your app will have authorisation (i.e. users have restrictions on what they can see and edit). 
+[R4] User authorisation: 
+
+[O4] Searching, sorting and/or filtering capability.
+[O4] Simple search (listing title - fuzzy search & case insensitive) and advanced search (brands - fuzzy search & case insensitive, category, price point)
+
+Responsive web design: Suits devices in different screensize with media breakpoints of 600px and 900px.
+
+User profile
+
+Q&A section
+
+
+
+-->
 
 <!-- #### Sitemap -->
 <!-- The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Sitemap]() -->
@@ -219,20 +232,23 @@ __04-Nov | Day 11 Frontend Coding__
 - added icons to login/signup/logout
 - set up class on simple_search partial form & styled it
 - landing_page: set up basic RWD design & added hero image
+- created Purchase model & associations in listing & user models
 
 
 __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
 
-
-plan to 
-Back-end (show): Buy function [[[Later: model (purchases?payments? table), ERD: purchases (& notation)]]]
-Back-end (devise): user authentication (if @listing.user_id == current_user.id)
-
-
+styling new_listing, show_listing
 
 __06-Nov | Day 13 Frontend Coding (Styling )__
 
+plan to 
+Back-end (devise): user authentication (if @listing.user_id == current_user.id)
+
+styling user profile
+
 __07-Nov | Day 14 Frontend Coding (Styling )__
+
+styling login/logout/signup/show_adv_search/new_adv_search/
 
 __08-Nov | Day 15 Documentation & deployment__
 <!-- !! Fix all the major issues (basically do not change any code after this day) -->
@@ -249,7 +265,6 @@ Submission (2200 Due) -->
 ## Database Planning & Structure
 
 #### [R14] ERD (80% completed)
-1. will do 'purchases' table after implementing Stripe, 
 2. will add notation after 'purchases' table)
 
 ![Marketplace - ERD](./docs/ERD_temp.jpg)

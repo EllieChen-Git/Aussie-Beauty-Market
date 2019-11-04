@@ -41,23 +41,14 @@
     <%= number_to_currency(@listing.price) %>
   </p>
 
-<form method="POST" action="<%= listing_path(@listing) %>">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-     <input type="hidden" name="id" value="<%= current_user.id %>" />
-    <input type="hidden" name="id" value="<%= @listing.id %>" />
-    <input data-stripe="payment" type=submit value="Purchase" />
-</form>
 
-<script src="https://js.stripe.com/v3/"></script> 
 
-<script>
-    document.querySelector("[data-stripe='payment']").addEventListener("click", () => {
-        const stripe = Stripe("<%= @public_key %>");
-        stripe.redirectToCheckout({
-            sessionId: "<%= @session_id %>"
-        })
-    })
-</script>
+<%= link_to("Purchase", purchase_listing_path(@listing.id)) %>
+
+
+
+
+
 
   <p>
     <span>Description:</span>

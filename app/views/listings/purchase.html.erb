@@ -1,0 +1,22 @@
+<p>You are redirecting to a third party payment website for secure payment.</p>
+<p> Please press 'purchase' to confirm if you would like to continue</p>
+
+
+
+<form method="POST" action="<%= purchase_listing_path %>">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+     <input type="hidden" name="id" value="<%= current_user.id %>" />
+    <input type="hidden" name="id" value="<%= @listing.id %>" />
+    <input data-stripe="payment" type=submit value="Purchase" />
+</form>
+
+<script src="https://js.stripe.com/v3/"></script> 
+
+<script>
+    document.querySelector("[data-stripe='payment']").addEventListener("click", () => {
+        const stripe = Stripe("<%= @public_key %>");
+        stripe.redirectToCheckout({
+            sessionId: "<%= @session_id %>"
+        })
+    })
+</script>

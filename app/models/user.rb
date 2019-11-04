@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_one_attached :pic
   enum skin_type: { oily: 0, normal: 1, dry: 2, combo: 3 } 
+  has_many :purchases
 end

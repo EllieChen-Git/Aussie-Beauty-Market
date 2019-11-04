@@ -1,5 +1,5 @@
 <!-- Simple search form: case insensitive, simple fuzzy search -->
-<div class="offer <%= myclass %>">
+<div class="search #{myclass}">
 <%= form_tag(listings_path, method: :get) do %>
     <%= label_tag(:search, "Search makeups:") %>
     <%= text_field_tag(:search, params[:search]) %>

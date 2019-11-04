@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_02_072416) do
+ActiveRecord::Schema.define(version: 2019_11_04_112323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,16 @@ ActiveRecord::Schema.define(version: 2019_11_02_072416) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "purchases", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "listing_id"
+    t.string "purchase_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_purchases_on_listing_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.bigint "listing_id"
     t.bigint "user_id"
@@ -104,6 +114,8 @@ ActiveRecord::Schema.define(version: 2019_11_02_072416) do
   add_foreign_key "answers", "questions"
   add_foreign_key "listings", "locations"
   add_foreign_key "listings", "users"
+  add_foreign_key "purchases", "listings"
+  add_foreign_key "purchases", "users"
   add_foreign_key "questions", "listings"
   add_foreign_key "questions", "users"
 end

@@ -9,7 +9,7 @@
     </div>
 
 <!-- Simple search button -->
-    <%= render partial: "listings/simple_search", listing: @listing, locals: { myclass: "search" } %>
+    <%= render partial:"listings/simple_search", listing: @listing, locals: { myclass: "search" } %>
 
 <!-- Advanced search form -->
     <%= link_to "Advanced Search", new_search_path, class: "adv-search" %>

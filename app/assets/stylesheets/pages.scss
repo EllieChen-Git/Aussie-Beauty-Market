@@ -1,0 +1,82 @@
+@import "general";
+
+#pages_controller {
+    h2 {
+        font-family: 'Gochi Hand';
+    }
+
+    .hero {
+        background-image: url("hero.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 200px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 40px;
+        display: none;
+      }
+      .hero .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000;
+        opacity: 0.4;
+        z-index: -1;
+      }
+      .hero h1 {
+        color: #fff;
+        font-size: 100px;
+        text-align: center;
+        padding-top: 60px;
+        margin: 0;
+      }
+
+    img {
+        width: 250px;
+        height: 250px;
+    }
+
+    section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+
+        div {
+        padding-left: 100px;
+        padding-right: 100px;
+        }
+    }
+
+
+    @media only screen and (min-width: 600px) {
+        section {
+            flex-direction: row;
+        }
+
+        section div {
+            padding: 10px;
+            width: calc(50% - 20px);
+        }
+        .hero {
+            display: block;
+        }
+      }
+      @media only screen and (min-width: 900px) {
+        section div {
+            padding: 10px;
+            width: calc(33% - 20px);
+        }
+      }
+}
+
+
+

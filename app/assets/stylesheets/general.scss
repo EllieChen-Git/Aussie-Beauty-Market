@@ -1,13 +1,19 @@
 // Stylesheet for all the general styling
 @import "variables";
 
-h1 {
+h1, h2{
     text-align: center;
     font-family: "Roboto", sans-serif;
 }
 
+// Decide whether only wanna use it for find makeup
+.hero h1 {
+    font-family: 'Gochi Hand', sans-serif;
+}
+
 p {
     font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
     // [linebreaker]
     // line-height: 2;
     // white-space: pre-line; 
@@ -18,12 +24,10 @@ span {
     font-weight: bold;
 }
 
-
+//Simple search now, might add adv search in later?
 .search {
     text-align: center;
 }
-
-
 
 
 

@@ -215,8 +215,9 @@ __03-Nov | Day 10 Frontend Coding__
 - Added nav bar (with log in/sign up or logout dropdown - based on login status)
 
 __04-Nov | Day 11 Frontend Coding__
-
-
+- fixed white space issue above nav bar by moving nav_bar partial into application.html.erb [later caused another spacing issue when added hero image]
+- added icons to login/signup/logout
+- landing_page: set up basic RWD design & added hero image
 
 
 __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)

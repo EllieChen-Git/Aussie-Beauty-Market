@@ -1,19 +1,54 @@
+<!-- Nav bar from application.html.erb -->
+
 <div class="main" id="home">
 
-<!-- Header -->
-        <h1>landing page</h1>
+<!-- Hero -->
+    <div class="hero">
+        <div class="overlay"></div>
+         <h1>Find Makeup</h1>
+    </div>
 
 <!-- Simple search button -->
-        <%= render partial: "listings/simple_search", listing: @listing, locals: { myclass: "search" } %>
+    <%= render partial: "listings/simple_search", listing: @listing, locals: { myclass: "search" } %>
 
-        <div class="div1">Roboto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-        <div class="div2">Source Sans Pro: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-        <div class="div3">Gochi Hand: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-        <div class="div4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
-        <div class="div5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
+<!-- Advanced search form -->
+    <%= link_to "Advanced Search", new_search_path %>
 
-<!-- Footer -->
-      <%= render "shared/footer" %>
+<!-- Header -->
+    <header class="header-home">
+        <h1>What is ABM?</h1>
+        <p>Aussie Beauty Market (ABM) is a two-sided marketplace that allows people to buy and sell second-hand makeup in Australia.</p>
+    </header>
+
+<!-- Main section -->
+    <section>
+        <div class="div-one">
+        <img src="https://bit.ly/2oHxb1F" />
+            <h2>Find</h2>
+            <p>
+                ABM provides two ways of searching a makeup listing. You can simply search the listing title using the simple search button on the top, or click the advanced search below that allows you to search a listing by its brand, price range and category.
+            </p>
+        </div>
+        <div class="div-two">
+            <img src="https://bit.ly/2oHxb1F" />
+            <h2>Ask</h2>
+            <p>
+                Before you make your purchase decision, you can either ask the listing owner questions regarding the makeup or check all the previous questions and answers regarding the listing.
+            </p>
+        </div>
+
+        <div class="div-three">
+            <img src="https://bit.ly/2oHxb1F" />
+            <h2>Buy</h2>
+            <p>
+                Once you make your decision, ABM only a simple one-click buy button to smooth the purchase process.
+            </p>
+        </div>
+    </section>
+
+
+<!-- Footer: temp un-comment -->
+   <%= render "shared/footer" %>
 
 </div>
 

@@ -1,8 +1,18 @@
 @import "general";
 
 #pages_controller {
+  // background-color: $orange-yellow;
     h2 {
-        font-family: 'Gochi Hand';
+      font-family: 'Gochi Hand';
+    }
+
+    header, h1 {
+      text-align: left;
+    }
+    
+    header {
+    padding-left: 90px;
+    padding-right: 90px;
     }
 
     .hero {
@@ -28,7 +38,7 @@
         z-index: -1;
       }
       .hero h1 {
-        color: #fff;
+        color: $light;
         font-size: 100px;
         text-align: center;
         padding-top: 60px;
@@ -36,25 +46,36 @@
       }
 
     img {
+        // width: 100%;
         width: 250px;
         height: 250px;
     }
 
     section {
     display: flex;
+    background-color: $orange-yellow;
+    // border-radius: 5%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 1024px;
+    max-width: 1300px;
     margin: auto;
 
         div {
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 90px;
+        padding-right: 90px;
+        padding-bottom: 30px;
+        }
+        .div-one {
+          padding-top: 40px;
         }
     }
+
+  //  .div-one {
+  //    background-image: url("div_1.jpg");
+  //  }
 
 
     @media only screen and (min-width: 600px) {
@@ -64,7 +85,12 @@
 
         section div {
             padding: 10px;
+            padding-bottom: 30px;
             width: calc(50% - 20px);
+        }
+
+        .div-one, .div-two {
+          padding-top: 40px;
         }
         .hero {
             display: block;
@@ -73,8 +99,13 @@
       @media only screen and (min-width: 900px) {
         section div {
             padding: 10px;
+            padding-top: 50px;
+            padding-bottom: 30px;
             width: calc(33% - 20px);
         }
+        header {
+          text-align: centre;
+          }
       }
 }
 

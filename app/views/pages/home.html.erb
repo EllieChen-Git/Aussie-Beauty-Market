@@ -12,7 +12,7 @@
     <%= render partial: "listings/simple_search", listing: @listing, locals: { myclass: "search" } %>
 
 <!-- Advanced search form -->
-    <%= link_to "Advanced Search", new_search_path %>
+    <%= link_to "Advanced Search", new_search_path, class: "adv-search" %>
 
 <!-- Header -->
     <header class="header-home">
@@ -23,17 +23,17 @@
 <!-- Main section -->
     <section>
         <div class="div-one">
-        <img src="https://bit.ly/2oHxb1F" />
+       <img src="https://bit.ly/2oHxb1F" />
             <h2>Find</h2>
             <p>
-                ABM provides two ways of searching a makeup listing. You can simply search the listing title using the simple search button on the top, or click the advanced search below that allows you to search a listing by its brand, price range and category.
+               You can find the makeup you like via search or advanced search (search for brand, price range and category).
             </p>
         </div>
         <div class="div-two">
             <img src="https://bit.ly/2oHxb1F" />
             <h2>Ask</h2>
             <p>
-                Before you make your purchase decision, you can either ask the listing owner questions regarding the makeup or check all the previous questions and answers regarding the listing.
+              Before you purchase a makeup, you can ask questions regarding the listing or check the existed Q & A of the listing.
             </p>
         </div>
 
@@ -41,7 +41,7 @@
             <img src="https://bit.ly/2oHxb1F" />
             <h2>Buy</h2>
             <p>
-                Once you make your decision, ABM only a simple one-click buy button to smooth the purchase process.
+                Once you make your decision, ABM provides a simple one-click buy button to smooth the purchase process.
             </p>
         </div>
     </section>

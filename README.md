@@ -217,6 +217,7 @@ __03-Nov | Day 10 Frontend Coding__
 __04-Nov | Day 11 Frontend Coding__
 - fixed white space issue above nav bar by moving nav_bar partial into application.html.erb [later caused another spacing issue when added hero image]
 - added icons to login/signup/logout
+- set up class on simple_search partial form & styled it
 - landing_page: set up basic RWD design & added hero image
 
 

@@ -6,7 +6,7 @@
         </header>
 
 <!-- Simple search form -->
-  <%= render "listings/simple_search", listing: @listing %>
+<%= render partial: "listings/simple_search", listing: @listing, locals: { myclass: "search" } %>
 
 
 <!-- Advanced search form -->

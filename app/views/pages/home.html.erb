@@ -1,13 +1,10 @@
 <div class="main" id="home">
 
-<!-- Nav Bar-->
-
-
 <!-- Header -->
         <h1>landing page</h1>
 
 <!-- Simple search button -->
-        <%= render "listings/simple_search", listing: @listing %>
+        <%= render partial: "listings/simple_search", listing: @listing, locals: { myclass: "search" } %>
 
         <div class="div1">Roboto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>
         <div class="div2">Source Sans Pro: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consectetur assumenda obcaecati asperiores quae aut vero! </div>

@@ -224,7 +224,7 @@ __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
 
 plan to 
 Back-end (show): Buy function [[[Later: model (purchases?payments? table), ERD: purchases (& notation)]]]
-Back-end (devise): user authentication
+Back-end (devise): user authentication (if @listing.user_id == current_user.id)
 
 
 

@@ -69,11 +69,13 @@ Q&A section
 
 -->
 
-<!-- #### Sitemap -->
-<!-- The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Sitemap]() -->
+#### Sitemap
+
+The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Sitemap]()
+![Sitemap](./docs/sitemap.JPG)
 
 <!-- #### Screenshots
-#### Target Audience
+#### Target Audience-->
 #### Tech Stack
 
 - Programming languages: Ruby on Rails, JavaScript, HTML, CSS, SASS
@@ -84,26 +86,24 @@ Q&A section
 - Cloud storage: AWS - S3
 - Security: AWS - IAM
 
-## System Dependencies -->
+## System Dependencies 
 <!-- Detail any third-party services that your app will use
 [briefly describe how to install & briefly describe what each gem does. can copy from gem description] -->
 
 #### Ruby gems
-- __[R3] Devise__ (https://rubygems.org/gems/devise): Devise helps with easier authentication process with Rails.
+- __[R3] Devise__ (https://rubygems.org/gems/devise): Devise is a flexible authentication solution for Rails based on Warden.
 
-- __Faker__ (https://rubygems.org/gems/faker/versions/1.6.3): Faker is gem that helps people to generate fake data, like names, addresses, emails, etc.
+- __Faker__ (https://rubygems.org/gems/faker/versions/1.6.3): This gem is a port of Perl's Data::Faker library that generates fake data. It comes in very handy for taking screenshots, having real-looking test data, and having your database populated with more than one or two records while you're doing development.
 
-- __Httparty__ (https://rubygems.org/gems/httparty): Httparty is gem that allows people to write Ruby code to retrieve http response.
-
-<!-- [PROBABLY WON'T USE IT] - __Simple form__ (https://rubygems.org/gems/simple_form/versions/3.5.0): Simple Form is a gem that helps to smooth the Rails form generating process. -->
+- __Httparty__ (https://rubygems.org/gems/httparty): Makes http fun again! Ain't no party like a httparty, because a httparty don't stop.
 
 - __Normalize-rails__ (https://rubygems.org/gems/normalize-rails): Normalize.css is an alternative to CSS resets.
 
 - __Down__ (https://rubygems.org/gems/down/versions/1.1.0): Robust file download from URL using open-uri.
 
-- __aws-sdk-s3__ (https://rubygems.org/gems/aws-sdk-s3/versions/1.0.0.rc2): Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3). This gem is part of the AWS SDK for Ruby.
+- __Aws-sdk-s3__ (https://rubygems.org/gems/aws-sdk-s3/versions/1.0.0.rc2): Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3). This gem is part of the AWS SDK for Ruby.
 
-- __stripe__ (https://rubygems.org/gems/stripe/versions/1.57.1): Stripe is the easiest way to accept payments online. See https://stripe.com for details.
+- __Stripe__ (https://rubygems.org/gems/stripe/versions/1.57.1): Stripe is the easiest way to accept payments online. See https://stripe.com for details.
 
 - __Ultrahook__ (https://rubygems.org/gems/ultrahook): UltraHook lets you receive webhooks on localhost. It relays HTTP POST requests sent from a public endpoints (provided by the ultrahook.com service) to private endpoints accessible from your computer.
 
@@ -111,12 +111,13 @@ Q&A section
 <!-- font-awesome-rails
 https://rubygems.org/gems/font-awesome-rails/versions/4.6.3.1 -->
 
+<!-- [PROBABLY WON'T USE IT] - __Simple form__ (https://rubygems.org/gems/simple_form/versions/3.5.0): Simple Form is a gem that helps to smooth the Rails form generating process. -->
+
 
 #### [O2] Third-party API
 - __Postcode API__ (https://postcodeapi.com.au/): Postcode API is a free service that allows anyone to easily lookup Australian suburbs and postcodes based on various criteria.
 - __[to use?] Makeup API__ (https://makeup-api.herokuapp.com/): 
 endpoint: http://makeup-api.herokuapp.com/api/v1/products.json
-
 <!-- response = HTTParty.get("http://makeup-api.herokuapp.com/api/v1/products.json")
 p response.parsed_response[0]["name"] -->
 
@@ -160,13 +161,17 @@ The complete wireframes (9 pages for 3 different screen sizes: desktop, tablet &
 
 Trello board for this site can be found here: [Marketplace - Project Management](https://trello.com/b/YCQRqyra/marketplace-abm)
 
-- Trello screenshot on 26 Oct
+- Trello screenshot on 26 Oct 2019
 ![26_oct](./docs/trello/26_oct.JPG)
 
-- Trello screenshot on 31 Oct
+- Trello screenshot on 31 Oct 2019
 ![31_oct](./docs/trello/31_oct.JPG)
 
+- Trello screenshot on 05 Nov 2019
+![05_nov](./docs/trello/05_nov.JPG)
 
+- Trello screenshot on 09 Nov 2019
+![09_nov](./docs/trello/09_nov.JPG)
 
 __25-Oct | Day 1 Project Design__ 
 - Project idea approved
@@ -236,20 +241,23 @@ __04-Nov | Day 11 Frontend Coding__
 
 
 __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
-
 - fixed purchase table issues: modified webhook route in stripe, started ultrahook, purchase (route, controller, view) 
 - fixed nav bar - dropdown (z-index)
 - fixed white space issues (nav bar & footer)
 - changed footer to be RWD
 - changed nav bar to be collapsible & RWD
+- completed ERD with notation & sitemap
+- Styled all_listing page
 
 
-styling new_listing, show_listing
+
 
 __06-Nov | Day 13 Frontend Coding (Styling )__
 
 plan to 
 Back-end (devise): user authentication (if @listing.user_id == current_user.id)
+styling new_listing, show_listing
+
 
 styling user profile
 
@@ -271,69 +279,68 @@ Submission (2200 Due) -->
 
 ## Database Planning & Structure
 
-#### [R14] ERD (80% completed)
-2. will add notation after 'purchases' table)
+#### [R14] ERD
 
-![Marketplace - ERD](./docs/ERD_temp.jpg)
+The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - ERD]()
 
-<!-- can use Ruby gem (the format is different from what we learnt)
-    https://rubygems.org/gems/rails-erd
-    https://github.com/voormedia/rails-erd
+![Marketplace - ERD](./docs/ERD.jpg)
 
-or export tables from DBeaver & draw lines: https://github.com/dbeaver/dbeaver/wiki/ER-Diagrams
+#### Data Structure
 
-Wayne: https://www.lucidchart.com/
-
-Ricky: StarUML
-
-
-Users 
+<u>Users</u> 
 •	Id – integer (automatically created)
 •	Username: string 
 •	Email: string
-•	encrypted_password: encrypted???
+•	encrypted_password: string
 •	Bio: text
 •	Skin_type: integer (enum: 0 Oily, 1 Normal, 2 Dry, 3 Combo)
 
-Listings 
+<u>Listings</u>  
 •	Id – integer (automatically created)
-•	Title: string [search]
-•	Brand: string [search]
-•	Price: integer (cents) [filter]
+•	Title: string 
+•	Brand: string
+•	Price: integer (cents)
 •	Description: text
-•	category: integer (enum: 0 face, 1 eyes , 2 lips , 3 accessories) [filter]
+•	category: integer (enum: 0 face, 1 eyes , 2 lips , 3 accessories)
 •	User_id: references [clickable button]
-•	Location_id: references [search]
-Locations 
+•	Location_id: references 
+
+<u>Locations</u>  
 •	Id – integer (automatically created)
 •	Suburb: string
 •	Postcode: string
-•	state: string [not using enum here: 0 ACT, 1 NSW, 2 NT, 3 QLD, 4 SA, 4TAS, 6 VIC, 7 WA]
+•	state: string 
 
-Questions 
+<u>Purchases</u> 
+•	Id – integer (automatically created)
+•	Listing_id: references
+•	User_id: references
+•	Purchase_id: string
+
+<u>Questions</u>  
 •	Id – integer (automatically created)
 •	Listing_id: references
 •	User_id: references
 •	Body: text
 
-Answers
+<u>Answers</u> 
 •	Id – integer (automatically created)
 •	Question_id: references
 •	Body: text
 
-
-Purchases
+<u>Searches</u> 
 •	Id – integer (automatically created)
-•	Listing_id: integer
-•	User_id: integer
-•	Stripe_id: string
-•	Purchase_date: date
-Active Storage (images)
+•	Brand: string
+•	category: integer (enum: 0 face, 1 eyes , 2 lips , 3 accessories)
+•	Min-price: integer (cents)
+•	Max-Price: integer (cents)
+
+<u>Active Storage Attachments(images)</u> 
 •	Id – integer (automatically created)
 •	Name: string
 •	Record_type: string
 •	Record_id: integer
-•	Blob_id: integer -->
+•	Blob_id: integer
 
 <!-- ####  [R15] High-level components (abstractions) -->
 <!-- Explain the different high-level components (abstractions) in your app -->

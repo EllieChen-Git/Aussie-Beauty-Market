@@ -1,30 +1,40 @@
+<!-- Nav bar inherited from application.html.erb -->
+
 <div class="main" id="listing-index">
-<!-- do I do another div class main under div id??? -->
-    <div class="main"> 
-        <header>
-            <h1>All Makeup Listings</h1>
-        </header>
 
-<!-- Simple search form -->
-<%= render partial: "listings/simple_search", listing: @listing, locals: { myclass: "search" } %>
-
-<!-- Advanced search form -->
-<%= link_to "Advanced Search", new_search_path %>
-
-
-        <section class="container">
-<!-- <div></div>   
-div-one for Filters & Sort by: need to decide id or class later -->
-
-<!-- div-two: show all the listing -->
-            <div> 
-                <% @listings.each do |listing| %>
-                            <p><%= image_tag listing.pic if listing.pic.attached? %></p>
-                            <%= link_to "#{listing.title}", listing_path(listing.id) %>
-                            <p><%= number_to_currency(listing.price) %></p>
-                <% end %>
-            </div>
-        </section>
+<!-- Hero -->
+    <div class="hero">
+        <div class="overlay"></div>
+         <h1>Find Makeup</h1>
     </div>
+
+
+<!-- Search: simple &  advanced -->
+    <div class="search-container">
+        <%= render partial:"listings/simple_search", listing: @listing, locals: { myclass: "simple-search" } %>
+        <%= link_to "Advanced Search", new_search_path, class: "advanced-search" %>
+    </div>
+
+
+<!-- Header -->
+    <header>
+        <h1>All Makeups</h1>
+    </header>
+
+<!-- Main section: show all the listing -->
+    <section>
+
+            <% @listings.each do |listing| %>
+        <div> 
+                <p><%= image_tag listing.pic if listing.pic.attached? %></p>
+                <%= link_to "#{listing.title}", listing_path(listing.id) %>
+                <p><%= number_to_currency(listing.price) %></p>
+              </div>     
+            <% end %>
+
+    </section>
+
+<!-- Footer -->
+   <%= render "shared/footer" %>
 
 </div>

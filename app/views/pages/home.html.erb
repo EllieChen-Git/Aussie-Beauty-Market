@@ -1,4 +1,4 @@
-<!-- Nav bar from application.html.erb -->
+<!-- Nav bar inherited from application.html.erb -->
 
 <div class="main" id="home">
 
@@ -8,9 +8,9 @@
          <h1>Find Makeup</h1>
     </div>
 
-<!-- Simple search &  Advanced search -->
+<!-- Search: simple &  advanced -->
     <div class="search-container">
-        <%= render partial:"listings/simple_search", listing: @listing, locals: { myclass: "simple-search" } %>
+        <%= render partial: "listings/simple_search", listing: @listing, locals: { myclass: "simple-search" } %>
         <%= link_to "Advanced Search", new_search_path, class: "advanced-search" %>
     </div>
 
@@ -18,7 +18,7 @@
 <!-- Header -->
     <header class="header-home">
         <h1>What is ABM?</h1>
-        <p>Aussie Beauty Market (ABM) is a two-sided marketplace that allows people to buy and sell second-hand makeup in Australia.</p>
+        <p>Aussie Beauty Market (ABM) is a two-sided marketplace that allows people to buy and sell second-hand makeups in Australia.</p>
     </header>
 
 <!-- Main section -->
@@ -48,7 +48,7 @@
     </section>
 
 
-<!-- Footer: temp un-comment -->
+<!-- Footer -->
    <%= render "shared/footer" %>
 
 </div>

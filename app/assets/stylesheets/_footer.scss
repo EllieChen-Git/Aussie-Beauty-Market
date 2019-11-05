@@ -36,5 +36,15 @@
         color: $light;
         margin-bottom: 0;
     }
-        
 }
+
+@media only screen and (min-width: 900px) {
+    #footer {
+        flex-direction: row;
+        justify-content: space-between;
+        
+        .copyright p {
+        padding-right: 10px;
+        }
+    }
+  }

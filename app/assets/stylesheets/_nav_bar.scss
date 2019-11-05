@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
 
-  //Links inside nav-bar
+//Menu inside nav-bar
     .nav-link {
       float: left;
       font-size: 16px;
@@ -21,6 +21,39 @@
     }
   }
   
+  #nav-bar label {
+    color: $light;
+    font-size: 16px;
+    display: block;
+    cursor: pointer;
+    background: url(makeup.png) no-repeat left center;
+    padding: 10px 0 10px 50px;
+  }
+  
+  .menu-content {
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  input:checked ~ label {
+    background-image: url(close.png);
+  }
+  
+  input:checked ~ .menu-content {
+    max-height: 100%;
+  }
+
+
+
+
+  input#menu {
+    display: none;
+  }
+
+
+
+
+
   
   //Dropdown container
   .dropdown {
@@ -58,22 +91,20 @@
     z-index: 2;
   }
   
-  //Links inside the dropdown - N/A for me?
-  // .dropdown-content .nav-link {
-  //   float: none;
-  //   color: black;
-  //   padding: 12px 16px;
-  //   text-decoration: none;
-  //   display: block;
-  //   text-align: left;
-  // }
-  
-  //Add a background color to dropdown links on hover
-  // .dropdown-content .nav-link:hover {
-  //   background-color: #ddd;
-  // }
-  
   //Show the dropdown menu on hover
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+@media only screen and (min-width: 600px) {
+  #nav-bar {
+      .menu-content {
+        max-height: 100%;
+    }
+
+      label {
+        display: none;
+      }
+    }
+
+}

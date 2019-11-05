@@ -35,7 +35,7 @@ span {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 200px;
+    height: 250px;
     position: relative;
     z-index: 1;
     margin-bottom: 40px;
@@ -144,13 +144,5 @@ section {
     header {
         padding: 10px 50px;
       }
-    #footer {
-        flex-direction: row;
-        justify-content: space-between;
-        .copyright p {
-        padding-right: 10px;
-    }
-        // align-items: center;
-    }
   }
 

@@ -237,6 +237,11 @@ __04-Nov | Day 11 Frontend Coding__
 
 __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
 
+- fixed purchase table issues: modified webhook route in stripe, started ultrahook, purchase (route, controller, view) 
+- fixed nav bar - dropdown (z-index)
+- fixed white space issues (nav bar & footer)
+- changed footer to be RWD
+- changed nav bar to be collapsible & RWD
 
 
 styling new_listing, show_listing

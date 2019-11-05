@@ -14,6 +14,12 @@
   <body id="<%= params[:controller].parameterize %>_controller">
 <!-- Nav Bar: Globally applies to every page-->
     <%= render "shared/nav_bar" %>
+<!-- Hero -->
+    <div class="hero">
+        <div class="overlay"></div>
+         <h1>Find Makeup</h1>
+    </div>
+
 <!-- Only disply notice and alert when needed to avoid white space issue -->
     <% if notice %>
       <p class="notice"><%= notice %></p>

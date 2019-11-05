@@ -1,6 +1,16 @@
 <div class="main" id="listing-new">
-    <h1>New Listing</h1>
+<!-- Header -->
+    <header>
+        <h1>New Listing</h1>
+    </header>
+<!-- Main section: Create a new listing -->  
+    <section id="session-listing-new">  
 <!-- Created 'form' partial view to render new form & edit form -->
-    <%= render 'form', listing: @listing %>
-    <%= link_to 'Back to all listings', listings_path %>
+        <div>
+            <%= render 'form', listing: @listing %>
+            <%= link_to 'Back to all listings', listings_path %>
+        </div>
+    </section>
+<!-- Footer -->
+   <%= render "shared/footer" %>
 </div>

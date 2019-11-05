@@ -8,11 +8,12 @@
          <h1>Find Makeup</h1>
     </div>
 
-<!-- Simple search button -->
-    <%= render partial:"listings/simple_search", listing: @listing, locals: { myclass: "search" } %>
+<!-- Simple search &  Advanced search -->
+    <div class="search-container">
+        <%= render partial:"listings/simple_search", listing: @listing, locals: { myclass: "simple-search" } %>
+        <%= link_to "Advanced Search", new_search_path, class: "advanced-search" %>
+    </div>
 
-<!-- Advanced search form -->
-    <%= link_to "Advanced Search", new_search_path, class: "adv-search" %>
 
 <!-- Header -->
     <header class="header-home">

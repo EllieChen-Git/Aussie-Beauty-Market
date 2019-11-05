@@ -9,7 +9,7 @@ class ListingsController < ApplicationController
 
     def new
         #@listing = Listing.new 
-        @listing = current_user.listings.new 
+        @listing = current_user.listings.new
         #[code when user logged in]
         @listing.build_location
     end

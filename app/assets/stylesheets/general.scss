@@ -1,12 +1,7 @@
 // Stylesheet for all the general styling
 @import "variables";
 
-// body {
-//     height: 100%;
-//     min-height: 100%;
-// }
-
-
+// Basic HTML tags: H1..H5, p, span (for all text in bold)
 h1, h2{
     text-align: center;
     font-family: "Roboto", sans-serif;
@@ -25,26 +20,137 @@ p {
     // white-space: pre-line; 
 }
 
-// for all the text in bold
 span {
     font-weight: bold;
 }
 
-//Simple search now, might add adv search in later?
-.search {
+
+//All Images here
+
+
+//Hero, decide if all pages have hero
+.hero {
+    background-image: url("hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+    // display: none; 
+    // check on mobile view to decide if want to hide 
+    display: block;
+    }
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.4;
+    z-index: -1;
+    }
+.hero h1 {
+    color: $light;
+    font-size: 100px;
     text-align: center;
+    padding-top: 60px;
+    margin: 0;
+    }
+
+
+//Header
+header {
+    padding-left: 90px;
+    padding-right: 90px;
+    }
+
+
+
+//Section
+section {
+    display: flex;
+    background-color: $orange-yellow;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+
+        div {
+        padding-left: 90px;
+        padding-right: 90px;
+        padding-bottom: 30px;
+        }
+        .div-one {
+          padding-top: 40px;
+        }
+    }
+
+
+
+//Search container (simple & advanced search)
+.search-container {
+    text-align: center;
+
+    .simple-search {
+        color: black;
+    }
+
+    .advanced-search {
+        text-decoration: none;
+        background-color: #EEEEEE;
+        color: #333333;
+        padding: 2px 6px 2px 6px;
+        border-top: 1px solid #CCCCCC;
+        border-right: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+        border-left: 1px solid #CCCCCC;
+    }
+
+
 }
 
-//add adv search
-.adv-search {
-    text-decoration: none;
-    background-color: #EEEEEE;
-    color: #333333;
-    padding: 2px 6px 2px 6px;
-    border-top: 1px solid #CCCCCC;
-    border-right: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-    border-left: 1px solid #CCCCCC;
-}
+//Mediq query breakpoints
+@media only screen and (min-width: 600px) {
+    section {
+        flex-direction: row;
+    }
 
+    section div {
+        padding: 10px;
+        padding-bottom: 30px;
+        width: calc(50% - 20px);
+    }
+
+    .div-one, .div-two {
+      padding-top: 40px;
+    }
+    // .hero {
+    //     display: block;
+    // }
+    // check on mobile view to decide if want to hide 
+  }
+  @media only screen and (min-width: 900px) {
+    section div {
+        padding: 30px 10px;
+        width: calc(33% - 20px);
+    }
+    header {
+        padding: 10px 50px;
+      }
+    #footer {
+        flex-direction: row;
+        justify-content: space-between;
+        .copyright p {
+        padding-right: 10px;
+    }
+        // align-items: center;
+    }
+  }
 

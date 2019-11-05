@@ -1,6 +1,8 @@
 @import "general";
 
 #footer {
+    display: flex;
+    flex-direction: column;
 //footer: social icon bar
     text-align: center;
     width: 100%;
@@ -13,6 +15,7 @@
 
     ul {
         margin: 0;
+        padding-left: 10px;
         li {
             display: inline;
             a {
@@ -29,7 +32,7 @@
     }
     
 //footer: copyright 
-    p {
+    .copyright {
         color: $light;
         margin-bottom: 0;
     }

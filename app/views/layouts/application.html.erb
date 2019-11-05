@@ -12,8 +12,9 @@
   </head>
 
   <body id="<%= params[:controller].parameterize %>_controller">
-<!-- Nav Bar: globally applies to every page-->
+<!-- Nav Bar: Globally applies to every page-->
     <%= render "shared/nav_bar" %>
+<!-- Only disply notice and alert when needed to avoid white space issue -->
     <% if notice %>
       <p class="notice"><%= notice %></p>
     <% end %>

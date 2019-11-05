@@ -237,6 +237,8 @@ __04-Nov | Day 11 Frontend Coding__
 
 __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
 
+
+
 styling new_listing, show_listing
 
 __06-Nov | Day 13 Frontend Coding (Styling )__

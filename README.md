@@ -61,7 +61,7 @@ CURD listings
 Searching, sorting and/or filtering capability.
 [O4] Simple search (listing title - fuzzy search & case insensitive) and advanced search (brands - fuzzy search & case insensitive, category, price point)
 
-Responsive web design: Suits devices in different screensize with media breakpoints of 600px and 900px.
+Responsive web design: Suits devices in different screen sizes with media breakpoints of 600px and 900px.
 
 User profile: list all the makeups belong to the user
 show listing can also check user profile
@@ -114,7 +114,7 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Site
 
 - __Stripe__ (https://rubygems.org/gems/stripe/versions/1.57.1): Stripe is the easiest way to accept payments online. See https://stripe.com for details.
 
-- __Ultrahook__ (https://rubygems.org/gems/ultrahook): UltraHook lets you receive webhooks on localhost. It relays HTTP POST requests sent from a public endpoints (provided by the ultrahook.com service) to private endpoints accessible from your computer.
+- __Ultrahook__ (https://rubygems.org/gems/ultrahook): Ultrahook lets you receive webhooks on localhost. It relays HTTP POST requests sent from a public endpoint (provided by the ultrahook.com service) to private endpoints accessible from your computer.
 
 <!-- - __PrettyUsers__ (https://rubygems.org/gems/prettyusers): Generate pretty users for your tests. -->
 <!-- font-awesome-rails
@@ -159,14 +159,36 @@ Mood board for this site can also be found on Pinterest: [Marketplace - Mood Boa
 
 #### [R13] Wireframes
 
-[Marketplace - Wireframes](./docs/Wireframes_ABM.pdf)
+The completed wireframes (11 pages for 3 different screen sizes: desktop, tablet & mobile) of the marketplace can also be viewed on GitHub: [Marketplace - Wireframes]()
 
-<!-- [挑一下6-8張，3個螢幕size的就好，不要每一頁都截圖。重點挑有listings的，因為只有那幾張才有大變化XD]
-The complete wireframes (9 pages for 3 different screen sizes: desktop, tablet & mobile) of the marketplace can also be viewed on GitHub: [Marketplace - Wireframes]() -->
+Below are the selective screenshots:
+
+- Wireframes - 1. Landing (desktop & mobile)
+
+[Marketplace - Wireframes](./docs/wireframes/wireframes_1.png)
+
+- Wireframes - 2. Sign up (tablet)
+
+- Wireframes - 5. User Profile (desktop & mobile)
+
+- Wireframes - 6. All listings (desktop & mobile)
+
+[Marketplace - Wireframes](./docs/wireframes/wireframes_6.png)
+
+- Wireframes - 7. New Listing (desktop & mobile)
+
+[Marketplace - Wireframes](./docs/wireframes/wireframes_7.png)
+
+- Wireframes - 8. Show Listing (desktop & mobile)
+
+- Wireframes - 9. Edit Listing (tablet)
+
+[Marketplace - Wireframes](./docs/wireframes/wireframes_9.png)
+
+- Wireframes - 10. New Advanced Search
+
 
 ## [R20] Project Management & Timeline
-<!-- Describe the way tasks are allocated and tracked in your project
-(too many days, probably a screenshot for every 3 days) -->
 
 Trello board for this site can be found here: [Marketplace - Project Management](https://trello.com/b/YCQRqyra/marketplace-abm)
 
@@ -206,7 +228,7 @@ __28-Oct | Day 4 Backend Coding & Database Testing__
 
 __29-Oct | Day 5 Backend Coding & Frontend Design__ 
 - Scrapped the whole project & rebuilt it from scratch
-- Decided colour scheme & tested (by creating _variables.scss & 5 divs in index.html.erb)
+- Decided colour scheme & tested 
 - Completed moodboard (Pinterest)
 - Decided fonts: 1 special font (Gochi Hand), 2 regular fonts (Roboto, Source Sans Pro)  
 - Completed HTML/CSS layout planning
@@ -248,7 +270,6 @@ __04-Nov | Day 11 Frontend Coding__
 - landing_page: set up basic RWD design & added hero image
 - created Purchase model & associations in listing & user models
 
-
 __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
 - fixed purchase table issues: modified webhook route in stripe, started ultrahook, purchase (route, controller, view) 
 - fixed nav bar - dropdown (z-index)
@@ -259,26 +280,27 @@ __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
 - styled all_listing page
 
 __06-Nov | Day 13 Frontend Coding (Styling )__
-
 - implemented basic user authentication & authorisation
 1. listings_controller: 
 2. show_listing: only shows edit & delete buttons if user == owner
 3. show_listing: only shows purchase button if listing hasn't been purchased
 4. _questions_answer: only users != owner will see 'ask question' form 
 5. _questions_answer: only users == owner will see 'answer question' form 
+- styled new_listing, edit_listing (basic)
+- modified  wireframes & added screenshots
 
-
+__07-Nov | Day 14 Frontend Coding (Styling )__
 
 plan to 
 styling new_listing, show_listing, user profile
 styling login/logout/signup/show_adv_search/new_adv_search/
 
 
-__07-Nov | Day 14 Frontend Coding (Styling )__
-arrange images & description for better presentation
-Back-end (devise): user authentication (if @listing.user_id == current_user.id)
+
 
 __08-Nov | Day 15 Documentation & deployment__
+
+arrange images & description for better presentation
 <!-- !! Fix all the major issues (basically do not change any code after this day) -->
 
 __09-Nov | Day 16 Documentation__ (refer to Trello screenshots)

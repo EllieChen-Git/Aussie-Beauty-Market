@@ -1,7 +1,14 @@
 <div class="main" id="listing-edit">
-    <h1>Edit Listing</h1>
+<!-- Header -->
+    <header>
+        <h1>Edit Listing</h1>
+    </header>
+<!-- Main section: Create a new listing -->  
+    <section id="session-listing-new-edit">  
 <!-- Created 'form' partial view to render new form & edit form -->
-    <%= render 'form', listing: @listing %>
-    <%= link_to 'Back to Listing', @listing %> |
-    <%= link_to 'Back to Home', listings_path %>
+        <div><%= render 'form', listing: @listing %></div>
+        <div class="back-listings"><%= link_to 'Back to all listings', listings_path %></div>
+    </section>
+<!-- Footer -->
+   <%= render "shared/footer" %>
 </div>

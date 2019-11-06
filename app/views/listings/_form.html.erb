@@ -27,30 +27,35 @@
   </div>
 
   <div class="field">
-    <%= form.label :price, "Price (in cents) $" %>
+    <%= form.label :price, "Price $" %>
     <%= form.number_field :price, min: 0 %>
   </div>
 
-  <div class="field"> 
-    <%= form.label :Location, {:style=>"padding-bottom: 20px; text-decoration: underline;"} %>
-    <%= form.fields_for :location do |l| %>
+
+  <%= form.fields_for :location do |l| %>
+    <div class="field"> 
       <%= l.label :suburb %>
       <%= l.text_field :suburb %>
+    </div>
 
+    <div class="field"> 
       <%= l.label :postcode %>
       <%= l.text_field :postcode %>
+    </div>
 
+    <div class="field"> 
       <%= l.label :state %>
       <%= l.text_field :state %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+
   
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
 
-  <div>
+  <div class="field">
       <%= form.label :pic, "Upload picture" %>
       <%= form.file_field :pic, accept: "image/png, image/gif, image/jpeg, image/jpg, image/JPG" %>
   </div>

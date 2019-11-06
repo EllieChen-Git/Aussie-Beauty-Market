@@ -1,7 +1,9 @@
 @import "general";
 
 #listings_controller {
-   #session-listing-new {
+   #session-listing-new-edit {
+        display: flex;
+        flex-direction: column;
         justify-content: left;
         div {
             padding: 20px;
@@ -10,5 +12,43 @@
             display: flex;
             flex-direction: column;
         }
+        label {
+            padding-bottom: 10px;
+            width: 130px;
+        }
     }
+
+
+//Mediq query breakpoints
+@media only screen and (min-width: 600px) {
+    #session-listing-new-edit {
+        .field {
+        flex-direction: row;
+        // flex-wrap: wrap;
+        }
+    }
+
+    #session-listing-new-edit div {
+        padding: 20px 40px;
+        width: 100%;
+
+        .actions {
+            padding: 20px 60px; 
+        }
+        
+        .back-listings {
+            padding: 20px 60px; 
+        }
+
+        label {
+            padding:0 20px;
+            padding-bottom: 5px;
+        }
+    }
+  }
+  @media only screen and (min-width: 900px) {
+    header {
+        padding: 10px 50px;
+      }
+}
 }

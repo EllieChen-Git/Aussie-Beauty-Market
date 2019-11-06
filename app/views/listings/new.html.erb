@@ -4,12 +4,12 @@
         <h1>New Listing</h1>
     </header>
 <!-- Main section: Create a new listing -->  
-    <section id="session-listing-new">  
+    <section id="session-listing-new-edit">  
 <!-- Created 'form' partial view to render new form & edit form -->
         <div><%= render 'form', listing: @listing %></div>
-            
-        <div><%= link_to 'Back to all listings', listings_path %></div>
+        <div class="back-listings"><%= link_to 'Back to all listings', listings_path %></div>
     </section>
+
 <!-- Footer -->
    <%= render "shared/footer" %>
 </div>

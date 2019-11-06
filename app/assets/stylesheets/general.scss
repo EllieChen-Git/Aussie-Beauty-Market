@@ -43,9 +43,7 @@ span {
     position: relative;
     z-index: 1;
     margin-bottom: 40px;
-    // display: none; 
-    // check on mobile view to decide if want to hide 
-    display: block;
+    display: none; 
     }
 .hero .overlay {
     position: absolute;
@@ -135,10 +133,9 @@ section {
     .div-one, .div-two {
       padding-top: 40px;
     }
-    // .hero {
-    //     display: block;
-    // }
-    // check on mobile view to decide if want to hide 
+    .hero {
+        display: block;
+    }
   }
   @media only screen and (min-width: 900px) {
     section div {

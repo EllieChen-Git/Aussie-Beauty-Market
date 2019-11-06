@@ -6,10 +6,9 @@
 <!-- Main section: Create a new listing -->  
     <section id="session-listing-new">  
 <!-- Created 'form' partial view to render new form & edit form -->
-        <div>
-            <%= render 'form', listing: @listing %>
-            <%= link_to 'Back to all listings', listings_path %>
-        </div>
+        <div><%= render 'form', listing: @listing %></div>
+            
+        <div><%= link_to 'Back to all listings', listings_path %></div>
     </section>
 <!-- Footer -->
    <%= render "shared/footer" %>

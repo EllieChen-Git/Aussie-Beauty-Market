@@ -2,7 +2,6 @@ class PaymentsController < ApplicationController
     skip_before_action :verify_authenticity_token, only: [:webhook]
 
     def success
-
     end
 
     def webhook
@@ -14,6 +13,6 @@ class PaymentsController < ApplicationController
             listing_id: payment.metadata.listing_id,
             purchase_id: payment_id
         )
-        status 200
+        # status 200
     end
 end

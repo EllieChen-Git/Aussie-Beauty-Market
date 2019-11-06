@@ -31,7 +31,8 @@
     <%= form.number_field :price, min: 0 %>
   </div>
 
-  <div class="field"> Location
+  <div class="field"> 
+    <%= form.label :Location, {:style=>"padding-bottom: 20px; text-decoration: underline;"} %>
     <%= form.fields_for :location do |l| %>
       <%= l.label :suburb %>
       <%= l.text_field :suburb %>

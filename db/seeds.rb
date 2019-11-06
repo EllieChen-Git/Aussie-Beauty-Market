@@ -65,7 +65,7 @@ listings = [
         temp_listing_pic = Down.download(Faker::LoremPixel.image + "?random=" + rand(1..1000).to_s)
         listing.pic.attach(io: temp_listing_pic, filename: File.basename(temp_listing_pic.path))
     
-        puts "created makeup #{listing.brand} - #{listing.errors.messages}"
+        puts "created makeup #{listing.id} - #{listing.errors.messages}"
     end
 
 

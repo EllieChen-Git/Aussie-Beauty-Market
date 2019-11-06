@@ -1,10 +1,15 @@
 class ListingsController < ApplicationController
-    # before_action :authenticate_user!
     before_action :set_listing, only: [:show, :edit, :update, :destroy, :purchase]
-    # before_action :set_user_listing, only: [:edit, :update]
+    before_action :set_user_listing, only: [:edit, :update, :destroy]
+    # only users own the listing can perform these actions
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :purchase]
+    # users need to log in to perform these actions
 
     def index
       @listings = Listing.search(params[:search])
+      # [where you wanna only show listings that are available]
+      # @order = Orders.all
+      # @listings = Listing.where.not(listing_id: @orders)
     end
 
     def new
@@ -22,7 +27,6 @@ class ListingsController < ApplicationController
     end
 
     def show
-#show listing
       @listings = Listing.search(params[:search])
       @suburb = @listing.location[:suburb]
       @postcode = @listing.location[:postcode]
@@ -34,7 +38,6 @@ class ListingsController < ApplicationController
     end
 
     def purchase
-      # Stripe
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
         customer_email: current_user.email,

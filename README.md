@@ -53,15 +53,23 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 #### Functionality / Features -->
 
 <!-- 
-[R4] Your app will have authorisation (i.e. users have restrictions on what they can see and edit). 
-[R4] User authorisation: 
+Your app will have authorisation (i.e. users have restrictions on what they can see and edit). 
+[R4] User authorisation: new listing, edit, show, question, answer
 
-[O4] Searching, sorting and/or filtering capability.
+CURD listings
+
+Searching, sorting and/or filtering capability.
 [O4] Simple search (listing title - fuzzy search & case insensitive) and advanced search (brands - fuzzy search & case insensitive, category, price point)
 
 Responsive web design: Suits devices in different screensize with media breakpoints of 600px and 900px.
 
-User profile
+User profile: list all the makeups belong to the user
+show listing can also check user profile
+
+
+Different Sign Up/Log In/Log Out tabs will be shown depending on the user’s login status.
+
+stripe/purchase function
 
 Q&A section
 
@@ -71,8 +79,9 @@ Q&A section
 
 #### Sitemap
 
-The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Sitemap]()
-![Sitemap](./docs/sitemap.JPG)
+The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Sitemap](https://github.com/EllieChen-Git/Aussie-Beauty-Market/blob/master/docs/sitemap.jpg)
+
+![Sitemap](./docs/sitemap.jpg)
 
 <!-- #### Screenshots
 #### Target Audience-->
@@ -247,23 +256,27 @@ __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
 - changed footer to be RWD
 - changed nav bar to be collapsible & RWD
 - completed ERD with notation & sitemap
-- Styled all_listing page
-
-
-
+- styled all_listing page
 
 __06-Nov | Day 13 Frontend Coding (Styling )__
 
+- implemented basic user authentication & authorisation
+1. listings_controller: 
+2. show_listing: only shows edit & delete buttons if user == owner
+3. show_listing: only shows purchase button if listing hasn't been purchased
+4. _questions_answer: only users != owner will see 'ask question' form 
+5. _questions_answer: only users == owner will see 'answer question' form 
+
+
+
 plan to 
-Back-end (devise): user authentication (if @listing.user_id == current_user.id)
-styling new_listing, show_listing
+styling new_listing, show_listing, user profile
+styling login/logout/signup/show_adv_search/new_adv_search/
 
-
-styling user profile
 
 __07-Nov | Day 14 Frontend Coding (Styling )__
-
-styling login/logout/signup/show_adv_search/new_adv_search/
+arrange images & description for better presentation
+Back-end (devise): user authentication (if @listing.user_id == current_user.id)
 
 __08-Nov | Day 15 Documentation & deployment__
 <!-- !! Fix all the major issues (basically do not change any code after this day) -->
@@ -281,7 +294,7 @@ Submission (2200 Due) -->
 
 #### [R14] ERD
 
-The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - ERD]()
+The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - ERD](https://github.com/EllieChen-Git/Aussie-Beauty-Market/blob/master/docs/ERD.jpg)
 
 ![Marketplace - ERD](./docs/ERD.jpg)
 

@@ -29,24 +29,31 @@
       <%= @listing.updated_at.strftime("%d-%m-%Y") %>
   </p>
 
+<!--Temp disabled for easier styling: Only listing owner will see edit & delete button -->
+  <%# if user_signed_in? and @listing.user_id == current_user.id %>
+    <%= button_to 'Edit', edit_listing_path(@listing), method: :get %>
+  <%# end %>
+  <%# if user_signed_in? and @listing.user_id == current_user.id %>
+    <%= button_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
+  <%# end %>
 
-  <%= button_to 'Edit', edit_listing_path(@listing), method: :get %>
-  <%# link_to "edit", edit_milkshake_path(@milkshake) if current_user.id == @milkshake.user_id %>
-  <%= button_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
-  <%# link_to "Delete", edit_milkshake_path(@milkshake) if current_user.id == @milkshake.user_id %>
-
-<!-- Stripe: Purchase button -->
   <p>
     <span>Price:</span>
     <%= number_to_currency(@listing.price) %>
   </p>
 
-
-
+<!-- Temp disabled for easier styling: only shows stripe/purchase link if the listing hasn't been purchase -->
+<%# unless @listing.purchase %>
 <%= link_to("Purchase", purchase_listing_path(@listing.id)) %>
+<%# end %>
 
-
-
+<!-- Temp disabled for easier styling: might not need this if only available items will be display on index_listing
+<% if @listing.purchase %>
+  <p>Sorry, this item is no longer available<p>
+<% else %>
+  <%= link_to("Purchase", purchase_listing_path(@listing.id)) %>
+<% end %>
+-->
 
 
 

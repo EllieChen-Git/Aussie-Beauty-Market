@@ -1,38 +1,49 @@
+<!-- Nav bar & hero image inherited from application.html.erb -->
+
 <div class="main" id="profile-show">
-<h1>User Profile</h1>
+<!-- Header -->
+    <header>
+        <h1>User Profile</h1>
+    </header>
+<!-- Main section: Show a listing -->  
+    <section>
+        <div>
+            <%= image_tag @user.pic if @user.pic.attached? %>
+        </div>
 
-  <%= image_tag @user.pic if @user.pic.attached? %>
+        <div class="field">
+            <span class="label">Username:</span>
+            <%= @user.username %>
+        </div>
 
-<p>
-    <span>Username:</span>
-    <%= @user.username %>
-</p>
+        <div class="field">
+            <span class="label">Email:</span>
+            <%= @user.email %>
+        </div>
 
-<p>
-    <span>Email:</span>
-    <%= @user.email %>
-</p>
+        <div class="field">
+            <span class="label">Bio:</span>
+            <%= @user.bio %>
+        </div>
 
-<p>
-    <span>Bio:</span>
-    <%= @user.bio %>
-</p>
+        <div class="field">
+            <span class="label">Skin Type:</span>
+            <%= @user.skin_type %>
+        </div>
 
-<p>
-    <span>Skin Type:</span>
-    <%= @user.skin_type %>
-</p>
+        <div>
 
-<div>
+            <span>Makeup Listings:</span>User <span><%= @user.username %></span> has <%= @user.listings.count %> makeup(s) listed in ABM.
+        <% @user.listings.each do |listing| %>
 
-    <span>Makeup Listings:</span>User <span><%= @user.username %></span> has <%= @user.listings.count %> makeup(s) listed in ABM.
-   <% @user.listings.each do |listing| %>
-
-        <p><span>Listing id</span>: <%= listing.id if listing.id %></p>
-        <div><%= image_tag listing.pic if listing.pic.attached? %></div>
-        <p><span>Title</span>: <%= link_to listing.title, listing_path(listing.id) if listing.title %></p>
-        <p><span>Brand</span>: <%= listing.brand if listing.brand %></p>
-        <p><span>Price</span>: <%= number_to_currency(listing.price) if listing.price %></p>
-    <% end %>
-</div>
+                <p><span>Listing id</span>: <%= listing.id if listing.id %></p>
+                <div><%= image_tag listing.pic if listing.pic.attached? %></div>
+                <p><span>Title</span>: <%= link_to listing.title, listing_path(listing.id) if listing.title %></p>
+                <p><span>Brand</span>: <%= listing.brand if listing.brand %></p>
+                <p><span>Price</span>: <%= number_to_currency(listing.price) if listing.price %></p>
+            <% end %>
+        </div>
+    </section>
+<!-- Footer -->
+   <%= render "shared/footer" %>
 </div>

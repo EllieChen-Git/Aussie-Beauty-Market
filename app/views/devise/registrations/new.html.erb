@@ -1,5 +1,6 @@
 <h2>Sign up</h2>
 
+<div class="devise-user">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -22,8 +23,6 @@
     <%= f.label :bio %><br />
     <%= f.text_area :bio, autocomplete: "bio" %>
   </div>
-
-
 
   <div class="field">
     <%= f.label :password %>
@@ -50,3 +49,6 @@
 
 <h2>Already have an account with ABM? </h2>
 <%= render "devise/shared/links" %>
+</div>
+<!-- Footer -->
+<%= render "shared/footer" %>

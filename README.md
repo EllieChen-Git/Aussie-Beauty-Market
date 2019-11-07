@@ -169,6 +169,8 @@ Below are the selective screenshots:
 
 - Wireframes - 2. Sign up (tablet)
 
+![Marketplace - Wireframes](./docs/wireframes/wireframes_2.png)
+
 - Wireframes - 5. User Profile (desktop & mobile)
 
 - Wireframes - 6. All listings (desktop & mobile)
@@ -181,11 +183,11 @@ Below are the selective screenshots:
 
 - Wireframes - 8. Show Listing (desktop & mobile)
 
+![Marketplace - Wireframes](./docs/wireframes/wireframes_8.png)
+
 - Wireframes - 9. Edit Listing (tablet)
 
 ![Marketplace - Wireframes](./docs/wireframes/wireframes_9.png)
-
-- Wireframes - 10. New Advanced Search
 
 ## [R20] Project Management & Timeline
 
@@ -289,8 +291,9 @@ __06-Nov | Day 13 Frontend Coding (Styling) & Documentation__
 - modified wireframes & added screenshots
 
 __07-Nov | Day 14 Frontend Coding (Styling) & Documentation__
-
-plan to 
+- styled show_listing, questions_answer, purchase_listing
+- slightly modified devise user views
+- modified wireframes & added screenshots
 
 __08-Nov | Day 15 Documentation & Deployment__
 

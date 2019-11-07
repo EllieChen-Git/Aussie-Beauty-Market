@@ -6,10 +6,11 @@ class ListingsController < ApplicationController
     # users need to log in to perform these actions
 
     def index
-      @listings = Listing.search(params[:search])
-      # [where you wanna only show listings that are available]
-      # @order = Orders.all
-      # @listings = Listing.where.not(listing_id: @orders)
+      @listings = Listing.search(params[:search]) 
+
+      # Only show available listings
+      @purchase = Purchase.pluck(:listing_id)
+      @listings = Listing.where.not(id: @purchase)
     end
 
     def new
@@ -55,10 +56,10 @@ class ListingsController < ApplicationController
         },
         success_url: "#{root_url}payments/success?userId=#{current_user.id}&listingId=#{@listing.id}",
         cancel_url: "#{root_url}listings"
-    )
+      )
 
-    @session_id = session.id
-    @public_key = Rails.application.credentials.dig(:stripe, :public_key) 
+      @session_id = session.id
+      @public_key = Rails.application.credentials.dig(:stripe, :public_key) 
     end
 
 

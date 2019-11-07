@@ -46,19 +46,9 @@
         <%= number_to_currency(@listing.price) %>
       </div>
 
-<!-- Temp disabled for easier styling: only shows stripe/purchase link if the listing hasn't been purchase -->
-      <%# unless @listing.purchase %>
       <div class="field">
           <%= button_to "Purchase",  purchase_listing_path(@listing.id), method: :get %>
       </div>
-<%# end %>
-<!-- Temp disabled for easier styling: might not need this if only available items will be display on index_listing
-<% if @listing.purchase %>
-<p>Sorry, this item is no longer available<p>
-<% else %>
-<%= link_to("Purchase", purchase_listing_path(@listing.id)) %>
-<% end %>
--->
 
 <!--Temp disabled for easier styling: Only listing owner will see edit & delete button -->
 <%# if user_signed_in? and @listing.user_id == current_user.id %>

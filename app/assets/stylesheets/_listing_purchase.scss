@@ -1,0 +1,16 @@
+@import "listings";
+
+#listing-purchase {
+    .confirmation {
+        padding: 40px 60px;
+    }
+    input {
+        margin-bottom: 60px;
+    }
+
+    @media only screen and (min-width: 600px) {
+        input {
+            margin-top: 40px;
+        }
+    }
+}

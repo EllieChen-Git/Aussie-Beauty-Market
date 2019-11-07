@@ -1,5 +1,18 @@
-<p>You are redirecting to a third party payment website for secure payment processing.</p>
-<p>Please press 'purchase' to confirm if you would like to continue.</p>
+<!-- Nav bar & hero image inherited from application.html.erb -->
+
+<div class="main" id="listing-purchase">
+
+<!-- Header -->
+    <header>
+        <h1>Confirmation</h1>
+    </header>
+
+<!-- Main section: confirmation information-->
+<section>
+    <div class="confirmation">
+        <p>You are redirecting to a third party payment website for secure payment processing.</p>
+        <p>Please press 'purchase' to confirm if you would like to continue.</p>
+    </div>
 
 <form method="POST" action="<%= purchase_listing_path %>">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
@@ -18,3 +31,7 @@
         })
     })
 </script>
+</section>
+   <%= render "shared/footer" %>
+</div>
+

@@ -1,73 +1,101 @@
- <h1>Have a qeustion?</h1>
+<div id="questions-answers">
 
-<div>
-   <% @listing.questions.each do |question| %>
-    <p><span>Question <%= question.id %></span>: <%= question.body %> </p>
-    <p><span>Answer</span>: <%= question.answer.body if question.answer %></p>
-    <% end %>
-</div>
+<!-- Header -->
+  <header>
+    <h1>Have a qeustion?</h1>
+  </header>
 
+<!-- Main section: Q&A -->  
+  <section class="session-questions-answers"> 
+
+<!-- Display existing Q & A -->  
+    <div class="div-questions-answers">
+      <% @listing.questions.each do |question| %>
+        <div class="field">
+          <span class="label">Question: <%= question.id %></span>
+          <%= question.body %>
+        </div>
+        <div class="field">
+          <span class="label">Answer: </span>
+          <%= question.answer.body if question.answer %>
+        </div>
+      <% end %>
+    </div>
+
+<!-- Question form -->  
 <!--Temp disabled for easier styling: Only ppl other than owner will see ask question -->
 <%# if user_signed_in? and @listing.user_id != current_user.id %>
-  <%= form_with(model: @question, local: true) do |form| %>
-    <% if @question.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@question.errors.count, "error") %> prohibited this answer from being saved:</h2>
+    <div class="div-questions-answers">
+      <%= form_with(model: @question, local: true) do |form| %>
+        <% if @question.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@question.errors.count, "error") %> prohibited this answer from being saved:</h2>
 
-        <ul>
-        <% @question.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+            <ul>
+            <% @question.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
         <% end %>
-        </ul>
-      </div>
-    <% end %>
 
-      <div class="field">
-        <%= form.label :body, "Ask a question" %>
-        <%= form.text_area :body %>
-      </div>
+          <div class="field">
+            <%= form.label :body, "Ask a question:" %>
+            <%= form.text_area :body %>
+          </div>
 
-      <div class="field">
-        <%= form.hidden_field :listing_id, value: @listing.id %>
-      </div>
+          <div class="field hidden">
+            <%= form.hidden_field :listing_id, value: @listing.id %>
+          </div>
 
-      <div class="field">
-        <%= form.hidden_field :user_id, value: @listing.user_id %>  
-      </div>
+          <div class="field hidden">
+            <%= form.hidden_field :user_id, value: @listing.user_id %>  
+          </div>
 
-      <div class="actions">
-      <%= form.submit "Submit your question"%>
-      </div>
-  <% end %>
-<%# end %>
+          <div class="actions">
+          <%= form.submit "Submit your question"%>
+          </div>
+      <% end %>
+    <%# end %>
+    </div>
 
+
+
+
+
+<!-- Answer form -->  
 <!--Temp disabled for easier styling: Only owner will see answer question -->
 <%# if user_signed_in? and @listing.user_id == current_user.id %>
-  <%= form_with(model: @answer, local: true) do |form| %>
-    <% if @answer.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this question from being saved:</h2>
+    <div class="div-questions-answers">
+      <%= form_with(model: @answer, local: true) do |form| %>
+        <% if @answer.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this question from being saved:</h2>
 
-        <ul>
-        <% @answer.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+            <ul>
+            <% @answer.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
         <% end %>
-        </ul>
-      </div>
-    <% end %>
 
-      <div class="field">
-          <%= form.label :question_id, "Please indicate the question number" %>
-          <%= form.text_field :question_id %>
-      </div>
+          <div class="field">
+              <%= form.label :question_id, "Enter the question number:" %>
+              <%= form.text_field :question_id %>
+          </div>
 
-      <div class="field">
-          <%= form.label :body, "Answer a question" %>
-          <%= form.text_area :body %>
-      </div>
+          <div class="field">
+              <%= form.label :body, "Answer a question:" %>
+              <%= form.text_area :body %>
+          </div>
 
-      <div class="actions">
-      <%= form.submit "Submit your answer"%>
+          <div class="actions">
+          <%= form.submit "Submit your answer"%>
+          </div>
+      <% end %>
+    <%# end %>
     </div>
-  <% end %>
-<%# end %>
+
+  </section>
+</div>

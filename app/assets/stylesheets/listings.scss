@@ -6,8 +6,10 @@
         display: flex;
         flex-direction: column;
         justify-content: left;
+        
         div {
             padding: 20px;
+            
         }
         .field {
             display: flex;
@@ -23,7 +25,7 @@
 // Generic media query breakpoints (tablet) for all the sections in view/listings
         .session-listing {
             .field {
-            flex-direction: row;
+                flex-direction: row;
             }
         }
 
@@ -35,9 +37,6 @@
                 padding: 20px 60px; 
             }
             
-            .back-listings {
-                padding: 20px 60px; 
-            }
 
             label {
                 padding:0 20px;

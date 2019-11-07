@@ -63,19 +63,20 @@
 <!--Temp disabled for easier styling: Only listing owner will see edit & delete button -->
 <%# if user_signed_in? and @listing.user_id == current_user.id %>
       <div class="field">
-        <%= button_to 'Edit', edit_listing_path(@listing), method: :get %>
+        <%= button_to "Edit", edit_listing_path(@listing), method: :get %>
       </div>
 <%# end %>
 <%# if user_signed_in? and @listing.user_id == current_user.id %>
       <div class="field">
-        <%= button_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
+        <%= button_to "Delete", listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
       </div>
       <%# end %>
     </section>
+
 <!-- Created 'questions_answers' partial view to render Q & A section-->
 <!-- add either session or div for Q&A form -->
+      <%= render "listings/questions_answers", listing: @listing %>
 
-      <%= render 'listings/questions_answers', listing: @listing %>
 <!-- Footer -->
    <%= render "shared/footer" %>
 </div>

@@ -1,13 +1,13 @@
+<!-- Nav bar & hero image inherited from application.html.erb -->
 <div class="main" id="listing-edit">
 <!-- Header -->
     <header>
         <h1>Edit Listing</h1>
     </header>
 <!-- Main section: Create a new listing -->  
-    <section id="session-listing-new-edit">  
+    <section class="session-listing">  
 <!-- Created 'form' partial view to render new form & edit form -->
         <div><%= render 'form', listing: @listing %></div>
-        <div class="back-listings"><%= link_to 'Back to all listings', listings_path %></div>
     </section>
 <!-- Footer -->
    <%= render "shared/footer" %>

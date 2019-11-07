@@ -6,7 +6,7 @@
 <!-- Search: simple &  advanced -->
     <div class="search-container">
         <%= render partial: "listings/simple_search", listing: @listing, locals: { myclass: "simple-search" } %>
-        <%= link_to "Advanced Search", new_search_path, class: "advanced-search" %>
+        <div class="advanced-search"><%= button_to "Advanced Search", new_search_path, method: :get %></div>
     </div>
 
 

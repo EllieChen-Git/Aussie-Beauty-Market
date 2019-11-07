@@ -1,7 +1,8 @@
 @import "general";
 
 #listings_controller {
-   #session-listing-new-edit {
+// Generic styling for all the sections in view/listings
+   .session-listing {
         display: flex;
         flex-direction: column;
         justify-content: left;
@@ -18,37 +19,37 @@
         }
     }
 
+    @media only screen and (min-width: 600px) {
+// Generic media query breakpoints (tablet) for all the sections in view/listings
+        .session-listing {
+            .field {
+            flex-direction: row;
+            }
+        }
 
-//Mediq query breakpoints
-@media only screen and (min-width: 600px) {
-    #session-listing-new-edit {
-        .field {
-        flex-direction: row;
-        // flex-wrap: wrap;
+        .session-listing div {
+            padding: 20px 40px;
+            width: 100%;
+
+            .actions {
+                padding: 20px 60px; 
+            }
+            
+            .back-listings {
+                padding: 20px 60px; 
+            }
+
+            label {
+                padding:0 20px;
+                padding-bottom: 5px;
+            }
         }
     }
 
-    #session-listing-new-edit div {
-        padding: 20px 40px;
-        width: 100%;
-
-        .actions {
-            padding: 20px 60px; 
-        }
-        
-        .back-listings {
-            padding: 20px 60px; 
-        }
-
-        label {
-            padding:0 20px;
-            padding-bottom: 5px;
-        }
-    }
-  }
-  @media only screen and (min-width: 900px) {
+    @media only screen and (min-width: 900px) {
+// Generic media query breakpoints (desktop) for all the sections in view/listings
     header {
         padding: 10px 50px;
-      }
-}
+        }
+    }
 }

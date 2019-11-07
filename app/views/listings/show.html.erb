@@ -1,69 +1,81 @@
+<!-- Nav bar & hero image inherited from application.html.erb -->
+
 <div class="main" id="listing-show">
-  <h1>Show a listing</h1>
 
-  <%= render "listings/simple_search", listing: @listing %>
+<!-- Header -->
+    <header>
+      <h1><%= @listing.title %></h1>
+    </header>
 
-  <%= image_tag @listing.pic if @listing.pic.attached? %>
+<!-- Main section: Show a listing -->  
+    <section class="session-listing">  
 
-  <p>
-    <span><%= @listing.title %></span>
-  </p>
+      <div>
+        <%= image_tag @listing.pic if @listing.pic.attached? %>
+      </div>
 
-  <p>
-    <span>Brand:</span>
-    <%= @listing.brand %>
-  </p>
+      <div class="field">
+        <span class="label">Brand: </span>
+        <%= @listing.brand %>
+      </div>
 
-  <p>
-    <span>Posted by:</span>
-    <%= link_to @listing.user[:username], profile_path(@listing.user_id) %>
-  </p>
-  
-  <p> 
-    <span>Location:</span>
-    <%= @suburb %>, <%= @postcode%>, <%= @state %>
-  </p>
- 
-  <p>
-      <span>Last updated:</span>
-      <%= @listing.updated_at.strftime("%d-%m-%Y") %>
-  </p>
+       <div class="field">
+        <span class="label">Description: </span>
+        <div class="description">
+          <%= @listing.description %>
+        </div>
+      </div>
 
-<!--Temp disabled for easier styling: Only listing owner will see edit & delete button -->
-  <%# if user_signed_in? and @listing.user_id == current_user.id %>
-    <%= button_to 'Edit', edit_listing_path(@listing), method: :get %>
-  <%# end %>
-  <%# if user_signed_in? and @listing.user_id == current_user.id %>
-    <%= button_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
-  <%# end %>
+     <div class="field">
+        <span class="label">Location: </span>
+        <%= @suburb %>, <%= @postcode%>, <%= @state %>
+      </div>
 
-  <p>
-    <span>Price:</span>
-    <%= number_to_currency(@listing.price) %>
-  </p>
+      <div class="field">
+        <span class="label">Posted by: </span>
+        <%= link_to @listing.user[:username], profile_path(@listing.user_id) %>
+      </div>
+
+      <div class="field">
+        <span class="label">Last updated: </span>
+        <%= @listing.updated_at.strftime("%d-%m-%Y") %>
+      </div>
+
+      <div class="field">
+        <span class="label">Price: </span>
+        <%= number_to_currency(@listing.price) %>
+      </div>
 
 <!-- Temp disabled for easier styling: only shows stripe/purchase link if the listing hasn't been purchase -->
-<%# unless @listing.purchase %>
-<%= link_to("Purchase", purchase_listing_path(@listing.id)) %>
+      <%# unless @listing.purchase %>
+      <div class="field">
+          <%= button_to "Purchase",  purchase_listing_path(@listing.id), method: :get %>
+      </div>
 <%# end %>
-
 <!-- Temp disabled for easier styling: might not need this if only available items will be display on index_listing
 <% if @listing.purchase %>
-  <p>Sorry, this item is no longer available<p>
+<p>Sorry, this item is no longer available<p>
 <% else %>
-  <%= link_to("Purchase", purchase_listing_path(@listing.id)) %>
+<%= link_to("Purchase", purchase_listing_path(@listing.id)) %>
 <% end %>
 -->
 
-
-
-  <p>
-    <span>Description:</span>
-    <%= @listing.description %>
-  </p>
-  <%= link_to 'Back to all listing', listings_path %>
-
+<!--Temp disabled for easier styling: Only listing owner will see edit & delete button -->
+<%# if user_signed_in? and @listing.user_id == current_user.id %>
+      <div class="field">
+        <%= button_to 'Edit', edit_listing_path(@listing), method: :get %>
+      </div>
+<%# end %>
+<%# if user_signed_in? and @listing.user_id == current_user.id %>
+      <div class="field">
+        <%= button_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
+      </div>
+      <%# end %>
+    </section>
 <!-- Created 'questions_answers' partial view to render Q & A section-->
-  <%= render 'listings/questions_answers', listing: @listing %>
+<!-- add either session or div for Q&A form -->
 
+      <%= render 'listings/questions_answers', listing: @listing %>
+<!-- Footer -->
+   <%= render "shared/footer" %>
 </div>

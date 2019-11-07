@@ -1,7 +1,6 @@
- <h1>Have a qeustions?</h1>
+ <h1>Have a qeustion?</h1>
 
 <div>
-  <h2>Q & A </h2>
    <% @listing.questions.each do |question| %>
     <p><span>Question <%= question.id %></span>: <%= question.body %> </p>
     <p><span>Answer</span>: <%= question.answer.body if question.answer %></p>

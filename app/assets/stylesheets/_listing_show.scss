@@ -1,0 +1,24 @@
+@import "listings";
+
+//show listing
+#listing-show {
+    .session-listing {
+        justify-content: flex-start;
+    }
+
+    .label {    
+        padding-bottom: 10px;
+        width: 150px;
+    }
+    .field {
+        justify-content: left;
+        align-self: flex-start;
+    }
+
+    @media only screen and (min-width: 600px) {
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

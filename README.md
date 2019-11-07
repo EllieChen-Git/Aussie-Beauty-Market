@@ -165,7 +165,7 @@ Below are the selective screenshots:
 
 - Wireframes - 1. Landing (desktop & mobile)
 
-[Marketplace - Wireframes](./docs/wireframes/wireframes_1.png)
+![Marketplace - Wireframes](./docs/wireframes/wireframes_1.png)
 
 - Wireframes - 2. Sign up (tablet)
 
@@ -173,20 +173,19 @@ Below are the selective screenshots:
 
 - Wireframes - 6. All listings (desktop & mobile)
 
-[Marketplace - Wireframes](./docs/wireframes/wireframes_6.png)
+![Marketplace - Wireframes](./docs/wireframes/wireframes_6.png)
 
 - Wireframes - 7. New Listing (desktop & mobile)
 
-[Marketplace - Wireframes](./docs/wireframes/wireframes_7.png)
+![Marketplace - Wireframes](./docs/wireframes/wireframes_7.png)
 
 - Wireframes - 8. Show Listing (desktop & mobile)
 
 - Wireframes - 9. Edit Listing (tablet)
 
-[Marketplace - Wireframes](./docs/wireframes/wireframes_9.png)
+![Marketplace - Wireframes](./docs/wireframes/wireframes_9.png)
 
 - Wireframes - 10. New Advanced Search
-
 
 ## [R20] Project Management & Timeline
 
@@ -279,7 +278,7 @@ __05-Nov | Day 12 Frontend Coding__ (refer to Trello screenshots)
 - completed ERD with notation & sitemap
 - styled all_listing page
 
-__06-Nov | Day 13 Frontend Coding (Styling )__
+__06-Nov | Day 13 Frontend Coding (Styling) & Documentation__
 - implemented basic user authentication & authorisation
 1. listings_controller: 
 2. show_listing: only shows edit & delete buttons if user == owner
@@ -287,18 +286,13 @@ __06-Nov | Day 13 Frontend Coding (Styling )__
 4. _questions_answer: only users != owner will see 'ask question' form 
 5. _questions_answer: only users == owner will see 'answer question' form 
 - styled new_listing, edit_listing (basic)
-- modified  wireframes & added screenshots
+- modified wireframes & added screenshots
 
-__07-Nov | Day 14 Frontend Coding (Styling )__
+__07-Nov | Day 14 Frontend Coding (Styling) & Documentation__
 
 plan to 
-styling new_listing, show_listing, user profile
-styling login/logout/signup/show_adv_search/new_adv_search/
 
-
-
-
-__08-Nov | Day 15 Documentation & deployment__
+__08-Nov | Day 15 Documentation & Deployment__
 
 arrange images & description for better presentation
 <!-- !! Fix all the major issues (basically do not change any code after this day) -->
@@ -322,6 +316,7 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - ERD]
 
 #### Data Structure
 
+<!-- 考慮不用列，反正ERD上都有了
 <u>Users</u> 
 •	Id – integer (automatically created)
 •	Username: string 
@@ -376,6 +371,7 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - ERD]
 •	Record_type: string
 •	Record_id: integer
 •	Blob_id: integer
+-->
 
 <!-- ####  [R15] High-level components (abstractions) -->
 <!-- Explain the different high-level components (abstractions) in your app -->

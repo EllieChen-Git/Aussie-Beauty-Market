@@ -3,7 +3,6 @@ class Search < ApplicationRecord
 
     def search_listings
         listings = Listing.all
-
         listings = listings.where("lower(brand) LIKE ?", "%#{brand.downcase}%") if brand.present?
         listings = listings.where(category: category) if category.present?
         listings = listings.where("price >= ?", min_price) if min_price.present?

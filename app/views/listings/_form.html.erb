@@ -4,9 +4,9 @@
       <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
 
       <ul>
-      <% listing.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% listing.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -49,7 +49,6 @@
     </div>
   <% end %>
 
-  
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>

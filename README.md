@@ -296,11 +296,18 @@ __07-Nov | Day 14 Frontend Coding (Styling) & Documentation__
 - modified wireframes & added screenshots
 
 __08-Nov | Day 15 Documentation & Deployment__
-
-arrange images & description for better presentation
+- only available listings will be shown on all_listing page
+- styled payment success page  (basic)
+- completed heroku deployment (changed background image tag to Rails way, added heroku endpoint at stripe/webhook)
+- styled user profile page (basic)
+- styled show_adv_search/new_adv_search (basic)
+- completed basic spelling check MVC & SCSS
 <!-- !! Fix all the major issues (basically do not change any code after this day) -->
 
 __09-Nov | Day 16 Documentation__ (refer to Trello screenshots)
+arrange images & description for better presentation
+REMEMBER to turn on user authorisation
+
 <!-- !! Last day of actual coding (only fix minor coding issues) -->
 
 __10-Nov | Day 17 Presentation Preparation & Final Check__

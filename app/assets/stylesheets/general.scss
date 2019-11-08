@@ -1,13 +1,12 @@
 // Stylesheet for all the general styling
 @import "variables";
 
-// Basic HTML tags: H1..H5, p, span (for all text in bold)
-h1, h2{
+// Basic HTML tags
+h1, h2 {
     text-align: center;
     font-family: "Roboto", sans-serif;
 }
 
-// Decide whether only wanna use it for find makeup
 .hero h1 {
     font-family: 'Gochi Hand', sans-serif;
 }
@@ -15,16 +14,13 @@ h1, h2{
 p {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
-    // [linebreaker]
-    // line-height: 2;
-    // white-space: pre-line; 
 }
 
 span {
     font-weight: bold;
 }
 
-.noitce {
+.notice {
     text-align: center;
 }
 
@@ -32,12 +28,7 @@ span {
     text-align: center;
 }
 
-
-
-//All Images here
-
-
-//Hero, decide if all pages have hero
+//Hero image
 .hero {
     background-image: url(image-path("hero.jpg"));
     background-repeat: no-repeat;
@@ -75,12 +66,8 @@ header {
     padding-right: 90px;
     }
 
-
-
 //Section
 section {
-    // background-color: $orange-yellow;
-    // Decide when to turn to section colour
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,30 +77,23 @@ section {
     max-width: 1300px;
     margin: auto;
 
-        div {
+    div {
         padding-left: 90px;
         padding-right: 90px;
         padding-bottom: 30px;
-        }
-        .div-one {
-          padding-top: 40px;
-        }
     }
-
+    .div-one {
+        padding-top: 40px;
+    }
+}
 
 
 //Search container (simple & advanced search)
 .search-container {
     text-align: center;
-
     .simple-search {
-        // position: relative;
-        // top: 10px;
-        // margin-top: 20px;
-        // display: inline-block;
         color: black;
     }
-
     .advanced-search {
         margin-top: 20px;
         display: inline-block;
@@ -127,20 +107,16 @@ section {
     text-align: center;
 }
 
-
-
-//Mediq query breakpoints
+//Media query breakpoints
 @media only screen and (min-width: 600px) {
     section {
         flex-direction: row;
     }
-
     section div {
         padding: 10px;
         padding-bottom: 30px;
         width: calc(50% - 20px);
     }
-
     .div-one, .div-two {
       padding-top: 40px;
     }

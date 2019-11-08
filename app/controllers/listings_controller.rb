@@ -1,11 +1,12 @@
 class ListingsController < ApplicationController
     before_action :set_listing, only: [:show, :edit, :update, :destroy, :purchase]
     before_action :set_user_listing, only: [:edit, :update, :destroy]
-    # only users own the listing can perform these actions
+    # Only users own the listing can perform these actions
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :purchase]
-    # users need to log in to perform these actions
+    # Users need to log in to perform these actions
 
     def index
+      # Simple search
       @listings = Listing.search(params[:search]) 
 
       # Only show available listings
@@ -14,8 +15,9 @@ class ListingsController < ApplicationController
     end
 
     def new
-          @listing = current_user.listings.new
-          @listing.build_location
+      # Nested attributes for location
+      @listing = current_user.listings.new
+      @listing.build_location
     end
 
     def create
@@ -28,14 +30,16 @@ class ListingsController < ApplicationController
     end
 
     def show
+      # Simple search
       @listings = Listing.search(params[:search])
+
       @suburb = @listing.location[:suburb]
       @postcode = @listing.location[:postcode]
       @state = @listing.location[:state]
-
+      
+      # Q & A
       @question = Question.new
       @answer = Answer.new
-
     end
 
     def purchase
@@ -57,15 +61,12 @@ class ListingsController < ApplicationController
         success_url: "#{root_url}payments/success?userId=#{current_user.id}&listingId=#{@listing.id}",
         cancel_url: "#{root_url}listings"
       )
-
       @session_id = session.id
       @public_key = Rails.application.credentials.dig(:stripe, :public_key) 
     end
 
-
     def edit
     end
-
 
     def update
           if @listing.update(listing_params)
@@ -97,5 +98,4 @@ class ListingsController < ApplicationController
             redirect_to listings_path
         end
     end
-
 end

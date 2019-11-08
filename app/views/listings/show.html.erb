@@ -3,69 +3,67 @@
 <div class="main" id="listing-show">
 
 <!-- Header -->
-    <header>
-      <h1><%= @listing.title %></h1>
-    </header>
+  <header>
+    <h1><%= @listing.title %></h1>
+  </header>
 
 <!-- Main section: Show a listing -->  
-    <section class="session-listing">  
+  <section class="session-listing">  
+    <div>
+      <%= image_tag @listing.pic if @listing.pic.attached? %>
+    </div>
 
-      <div>
-        <%= image_tag @listing.pic if @listing.pic.attached? %>
-      </div>
-
-      <div class="field">
-        <span class="label">Brand: </span>
-        <%= @listing.brand %>
-      </div>
-
-       <div class="field">
-        <span class="label">Description: </span>
-        <div class="description">
-          <%= @listing.description %>
-        </div>
-      </div>
-
-     <div class="field">
-        <span class="label">Location: </span>
-        <%= @suburb %>, <%= @postcode%>, <%= @state %>
-      </div>
+    <div class="field">
+      <span class="label">Brand: </span>
+      <%= @listing.brand %>
+    </div>
 
       <div class="field">
-        <span class="label">Posted by: </span>
-        <%= link_to @listing.user[:username], profile_path(@listing.user_id) %>
+      <span class="label">Description: </span>
+      <div class="description">
+        <%= @listing.description %>
       </div>
+    </div>
 
-      <div class="field">
-        <span class="label">Last updated: </span>
-        <%= @listing.updated_at.strftime("%d-%m-%Y") %>
-      </div>
+    <div class="field">
+      <span class="label">Location: </span>
+      <%= @suburb %>, <%= @postcode%>, <%= @state %>
+    </div>
 
-      <div class="field">
-        <span class="label">Price: </span>
-        <%= number_to_currency(@listing.price) %>
-      </div>
+    <div class="field">
+      <span class="label">Posted by: </span>
+      <%= link_to @listing.user[:username], profile_path(@listing.user_id) %>
+    </div>
 
-      <div class="field">
-          <%= button_to "Purchase",  purchase_listing_path(@listing.id), method: :get %>
-      </div>
+    <div class="field">
+      <span class="label">Last updated: </span>
+      <%= @listing.updated_at.strftime("%d-%m-%Y") %>
+    </div>
+
+    <div class="field">
+      <span class="label">Price: </span>
+      <%= number_to_currency(@listing.price) %>
+    </div>
+
+    <div class="field">
+        <%= button_to "Purchase",  purchase_listing_path(@listing.id), method: :get %>
+    </div>
 
 <!--Temp disabled for easier styling: Only listing owner will see edit & delete button -->
 <%# if user_signed_in? and @listing.user_id == current_user.id %>
-      <div class="field">
-        <%= button_to "Edit", edit_listing_path(@listing), method: :get %>
-      </div>
+    <div class="field">
+      <%= button_to "Edit", edit_listing_path(@listing), method: :get %>
+    </div>
 <%# end %>
 <%# if user_signed_in? and @listing.user_id == current_user.id %>
-      <div class="field">
-        <%= button_to "Delete", listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
-      </div>
-      <%# end %>
-    </section>
+    <div class="field">
+      <%= button_to "Delete", listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
+    </div>
+    <%# end %>
+  </section>
 
-<!-- Created 'questions_answers' partial view to render Q & A section-->
-<!-- add either session or div for Q&A form -->
-      <%= render "listings/questions_answers", listing: @listing %>
+<!-- 'Questions_answers' partial to render Q & A section-->
+  <%= render "listings/questions_answers", listing: @listing %>
 
 <!-- Footer -->
    <%= render "shared/footer" %>

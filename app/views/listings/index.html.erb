@@ -2,12 +2,11 @@
 
 <div class="main" id="listing-index">
 
-<!-- Search: simple &  advanced -->
+<!-- Search: simple & advanced -->
     <div class="search-container">
-        <%= render partial:"listings/simple_search", listing: @listing, locals: { myclass: "simple-search" } %>
+        <%= render partial: "listings/simple_search", listing: @listing, locals: { myclass: "simple-search" } %>
         <%= link_to "Advanced Search", new_search_path, class: "advanced-search" %>
     </div>
-
 
 <!-- Header -->
     <header>
@@ -16,18 +15,15 @@
 
 <!-- Main section: show all the listing -->
     <section>
-
-            <% @listings.each do |listing| %>
-        <div> 
+        <% @listings.each do |listing| %>
+            <div> 
                 <p><%= image_tag listing.pic if listing.pic.attached? %></p>
                 <%= link_to "#{listing.title}", listing_path(listing.id) %>
                 <p><%= number_to_currency(listing.price) %></p>
-              </div>     
-            <% end %>
-
+            </div>     
+        <% end %>
     </section>
 
 <!-- Footer -->
    <%= render "shared/footer" %>
-
 </div>

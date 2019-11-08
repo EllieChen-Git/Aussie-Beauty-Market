@@ -1,28 +1,26 @@
 @import "general";
 
 #pages_controller {
-    h2 {
-      font-family: 'Gochi Hand';
+  h2 {
+    font-family: 'Gochi Hand';
+  }
+  header {
+    text-align: left;  
     }
-    
-    header {
-      text-align: left;  
-      }
+  header h1 {
+    text-align: left;  
+  }
   
-      header h1 {
-        text-align: left;  
-      }
-  
-
 // Only images in landing
-    img {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      }
+  img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    }
 
-      section {
-        background-color: $orange-yellow;}
+    section {
+      background-color: $orange-yellow;
+    }
 }
 
 

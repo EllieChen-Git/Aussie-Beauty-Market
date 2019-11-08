@@ -3,7 +3,8 @@
 #footer {
     display: flex;
     flex-direction: column;
-//footer: social icon bar
+
+// footer: social icon bar
     text-align: center;
     width: 100%;
     background-color: $dark-maple;
@@ -31,7 +32,7 @@
         }
     }
     
-//footer: copyright 
+// footer: copyright 
     .copyright {
         color: $light;
         margin-bottom: 0;

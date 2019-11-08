@@ -7,31 +7,31 @@
         <h1>Confirmation</h1>
     </header>
 
-<!-- Main section: confirmation information-->
-<section>
-    <div class="confirmation">
-        <p>You are redirecting to a third party payment website for secure payment processing.</p>
-        <p>Please press 'purchase' to confirm if you would like to continue.</p>
-    </div>
+<!-- Main section: purchase confirmation information-->
+    <section>
+        <div class="confirmation">
+            <p>You are redirecting to a third party payment website for secure payment processing.</p>
+            <p>Please press 'purchase' to confirm if you would like to continue.</p>
+        </div>
 
-<form method="POST" action="<%= purchase_listing_path %>">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-     <input type="hidden" name="id" value="<%= current_user.id %>" />
-    <input type="hidden" name="id" value="<%= @listing.id %>" />
-    <input data-stripe="payment" type=submit value="Purchase" />
-</form>
+        <form method="POST" action="<%= purchase_listing_path %>">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+            <input type="hidden" name="id" value="<%= current_user.id %>" />
+            <input type="hidden" name="id" value="<%= @listing.id %>" />
+            <input data-stripe="payment" type=submit value="Purchase" />
+        </form>
 
-<script src="https://js.stripe.com/v3/"></script> 
+        <script src="https://js.stripe.com/v3/"></script> 
 
-<script>
-    document.querySelector("[data-stripe='payment']").addEventListener("click", () => {
-        const stripe = Stripe("<%= @public_key %>");
-        stripe.redirectToCheckout({
-            sessionId: "<%= @session_id %>"
-        })
-    })
-</script>
-</section>
+        <script>
+            document.querySelector("[data-stripe='payment']").addEventListener("click", () => {
+                const stripe = Stripe("<%= @public_key %>");
+                stripe.redirectToCheckout({
+                    sessionId: "<%= @session_id %>"
+                })
+            })
+        </script>
+    </section>
    <%= render "shared/footer" %>
 </div>
 

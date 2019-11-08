@@ -6,17 +6,19 @@
         flex-direction: column;
         
     }
+    
     div {
         align-self: flex-start;
     }
+
     @media only screen and (min-width: 600px) {
         div {
-        align-self: center;
-        width: calc(100% - 120px);
-        padding: 10px 60px;
-        .field{
-            padding: 0px;
+            align-self: center;
+            width: calc(100% - 120px);
+            padding: 10px 60px;
+            .field{
+                padding: 0px;
+            }
         }
-    }
     }
 }

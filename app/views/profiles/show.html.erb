@@ -32,12 +32,11 @@
         </div>
 
 
-            <div class="field">
+        <div class="field">
             <h1>
                 <%= @user.username.upcase %> has <%= @user.listings.count %> makeup(s) listed in ABM:</span>
-                </h1>
+            </h1>
             <% @user.listings.each do |listing| %>
-
                 <div class="field"><span class="label">Listing id</span>: <%= listing.id if listing.id %></div>
                 <div class="field"><%= image_tag listing.pic if listing.pic.attached? %></div>
                 <div class="field"><span class="label">Title</span>: <%= link_to listing.title, listing_path(listing.id) if listing.title %></div>

@@ -13,6 +13,5 @@ class PaymentsController < ApplicationController
             listing_id: payment.metadata.listing_id,
             purchase_id: payment_id
         )
-        # status 200
     end
 end

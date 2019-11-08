@@ -12,15 +12,15 @@
   </head>
 
   <body id="<%= params[:controller].parameterize %>_controller">
-<!-- Nav Bar: globally applies to all pages-->
+<!-- Nav bar: globally applies to all pages-->
     <%= render "shared/nav_bar" %>
-<!-- Hero: globally applies to all pages-->
+<!-- Hero image: globally applies to all pages-->
     <div class="hero">
         <div class="overlay"></div>
          <h1>Beauty is Spirit</h1>
     </div>
 
-<!-- Only display notice and alert when needed, in order to avoid white space issue on teh top -->
+<!-- Only display notice and alert when needed, in order to avoid white space issue on the top -->
       <% if notice %>
         <p class="notice"><%= notice %></p>
       <% end %>

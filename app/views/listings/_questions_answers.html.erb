@@ -22,9 +22,8 @@
       <% end %>
     </div>
 
-<!-- Question form -->  
-<!--Temp disabled for easier styling: Only ppl other than owner will see ask question -->
-<%# if user_signed_in? and @listing.user_id != current_user.id %>
+<!-- Question form: Only people other than listing owner will see 'ask question' form -->
+<% if user_signed_in? and @listing.user_id != current_user.id %>
     <div class="div-questions-answers">
       <%= form_with(model: @question, local: true) do |form| %>
         <% if @question.errors.any? %>
@@ -56,12 +55,11 @@
           <%= form.submit "Submit question"%>
           </div>
       <% end %>
-    <%# end %>
+    <% end %>
     </div>
 
-<!-- Answer form -->  
-<!--Temp disabled for easier styling: Only owner will see answer question -->
-<%# if user_signed_in? and @listing.user_id == current_user.id %>
+<!-- Answer form: Only listing owner will see 'answer question' form -->
+<% if user_signed_in? and @listing.user_id == current_user.id %>
     <div class="div-questions-answers">
       <%= form_with(model: @answer, local: true) do |form| %>
         <% if @answer.errors.any? %>
@@ -90,8 +88,7 @@
           <%= form.submit "Submit answer"%>
           </div>
       <% end %>
-    <%# end %>
+    <% end %>
     </div>
-
   </section>
 </div>

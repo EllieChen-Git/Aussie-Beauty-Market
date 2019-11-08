@@ -38,7 +38,7 @@ end
 # category: integer (enum: 0 face, 1 eyes, 2 lips, 3 accessories)
 listings = [
     { title: "Colourpop lip liner", brand: "Colourpop", description: "Lippie Pencil A long-wearing and high-intensity lip pencil that glides on easily and prevents feathering. Many of our Lippie Stix have a coordinating Lippie Pencil designed to compliment it perfectly, but feel free to mix and match!", category: 2 },
-    
+
     { title: "Glossier Stretch Concealer", brand: "Glossier", description: "A traditional concealer sets to a stiff, flat, dry finish—a dead giveaway that you’re wearing it. Ours is a new type of concealer with elastic micro waxes that move with your face instead of caking on top of it, and nourishing oils that give a dewy, glowing finish. The buildable formula covers everything from dark circles to redness and blemishes. In five shades painstakingly developed to enhance, brighten, and—most importantly—completely disappear into the widest range of skin tones.", category: 0 },
 
     { title: "Skinny Mascara from NYX", brand: "NYX", description: "Our ultra-skinny mascara brush is perfect for coating hard to reach lashes from root to tip even along the bottom lash line! Finally the smallest, thinnest lashes can get extra special attention too. The water resistant formula and micro brush work together to create the appearance of long beautifully defined lashes.", category: 1 },
@@ -47,7 +47,7 @@ listings = [
 
     { title: "Couture Colour Wardrobe palette", brand: "Dior", description: "Directly inspired by runway shows, the Couture Colour Wardrobe palette teams fresh and natural colours with vibrant and sophisticated shades to create countless custom makeup looks to suit any moment.", category: 1},
 
-    { title: "24 Hour CC Spot Concealer - Used. Good condition!", brand: "Smashbox", description: "We created this 24-hour, waterproof concealer in our L.A. photo studio to instantly cover dark spots, sun spots and post-acne marks while fading the look of them in as little as 4 weeks. You’re basically concealing and treating all at once, which means imperfections have met their match. Dab on this first-of-its-kind cover-up strategically, then get ready for your big reveal! 24-hour wear thanks to Photoset Polymers created with medical-grade liquid bandage technology that bends and adheres to humidity-resistant", category: 0},
+    { title: "24 Hour CC Spot Concealer", brand: "Smashbox", description: "We created this 24-hour, waterproof concealer in our L.A. photo studio to instantly cover dark spots, sun spots and post-acne marks while fading the look of them in as little as 4 weeks. You’re basically concealing and treating all at once, which means imperfections have met their match. Dab on this first-of-its-kind cover-up strategically, then get ready for your big reveal! 24-hour wear thanks to Photoset Polymers created with medical-grade liquid bandage technology that bends and adheres to humidity-resistant", category: 0},
 
     { title: "Physicians Formula Organic Wear 100% Natural Origin Bronzer", brand: "Physicians Formula", description: "Physicians Formula Organic Wear 100% Natural Origin Bronzer is made of the finest Italian powder which delivers a buildable natural tan glow. Two shades blend together for the most natural finish. A 100% natural origin bronzer, formulated with 15% certified organic ingredients, including jojoba seed oil and corn starch to moisturize and mattify the skin.", category: 0},
 

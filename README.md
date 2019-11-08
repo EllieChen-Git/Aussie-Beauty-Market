@@ -163,35 +163,38 @@ Mood board for this site can also be found on Pinterest: [Marketplace - Mood Boa
 
 The completed wireframes (9 pages for 3 different screen sizes: desktop, tablet & mobile) of the marketplace can also be viewed on GitHub: [Marketplace - Wireframes]()
 
-Below are the selective screenshots:
-
-- Wireframes - 1. Landing (desktop & mobile)
-
+- Wireframes - 1. Landing 
 ![Marketplace - Wireframes](./docs/wireframes/1_Landing.png)
+![Marketplace - Wireframes](./docs/wireframes/1_Landing(tablet).png)
 
 - Wireframes - 2. Sign up (tablet)
 
-![Marketplace - Wireframes](./docs/wireframes/wireframes_2.png)
+![Marketplace - Wireframes](./docs/wireframes/2_Sign_up.png)
+![Marketplace - Wireframes](./docs/wireframes/2_Sign_up(tablet).png)
 
 - Wireframes - 5. User Profile (desktop & mobile)
 
-![Marketplace - Wireframes](./docs/wireframes/wireframes_5.png)
+![Marketplace - Wireframes](./docs/wireframes/5_User_Profile.png)
+![Marketplace - Wireframes](./docs/wireframes/5_User_Profile(tablet).png)
 
 - Wireframes - 6. All listings (desktop & mobile)
 
-![Marketplace - Wireframes](./docs/wireframes/wireframes_6.png)
+![Marketplace - Wireframes](./docs/wireframes/6_All_Listings.png)
+![Marketplace - Wireframes](./docs/wireframes/6_All_Listings(tablet).png)
 
 - Wireframes - 7. New Listing (desktop & mobile)
 
-![Marketplace - Wireframes](./docs/wireframes/wireframes_7.png)
+![Marketplace - Wireframes](./docs/wireframes/7_New_Listing.png)
+![Marketplace - Wireframes](./docs/wireframes/7_New_Listing(tablet).png)
 
 - Wireframes - 8. Show Listing (desktop & mobile)
 
-![Marketplace - Wireframes](./docs/wireframes/wireframes_8.png)
+![Marketplace - Wireframes](./docs/wireframes/8_Show_Listing.png)
+![Marketplace - Wireframes](./docs/wireframes/8_Show_Listing(tablet).png)
 
 - Wireframes - 9. Edit Listing (tablet)
-
-![Marketplace - Wireframes](./docs/wireframes/wireframes_9.png)
+![Marketplace - Wireframes](./docs/wireframes/9_Edit_Listing.png)
+![Marketplace - Wireframes](./docs/wireframes/9_Edit_Listing(tablet).png)
 
 ## [R20] Project Management & Timeline
 
@@ -309,14 +312,14 @@ __08-Nov | Day 15 Frontend Coding (Styling)/Documentation/Deployment__
 <!-- !! Fix all the major issues (basically do not change any code after this day) -->
 
 __09-Nov | Day 16 Documentation__ (refer to Trello screenshots)
-arrange images & description for better presentation
+<!-- arrange images & description for better presentation
 REMEMBER to turn on user authorisation on view
 
 modify wireframe
 
 README
 
-slides/presentation
+slides/presentation -->
 
 <!-- !! Last day of actual coding (only fix minor coding issues) -->
 
@@ -334,7 +337,7 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - ERD]
 
 ![Marketplace - ERD](./docs/ERD.jpg)
 
-#### Data Structure
+<!-- #### Data Structure -->
 
 <!-- 考慮不用列，反正ERD上都有了
 <u>Users</u> 
@@ -393,19 +396,21 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - ERD]
 •	Blob_id: integer
 -->
 
-<!-- ####  [R15] High-level components (abstractions) -->
+####  [R15] High-level components (abstractions)
 <!-- Explain the different high-level components (abstractions) in your app -->
 
-<!-- ####  [R17] Projects Models & Relationships -->
+####  [R17] Projects Models & Relationships
 <!-- Describe your projects models in terms of the relationships (active record associations) they have with each other -->
 
-<!-- ####  [R18] Database -->
+####  [R18] Database
 <!-- Discuss the database relations to be implemented in your application [remember to mention PostgreSQL R2]-->
 
-<!-- ####  [R19] Database Schema Design -->
+####  [R19] Database Schema Design
 <!-- Provide your database schema design -->
 ---
 ## Future Improvements
 
+- Improved website styling
+- Added 3rd party services: Mailgun - transaction email (https://github.com/mailgun/mailgun-ruby)
 
 Copyright © 2019 Ellie Chen. All Rights Reserved.

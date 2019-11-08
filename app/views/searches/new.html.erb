@@ -1,29 +1,36 @@
+<!-- Nav bar & hero image inherited from application.html.erb -->
+
 <div class="main" id="search-new">
-<h1>Advanced Search</h1>
+<!-- Header -->
+    <header>
+        <h1>Advanced Search</h1>
+    </header>
 
-<%= form_with(model: @search, local: true) do |form| %>
+<!-- Main section-->
+    <section>
+        <%= form_with(model: @search, local: true) do |form| %>
 
-<div class="field">
-<%= form.label :brand, "Search brands"%>
-<%= form.text_field(:brand, size: 17) %>
-</div>
+        <div class="field">
+            <%= form.label :brand, "Search brands"%>
+            <%= form.text_field(:brand) %>
+        </div>
 
-<div class="field">
-<%= form.label :category %>
-<%= form.select(:category, [["Face", "face"], ["Eyes", "eyes"], ["Lips", "lips"], ["Accessories", "accessories"]], :include_blank => true) %>
-</div>
+        <div class="field">
+            <%= form.label :category %>
+            <%= form.select(:category, [["Face", "face"], ["Eyes", "eyes"], ["Lips", "lips"], ["Accessories", "accessories"]], :include_blank => true) %>
+        </div>
 
+        <div class="field">
+            <%= form.label :min_price, "Price Range $" %>
+            <%= form.text_field(:min_price) %>
+            to
+            <%= form.text_field(:max_price) %>
+        </div>
 
-<div class="field">
-<%= form.label :min_price, "Price Range $" %>
-<%= form.text_field(:min_price, size: 5) %>
-to
-<%= form.text_field(:max_price, size: 5) %>
-</div>
+        <div class="actions"><%= form.submit "Search"%><div>
 
-<div class="actions"><%= form.submit "Search"%><div>
-
-<% end %>
-
-<%= link_to "Back", listings_path %>
+        <% end %>
+    </section>
+<!-- Footer -->
+   <%= render "shared/footer" %>
 </div>

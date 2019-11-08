@@ -33,14 +33,15 @@
 
         <div>
 
-            <span>Makeup Listings:</span>User <span><%= @user.username %></span> has <%= @user.listings.count %> makeup(s) listed in ABM.
-        <% @user.listings.each do |listing| %>
+            <span class="label">Makeup Listings: </span>
+                <%= @user.username %> has <%= @user.listings.count %> makeup(s) listed in ABM.
+            <% @user.listings.each do |listing| %>
 
-                <p><span>Listing id</span>: <%= listing.id if listing.id %></p>
-                <div><%= image_tag listing.pic if listing.pic.attached? %></div>
-                <p><span>Title</span>: <%= link_to listing.title, listing_path(listing.id) if listing.title %></p>
-                <p><span>Brand</span>: <%= listing.brand if listing.brand %></p>
-                <p><span>Price</span>: <%= number_to_currency(listing.price) if listing.price %></p>
+                <div class="field"><span class="label">Listing id</span>: <%= listing.id if listing.id %></div>
+                <div class="field"><%= image_tag listing.pic if listing.pic.attached? %></div>
+                <div class="field"><span class="label">Title</span>: <%= link_to listing.title, listing_path(listing.id) if listing.title %></div>
+                <div class="field"><span class="label">Brand</span>: <%= listing.brand if listing.brand %></div>
+                <div class="field"><span class="label">Price</span>: <%= number_to_currency(listing.price) if listing.price %></div>
             <% end %>
         </div>
     </section>

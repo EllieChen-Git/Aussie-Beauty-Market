@@ -1,5 +1,8 @@
 @import "listing_show";
 
 #profile-show {
-    
+    section {
+        display: flex;
+        flex-direction: row;
+    }
 }

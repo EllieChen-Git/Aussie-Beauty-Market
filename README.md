@@ -161,7 +161,7 @@ Mood board for this site can also be found on Pinterest: [Marketplace - Mood Boa
 
 #### [R13] Wireframes
 
-The completed wireframes (9 pages for 3 different screen sizes: desktop, tablet & mobile) of the marketplace can also be viewed on GitHub: [Marketplace - Wireframes]()
+The completed wireframes (9 pages for 3 different screen sizes: desktop, tablet & mobile) in one single PDF can also be viewed on GitHub: [Marketplace - Wireframes](https://github.com/EllieChen-Git/Aussie-Beauty-Market/blob/master/docs/wireframes/Wireframes_ABM.pdf)
 
 - Wireframes - 1. Landing 
 ![Marketplace - Wireframes](./docs/wireframes/1_Landing.png)

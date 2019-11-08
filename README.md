@@ -8,7 +8,7 @@ Aussie Beauty Market (ABM) is a two-sided Rails marketplace application that all
 - __[R10] GitHub Repo__: https://github.com/EllieChen-Git/Aussie-Beauty-Market
 
 
-<!-- ## [R7][R8] Problem Identification & Solution -->
+## [R7][R8] Problem Identification & Solution
 <!-- 
 Identification of the problem you are trying to solve by building this particular marketplace app.)
 Why is it a problem that needs solving?
@@ -37,7 +37,7 @@ Similar websites
 
 -->
 
-<!-- ## [R11] Project Description -->
+## [R11] Project Description
 
 <!--
 Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Australia
@@ -49,8 +49,10 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 
 -->
 
-<!-- #### Purpose
-#### Functionality / Features -->
+#### Purpose
+
+<!-- A full stack developer needs to be able to demonstrate they can build a complete application from design through to deployment, using appropriate tools and methodologies.  -->
+#### Functionality / Features
 
 <!-- 
 Your app will have authorisation (i.e. users have restrictions on what they can see and edit). 
@@ -159,19 +161,21 @@ Mood board for this site can also be found on Pinterest: [Marketplace - Mood Boa
 
 #### [R13] Wireframes
 
-The completed wireframes (11 pages for 3 different screen sizes: desktop, tablet & mobile) of the marketplace can also be viewed on GitHub: [Marketplace - Wireframes]()
+The completed wireframes (9 pages for 3 different screen sizes: desktop, tablet & mobile) of the marketplace can also be viewed on GitHub: [Marketplace - Wireframes]()
 
 Below are the selective screenshots:
 
 - Wireframes - 1. Landing (desktop & mobile)
 
-![Marketplace - Wireframes](./docs/wireframes/wireframes_1.png)
+![Marketplace - Wireframes](./docs/wireframes/1_Landing.png)
 
 - Wireframes - 2. Sign up (tablet)
 
 ![Marketplace - Wireframes](./docs/wireframes/wireframes_2.png)
 
 - Wireframes - 5. User Profile (desktop & mobile)
+
+![Marketplace - Wireframes](./docs/wireframes/wireframes_5.png)
 
 - Wireframes - 6. All listings (desktop & mobile)
 
@@ -295,7 +299,7 @@ __07-Nov | Day 14 Frontend Coding (Styling) & Documentation__
 - slightly modified devise user views
 - modified wireframes & added screenshots
 
-__08-Nov | Day 15 Documentation & Deployment__
+__08-Nov | Day 15 Frontend Coding (Styling)/Documentation/Deployment__
 - only available listings will be shown on all_listing page
 - styled payment success page  (basic)
 - completed heroku deployment (changed background image tag to Rails way, added heroku endpoint at stripe/webhook)
@@ -306,7 +310,13 @@ __08-Nov | Day 15 Documentation & Deployment__
 
 __09-Nov | Day 16 Documentation__ (refer to Trello screenshots)
 arrange images & description for better presentation
-REMEMBER to turn on user authorisation
+REMEMBER to turn on user authorisation on view
+
+modify wireframe
+
+README
+
+slides/presentation
 
 <!-- !! Last day of actual coding (only fix minor coding issues) -->
 

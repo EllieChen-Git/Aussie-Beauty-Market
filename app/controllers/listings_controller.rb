@@ -1,8 +1,8 @@
 class ListingsController < ApplicationController
-    before_action :set_listing, only: [:show, :edit, :update, :destroy, :purchase]
+    # before_action :set_listing, only: [:show, :edit, :update, :destroy, :purchase]
     # before_action :set_user_listing, only: [:edit, :update, :destroy]
     # Only users own the listing can perform these actions
-    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :purchase]
+    # before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :purchase]
     # Users need to log in to perform these actions
 
     def index

@@ -7,11 +7,13 @@ class ListingsController < ApplicationController
 
     def index
       # Simple search
-      @listings = Listing.search(params[:search]) 
-
-      # Only show available listings
-      @purchase = Purchase.pluck(:listing_id)
-      @listings = Listing.where.not(id: @purchase)
+      if :search
+        @listings = Listing.search(params[:search])
+      else
+        # Only show available listings
+        @purchase = Purchase.pluck(:listing_id)
+        @listings = Listing.where.not(id: @purchase)
+      end
     end
 
     def new

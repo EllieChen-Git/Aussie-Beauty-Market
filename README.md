@@ -1,6 +1,8 @@
 ## Rails Marketplace: Aussie Beauty Market
 
-Aussie Beauty Market (ABM) is a two-sided Rails marketplace application that allows people to buy and sell second-hand makeup in Australia.
+![decoration image](./docs/README_hero.JPG)
+
+Aussie Beauty Market (ABM) is a two-sided marketplace application on Rails that allows people to buy and sell second-hand makeups in Australia.
 
 ## Links
 
@@ -9,36 +11,27 @@ Aussie Beauty Market (ABM) is a two-sided Rails marketplace application that all
 
 
 ## [R7][R8] Problem Identification & Solution
-<!-- 
-Identification of the problem you are trying to solve by building this particular marketplace app.)
-Why is it a problem that needs solving?
 
-In a consumer society, so many new products are launched every single day. Nowadays, many people own stuffs either they do not like anymore or they will not be using in the near future. Makeups are no exception! Therefore, ABM is specifically developed to tackle this problem that the Australian beauty industry is facing. 
+In a consumer society, so many new products are launched every single day. Nowadays, many people own stuffs either they do not like anymore or they will not be using in the near future. Makeups are no exception! 
 
-ABM is a two-sided marketplace application where people can sell and buy second-hand makeup in Australia. It does not only serve as a second-hand makeup marketplace, but also help us reduce the waste and do our bit to protect the environment. I am also hoping that this app can build a platform for people in Australia to share their views on makeups and find the products that suit them personally based on the product information listed and the user profile provided on the website. 
+ABM is a two-sided marketplace application where people can trade second-hand makeups directly in Australia. It does not only serve as a second-hand makeup marketplace, but also help us reduce the waste and protect the environment. This app was also created with an intention to build a platform for Aussies to find the products that suit their personal tastes based on the product information listed and the user profiles (skin type & bio - preferred makeup styles) provided on the website. 
 
-Before starting this project, I researched on the existing websites on the market. When it comes to selling goods, the first idea comes to people's mind would be websites like Gumtree, eBay and Amazon. However, these websites do not only focus on makeups and are not intended for building a beauty community. Therefore, the target audience would be different from ABM. 
+Before starting this project, a market research was conduced on the existing websites. When it comes to selling used goods, the first thing comes to people's mind would be online classified advertisement websites like Gumtree, eBay and Amazon. However, these websites do not focus on makeups only and are not intended for building a beauty community. Therefore, the target audience would be different from ABM. 
 
-Many social platforms also provide a similar functionality (i.e. online forum) for people to sell makeups. For example, there is a social group 'MAKEUP BUY, SELL, GIVEAWAY AND SWAP AUSTRALIA AND NEW ZEALAND (https://www.facebook.com/groups/894975940585690/)' on Facebook. The drawbacks of this kind of marketplace on social platform is that people must have Facebook accounts in order to use this service. As many people use Facebook to share their personal lives with their family and friends, there are many sensitive personal information on their Facebook profile. Some people (like me) are hesitated to use Facebook groups to buy and sell goods as we are afraid that our personal information will be comprised without our acknowledgment.
+Many social platforms also provide a similar functionality (i.e. online forums) for people to sell makeups. For example, there is a social group 'MAKEUP BUY, SELL, GIVEAWAY AND SWAP AUSTRALIA AND NEW ZEALAND (https://www.facebook.com/groups/894975940585690/)' on Facebook. The drawbacks of this kind of marketplace on social medias is that people must have the social media accounts in order to use this service. As many people use Facebook to share their personal lives with their family and friends, there is sensitive personal information attached to their Facebook accounts. Many people like me would be hesitated to use Facebook groups to buy and sell goods as we are concerned that our personal information might be comprised without our acknowledgment.
 
-There is another website called Glambot (https://www.glambot.com/) on the market. However, this is not a direct two-sided marketplace as buyers and sellers cannot trade with each other directly. This website servers as a medium to firstly collect used makeups from sellers (they pay the sellers), and re-sell the products to product buyers.  
+There is another website called Glambot (https://www.glambot.com/) on the market. However, this is not a direct two-sided marketplace as buyers and sellers cannot trade with each other directly. This website servers as a medium to firstly collect used makeups from sellers (they pay the sellers), and re-sell the products to buyers.  
 
-The only similar website 'r/aussiemakeupexchange' was shut down few years ago.
+Lastly the only website with the similar functionalities 'r/aussiemakeupexchange' was shut down few years ago.
 
+Therefore, ABM was specifically developed to solve the problems that the Australian beauty community is currently facing. 
 
-Similar websites
-1.	Glambot (https://www.glambot.com/): ‘we are changing the way that the beauty industry works, now people, brands, and vloggers can sell their makeup to us with our 100% confidential process and receive $$ on the spot for their goodies. We then professionally sanitize everything and package it for sale on our site’
-•	Glambot serves as a medium (they buy makeups, clean them, and sell them to people)
-2.	Facebook group - MAKEUP BUY, SELL, GIVEAWAY AND SWAP AUSTRALIA AND NEW ZEALAND (https://www.facebook.com/groups/894975940585690/)
-•	People need to have a fb account & log into their account: privacy
-3.	Gumtree/eBay: not only for makeup
-4.	r/aussiemakeupexchange: shut down
-
-
--->
 
 ## [R11] Project Description
 
+#### Purpose
+
+<!-- A full stack developer needs to be able to demonstrate they can build a complete application from design through to deployment, using appropriate tools and methodologies.  -->
 <!--
 Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Australia
 1.	Only for makeups
@@ -49,9 +42,6 @@ Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Au
 
 -->
 
-#### Purpose
-
-<!-- A full stack developer needs to be able to demonstrate they can build a complete application from design through to deployment, using appropriate tools and methodologies.  -->
 #### Functionality / Features
 
 <!-- 
@@ -85,8 +75,42 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Site
 
 ![Sitemap](./docs/sitemap.jpg)
 
-<!-- #### Screenshots
-#### Target Audience-->
+#### Website Screenshots
+
+- Landing page
+
+![Screenshot](./docs/screenshots/landing.png)
+
+- All makeups
+
+![Screenshot](./docs/screenshots/all_listings.png)
+
+- New listing
+
+![Screenshot](./docs/screenshots/new_listing.png)
+
+- Edit listing
+
+![Screenshot](./docs/screenshots/edit_listing.png)
+
+- Show listing (when user is the listing owner): will see 'Edit', 'Eelete' and 'Answer a question' buttons
+
+![Screenshot](./docs/screenshots/show_listing_(listing_owner).png)
+
+- Show listing (when users are NOT the listing owner) will see 'Purchase' and 'Ask a question' buttons
+
+![Screenshot](./docs/screenshots/show_listing_(non_listing_owner).png)
+
+- User sign up
+
+![Screenshot](./docs/screenshots/users_sign_up.png)
+
+- User profiles
+
+![Screenshot](./docs/screenshots/users_profiles.png)
+
+#### Target Audience
+
 #### Tech Stack
 
 - Programming languages: Ruby on Rails, JavaScript, HTML, CSS, SASS
@@ -309,22 +333,26 @@ __08-Nov | Day 15 Frontend Coding (Styling)/Documentation/Deployment__
 - styled user profile page (basic)
 - styled show_adv_search/new_adv_search (basic)
 - completed basic spelling check MVC & SCSS
-<!-- !! Fix all the major issues (basically do not change any code after this day) -->
+- uploaded wireframs images
 
-__09-Nov | Day 16 Documentation__ (refer to Trello screenshots)
-<!-- arrange images & description for better presentation
-REMEMBER to turn on user authorisation on view
+__09-Nov | Day 16 Debugging & Documentation__ (refer to Trello screenshots)
+<!-- !! Last day of actual coding (only fix minor coding issues) -->
+- arranged images and Q & A for presentation purpose
+- turned on user authentication on view
+- fixed issues: search bug
+- added 'dependent: :destroy' to user-purchase, listing-purchase
+- added alt tag to all the images, ran accessibility test
 
-modify wireframe
+
 
 README
 
 slides/presentation -->
 
-<!-- !! Last day of actual coding (only fix minor coding issues) -->
+
 
 __10-Nov | Day 17 Presentation Preparation & Final Check__
-<!-- Final check: spelling check on README, spelling check on code comment (html/CSS), all images need to have alt text, accessibility test
+<!-- Final check: spelling check on README
 slides & presentation preparation 
 Submission (2200 Due) -->
 

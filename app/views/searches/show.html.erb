@@ -14,7 +14,7 @@
                 <p>No Listings Found!<p>
             <% else %>
                 <% @search.search_listings.each do |search| %>
-                    <%= image_tag search.pic if search.pic.attached? %>
+                    <%= image_tag(search.pic, alt: "picture of makeup listing") if search.pic.attached? %>
                     <p><span><%= link_to "#{search.title}", listing_path(search.id) %></span></p>
                     <p>Brand: <%= search.brand %></p>
                     <p>Category: <%= search.category %></p>

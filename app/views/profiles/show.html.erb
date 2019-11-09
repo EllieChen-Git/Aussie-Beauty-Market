@@ -8,7 +8,7 @@
 <!-- Main section: Show a listing -->  
     <section>
         <div>
-            <%= image_tag @user.pic if @user.pic.attached? %>
+            <%= image_tag(@user.pic, alt: "user's profile picture") if @user.pic.attached? %>
         </div>
 
         <div class="field">
@@ -38,11 +38,14 @@
             </h1>
             <% @user.listings.each do |listing| %>
                 <div class="field"><span class="label">Listing ID</span>: <%= listing.id if listing.id %></div>
-                <div class="field"><%= image_tag listing.pic if listing.pic.attached? %></div>
+                <div class="field"><%= image_tag(listing.pic, alt: "picture of makeup listing") if listing.pic.attached? %></div>
                 <div class="field"><span class="label">Title</span>: <%= link_to listing.title, listing_path(listing.id) if listing.title %></div>
                 <div class="field"><span class="label">Brand</span>: <%= listing.brand if listing.brand %></div>
                 <div class="field"><span class="label">Price</span>: <%= number_to_currency(listing.price) if listing.price %></div>
             <% end %>
+
+    
+
     </section>
 <!-- Footer -->
    <%= render "shared/footer" %>

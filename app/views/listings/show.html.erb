@@ -10,7 +10,7 @@
 <!-- Main section: Show a listing -->  
   <section class="session-listing">  
     <div>
-      <%= image_tag @listing.pic if @listing.pic.attached? %>
+      <%= image_tag(@listing.pic, alt: "picture of makeup listing") if @listing.pic.attached? %>
     </div>
 
     <div class="field">

@@ -17,7 +17,7 @@
     <section>
         <% @listings.each do |listing| %>
             <div> 
-                <p><%= image_tag listing.pic if listing.pic.attached? %></p>
+                <p><%= image_tag(listing.pic, alt: "picture of makeup listing") if listing.pic.attached? %></p>
                 <%= link_to "#{listing.title}", listing_path(listing.id) %>
                 <p><%= number_to_currency(listing.price) %></p>
             </div>     

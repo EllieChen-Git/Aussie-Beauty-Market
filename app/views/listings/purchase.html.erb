@@ -4,21 +4,21 @@
 
 <!-- Header -->
     <header>
-        <h1>Confirmation</h1>
+        <h1>Purchae Confirmation</h1>
     </header>
 
 <!-- Main section: purchase confirmation information-->
     <section>
         <div class="confirmation">
             <p>You are redirecting to a third party payment website for secure payment processing.</p>
-            <p>Please press 'purchase' to confirm if you would like to continue.</p>
+            <p>Please press 'Continue' to confirm if you would like to continue.</p>
         </div>
 
         <form method="POST" action="<%= purchase_listing_path %>">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
             <input type="hidden" name="id" value="<%= current_user.id %>" />
             <input type="hidden" name="id" value="<%= @listing.id %>" />
-            <input data-stripe="payment" type=submit value="Purchase" />
+            <input data-stripe="payment" type=submit value="Continue" />
         </form>
 
         <script src="https://js.stripe.com/v3/"></script> 

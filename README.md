@@ -4,70 +4,199 @@
 
 Aussie Beauty Market (ABM) is a two-sided marketplace application on Rails that allows people to buy and sell second-hand makeups in Australia.
 
+---
 ## Links
 
 - __[R9] Live Website__: https://aussie-beauty-market.herokuapp.com/
 - __[R10] GitHub Repo__: https://github.com/EllieChen-Git/Aussie-Beauty-Market
 
-
+---
 ## [R7][R8] Problem Identification & Solution
 
 In a consumer society, so many new products are launched every single day. Nowadays, many people own stuffs either they do not like anymore or they will not be using in the near future. Makeups are no exception! 
 
 ABM is a two-sided marketplace application where people can trade second-hand makeups directly in Australia. It does not only serve as a second-hand makeup marketplace, but also help us reduce the waste and protect the environment. This app was also created with an intention to build a platform for Aussies to find the products that suit their personal tastes based on the product information listed and the user profiles (skin type & bio - preferred makeup styles) provided on the website. 
 
-Before starting this project, a market research was conduced on the existing websites. When it comes to selling used goods, the first thing comes to people's mind would be online classified advertisement websites like Gumtree, eBay and Amazon. However, these websites do not focus on makeups only and are not intended for building a beauty community. Therefore, the target audience would be different from ABM. 
+Before starting this project, a market research was conducted on the existing websites. When it comes to selling used goods, the first thing comes to people's mind would be online classified advertisement websites like Gumtree, eBay and Amazon. However, these websites do not focus on makeups only and are not intended for building a beauty community. Therefore, the target audience would be different from ABM. 
 
-Many social platforms also provide a similar functionality (i.e. online forums) for people to sell makeups. For example, there is a social group 'MAKEUP BUY, SELL, GIVEAWAY AND SWAP AUSTRALIA AND NEW ZEALAND (https://www.facebook.com/groups/894975940585690/)' on Facebook. The drawbacks of this kind of marketplace on social medias is that people must have the social media accounts in order to use this service. As many people use Facebook to share their personal lives with their family and friends, there is sensitive personal information attached to their Facebook accounts. Many people like me would be hesitated to use Facebook groups to buy and sell goods as we are concerned that our personal information might be comprised without our acknowledgment.
+Many social platforms also provide a similar functionality (i.e. online forums) for people to sell makeups. For example, there is a social group [Makeup Buy, Sell, Giveaway And Swap Australia And New Zealand](https://www.facebook.com/groups/894975940585690/) on Facebook. The drawbacks of this kind of marketplace on social medias is that people must have the social media accounts in order to use this service. As many people use Facebook to share their personal lives with their family and friends, there is sensitive personal information attached to their Facebook accounts. Many people like me would be hesitated to use Facebook groups to buy and sell goods as we are concerned that our personal information might be comprised without our acknowledgment.
 
-There is another website called Glambot (https://www.glambot.com/) on the market. However, this is not a direct two-sided marketplace as buyers and sellers cannot trade with each other directly. This website servers as a medium to firstly collect used makeups from sellers (they pay the sellers), and re-sell the products to buyers.  
-
-Lastly the only website with the similar functionalities 'r/aussiemakeupexchange' was shut down few years ago.
+There is another website called [Glambot](https://www.glambot.com/) on the market. However, this is not a direct two-sided marketplace as buyers and sellers cannot trade with each other directly. This website servers as a medium to firstly collect used makeups from sellers (they pay the sellers), and re-sell the products to buyers.
 
 Therefore, ABM was specifically developed to solve the problems that the Australian beauty community is currently facing. 
 
-
+---
 ## [R11] Project Description
 
 #### Purpose
 
-<!-- A full stack developer needs to be able to demonstrate they can build a complete application from design through to deployment, using appropriate tools and methodologies.  -->
-<!--
-Purpose: Aussie Beauty Market - Where you can buy and sell 2nd hand makeup in Australia
-1.	Only for makeups
-2.	Only for Aussies
-3.	People can trade makeups from each other directly
-4.	User can create their own profile (skin type, preferred makeup style, the beauty youtubers they follow): people can see the products from people with the same skin type (& the same makeup tastes) with them
-5.	People can ask questions before purchasing 
+The purpose of this marketplace application is to solve the problems faced by the Australian beauty community. It can also be used to demonstrate what I have learned about Ruby on Rails, HTML, CSS and SASS, and showcase my abilities in full stack web development. ABM serves as an example that I can plan, design, implement and deploy a two-sided E-commerce application, from a design brief, database implementation to a deployed website.
 
--->
 
 #### Functionality / Features
 
-<!-- 
-Your app will have authorisation (i.e. users have restrictions on what they can see and edit). 
-[R4] User authorisation: new listing, edit, show, question, answer
+__1. Responsive web design__
 
-CURD listings
+ABM suits devices in different screen sizes with media breakpoints of 600px and 900px.
 
-Searching, sorting and/or filtering capability.
-[O4] Simple search (listing title - fuzzy search & case insensitive) and advanced search (brands - fuzzy search & case insensitive, category, price point)
+```css
+//Media query breakpoints
+@media only screen and (min-width: 600px) {
+    section {
+        flex-direction: row;
+    }
+    section div {
+        padding: 10px;
+        padding-bottom: 30px;
+        width: calc(50% - 20px);
+    }
+    .div-one, .div-two {
+      padding-top: 40px;
+    }
+    .hero {
+        display: block;
+    }
+  }
+  @media only screen and (min-width: 900px) {
+    section div {
+        padding: 30px 10px;
+        width: calc(33% - 20px);
+    }
+    header {
+        padding: 10px 50px;
+      }
+  }
+```
 
-Responsive web design: Suits devices in different screen sizes with media breakpoints of 600px and 900px.
+__2. User authentication (from Devise)__
 
-User profile: list all the makeups belong to the user
-show listing can also check user profile
+- Users need to sign up for a password-protected account and log into their account in order to perform certain actions (e.g., create, edit, delete & purchase a listing, ask a question and answer a question):
+
+app\controllers\listings_controller.rb
+
+```ruby
+before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :purchase]
+```
+app\controllers\answers_controller.rb
+```ruby
+before_action :authenticate_user!
+```
+app\controllers\questions_controller.rb
+```ruby
+before_action :authenticate_user!
+```
+
+- On the navigation bar, different Sign Up/Log In (if users have not signed in) and Log Out (if users have signed in) tabs will be shown depending on the user’s login status.
+
+![log out](./docs/logout.png)
 
 
-Different Sign Up/Log In/Log Out tabs will be shown depending on the user’s login status.
+__3. [R4] User authorisation__
 
-stripe/purchase function
+- Only the listing owner can edit and delete a listing and see the edit and delete buttons on the show listing page. Likewise, only the listing owner can answer the questions on the same page.
 
-Q&A section
+app\controllers\listings_controller.rb
+
+```ruby
+class ListingsController < ApplicationController
+    before_action :set_user_listing, only: [:edit, :update, :destroy]
+
+   private
+
+    def set_user_listing
+        @listing = current_user.listings.find_by_id(params[:id])
+
+        if @listing == nil
+            redirect_to listings_path
+        end
+    end
+```
+app\views\listings\show.html.erb
+
+```html
+
+    <!-- Only listing owner can see 'edit' & 'delete' buttons -->
+    <% if user_signed_in? and @listing.user_id == current_user.id %>
+    <div class="field">
+      <%= button_to "Edit", edit_listing_path(@listing), method: :get %>
+    </div>
+
+    <div class="field">
+      <%= button_to "Delete", listing_path(@listing), method: :delete, data: { confirm: "Are you sure?" }%>
+    </div>
+    <% end %>
+```
+
+- Only people other than the listing owner can see the purchase buttons on the show listing page. Likewise, only people other than the listing owner can ask the questions on the same page.
+
+app\views\listings\show.html.erb
+
+```html
+    <!-- Only people other than listing owner can see 'purchase' button -->
+    <% if user_signed_in? and @listing.user_id != current_user.id %>
+    <div class="field">
+        <%= button_to "Purchase",  purchase_listing_path(@listing.id), method: :get %>
+    </div>
+    <% end %>
+```
+app\views\listings\_questions_answers.html.erb
+
+```html
+<!-- Question form: Only people other than listing owner will see 'ask question' form -->
+<% if user_signed_in? and @listing.user_id != current_user.id %>
+    <div class="div-questions-answers">
+      <%= form_with(model: @question, local: true) do |form| %>
+          <div class="field">
+            <%= form.label :body, "Ask a question:" %>
+            <%= form.text_area :body %>
+          </div>
+
+          <div class="field hidden">
+            <%= form.hidden_field :listing_id, value: @listing.id %>
+          </div>
+
+          <div class="field hidden">
+            <%= form.hidden_field :user_id, value: @listing.user_id %>  
+          </div>
+
+          <div class="actions">
+            <%= form.submit "Submit question"%>
+          </div>
+      <% end %>
+    <% end %>
+    </div>
+```
+
+__4. Purchase function__
+
+- Users can make secured payment through Stripe.
+
+__5. Q&A section__
+
+- Before purchasing a makeup, users can check the Q & A section on the show listing page. They can only ask questions on the same page.
 
 
+__6. Dynamic relationship between user profile and show listing__
 
--->
+- When signing up for an account, users are required to describe certain information like their skin type and preferred makeup styles on their user profile. 
+- On the show listing page, users click on the listing owner's username and see the profile with the above-mentioned information.
+- The user profile page will list all the makeups belong to the user (with links led to each listing page), and others can use this function to trace the products owned by the users with the same skin types or similar makeup tastes.
+
+__7. [O4] Searching capability__ 
+
+- Two search functions are presented on the landing page and all makeups pages.
+- With 'Simple Search', users can search listings by listing titles (this is a fuzzy search & case insensitive search).
+- With 'Advanced Search', users can search listings by brand keywords (fuzzy search & case insensitive), dropdown category menu (face, eyes, lips and accessory) and price range (minimum and maximum prices). The 'Advanced Search' function is a CRUD resource.
+
+__8. Other general features__
+
+- ABM provides a simple 3-step explanation on how to use the site on the landing page.
+
+- ABM only shows the available listings on the all makeup page. Once an item is purchased, it will no longer be shown to the users.
+
+- Placeholders are provided for the social icon bar.
+
+---
 
 #### Sitemap
 
@@ -75,41 +204,45 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Site
 
 ![Sitemap](./docs/sitemap.jpg)
 
+---
 #### Website Screenshots
 
-- Landing page
+- __Landing page__
 
 ![Screenshot](./docs/screenshots/landing.png)
 
-- All makeups
+- __All makeups__
 
 ![Screenshot](./docs/screenshots/all_listings.png)
 
-- New listing
+- __New listing__
 
 ![Screenshot](./docs/screenshots/new_listing.png)
 
-- Edit listing
+- __Edit listing__
 
 ![Screenshot](./docs/screenshots/edit_listing.png)
 
-- Show listing (when user is the listing owner): will see 'Edit', 'Eelete' and 'Answer a question' buttons
+- __Show listing (when user is the listing owner: will see 'Edit', 'Delete' and 'Answer a question' buttons)__
 
 ![Screenshot](./docs/screenshots/show_listing_(listing_owner).png)
 
-- Show listing (when users are NOT the listing owner) will see 'Purchase' and 'Ask a question' buttons
+- __Show listing (when users are NOT the listing owner: will see 'Purchase' and 'Ask a question' buttons)__
 
 ![Screenshot](./docs/screenshots/show_listing_(non_listing_owner).png)
 
-- User sign up
+- __User sign up__
 
 ![Screenshot](./docs/screenshots/users_sign_up.png)
 
-- User profiles
+- __User profile__
 
 ![Screenshot](./docs/screenshots/users_profiles.png)
 
 #### Target Audience
+- People who would like to buy and sell second-hand makeups in Australia
+- Potential employers and recruiting agencies
+- People who are interested in my personal projects
 
 #### Tech Stack
 
@@ -121,16 +254,18 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Site
 - Cloud storage: AWS - S3
 - Security: AWS - IAM
 
-## System Dependencies 
-<!-- Detail any third-party services that your app will use
-[briefly describe how to install & briefly describe what each gem does. can copy from gem description] -->
+---
+## [R16] Third-party Service
+
+There are a bunch of third-party services used in this application to streamline the development and deployment process, including Ruby/Rails gems, third-party APIs and third-party platforms:
 
 #### Ruby gems
+
 - __[R3] Devise__ (https://rubygems.org/gems/devise): Devise is a flexible authentication solution for Rails based on Warden.
 
 - __Faker__ (https://rubygems.org/gems/faker/versions/1.6.3): This gem is a port of Perl's Data::Faker library that generates fake data. It comes in very handy for taking screenshots, having real-looking test data, and having your database populated with more than one or two records while you're doing development.
 
-- __Httparty__ (https://rubygems.org/gems/httparty): Makes http fun again! Ain't no party like a httparty, because a httparty don't stop.
+- __Httparty__ (https://rubygems.org/gems/httparty): Makes http fun again! Ain't no party like a Httparty, because a Httparty don't stop. In order to randomly generate user locations in the seeds file, Httparty was used to incorporate with the Postcode API.
 
 - __Normalize-rails__ (https://rubygems.org/gems/normalize-rails): Normalize.css is an alternative to CSS resets.
 
@@ -142,27 +277,44 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Site
 
 - __Ultrahook__ (https://rubygems.org/gems/ultrahook): Ultrahook lets you receive webhooks on localhost. It relays HTTP POST requests sent from a public endpoint (provided by the ultrahook.com service) to private endpoints accessible from your computer.
 
-<!-- - __PrettyUsers__ (https://rubygems.org/gems/prettyusers): Generate pretty users for your tests. -->
-<!-- font-awesome-rails
-https://rubygems.org/gems/font-awesome-rails/versions/4.6.3.1 -->
-
-<!-- [PROBABLY WON'T USE IT] - __Simple form__ (https://rubygems.org/gems/simple_form/versions/3.5.0): Simple Form is a gem that helps to smooth the Rails form generating process. -->
-
 
 #### [O2] Third-party API
-- __Postcode API__ (https://postcodeapi.com.au/): Postcode API is a free service that allows anyone to easily lookup Australian suburbs and postcodes based on various criteria.
-- __[to use?] Makeup API__ (https://makeup-api.herokuapp.com/): 
-endpoint: http://makeup-api.herokuapp.com/api/v1/products.json
-<!-- response = HTTParty.get("http://makeup-api.herokuapp.com/api/v1/products.json")
-p response.parsed_response[0]["name"] -->
 
-#### [R16] Third-party Service
+- __Postcode API__ (https://postcodeapi.com.au/): Postcode API is a free service that allows anyone to easily lookup Australian suburbs and postcodes based on various criteria. This API was used to randomly generated users' locations.
+
+
+#### Third-party Platforms
+
 - __[R6] Heroku__
+
+This application was deployed on Heroku, a cloud-based Platform-as-a-Service, which manages server configuration, network management, database versioning and DNS management.
+
+Heroku uses Puma as the web server, which is the one I used in developing and testing this application. With the URL provided by Heroku (which can also be customised to the domain name you like), users can access a live version of the app anytime.
+
+Heroku runs the application inside a dyno by packaging all the source code of this application and all the dependencies. Dynos also provide the capability of scaling up this application in the future.
+
+Lastly, Heroku offers different deployment methods to smooth the deployment process. I chose to connect my Heroku app with my GitHub repo, which means every time I made a git push, the files on my GitHub repo will be updated and the site deployed on Heroku will also be synchronised automatically.
+
 - __[O1] Stripe__
+
+Stripe is an online software platform, which specialising in payment processing. Stripe is a very powerful and flexible tool for e-commerce, as it also provides different type of payment methods, like one-off payment, recurring payment and subscription. ABM utilises Stripe as a secured way to process one-off payment.
+
+When users click the purchase button on the listing page, they are firstly redirected to a payment confirmation page. On this page, users will be notified that they will be redirecting to a third-party payment system (Stripe) for secure payment processing and seek their confirmation on it. Once they click the ‘Continue’ button, they are redirected to Stripe page to enter their credit card details. 
+Once the payment is successful, users are redirected back to successful payment page of the application, where they will see the congratulations message, and they can also keep shopping by click the link provided, which will redirect them back to the all makeups page.
+
+ABM does not handle payment and store payment data. All payments go through Stripe, which forces TLS encryption, PCI DSS and tokenisation. Stripe encrypts all the credit card numbers and holds their decryption keys on separate machines. Stripe also forces users to use HTTPS for secure connections. As a result, ABM only stores the purchase ID, listing ID and User ID in the database as a payment reference. In other words, all the sensitive data like credit card details are not kept in our database.
+
+The Stripe payment processing also incorporates Webhooks. Once a payment is processed, Stripe uses webhooks to notify ABM that an event happens in ABM’s account. 
+
 - __[R5] AWS - S3__
+
+Amazon Simple Storage Service (Amazon S3) is a cloud hosting service for any uploaded images. ABM uses AWS S3 Bucket to host images (pictures for user profiles and makeup listing) instead of storing files locally. In this case, the images on ABM have higher reliability (compared to using image links from the Internet) and mobility (compared to store image files locally) and it also provides the potential for scalability in the future.
+
 - __AWS - IAM__
 
+ABM also uses 'AWS Identity and Access Management (AWS IAM)' to securely manage access to AWS services (in this case AWS S3). With AWS IAM, we can create and manage AWS users, and set up permissions to allow and deny their access to certain AWS resources. 
 
+---
 ## Design Brief
 
 #### Colour Scheme
@@ -180,46 +332,94 @@ Mood board for this site can also be found on Pinterest: [Marketplace - Mood Boa
 ![Autumn](./docs/moodboard/autumn.JPG)
 
 
+---
+#### [R12] User Stories
 
-<!-- #### [R12] User Stories -->
+•	As Ellie, I would like to browse the website on my mobile, computer or even my tablet.
 
+•	As Ricky, I would like to sign up an account, so that I can start using certain functions provided by the site.
+
+•	As Mark, I would like to log into my existing account, so that I can buy or sell makeups.
+
+•	As Wayne, I should be able to see all the makeup listings without logging in.
+
+•	As Garret, I should be able to see the detailed information of a listing without logging in.
+
+•	As Hamish, I would like to log out my account if I’m leaving the website.
+
+•	As Tom, I would like to upload picture for my user profile.
+
+•	As Angel, I would like to view other users’ user profile.
+
+•	As Jurra, I would like to see the listings owned by the same user.
+
+•	As Elliot, I would like to see the listing owner’s username on the listing page.
+
+•	As Prad, I would like to only see the available items. (i.e. a listing will not be shown if it has been purchased by someone else).
+
+•	As Alex, I would like to search a makeup with its name, brand, price, and category.
+
+•	As Ragan, I would like to buy second makeups.
+
+•	As Dale, I would like the website to handle the payment function, so that I do not have to provide my bank details or another account details to others.
+
+•	As Blake, I would like to sell second makeups.
+
+•	As Nina, I would like to create, update and even delete a makeup listing.
+
+•	As Luke, I would like to upload the picture and provide information for my listing when I create a listing.
+
+•	As Chelsea, I will not be able to edit or delete someone else’s listing.
+
+•	As Cassie, I will not be able to purchase my own listing.
+
+•	As Max, I would like to ask questions before my purchase.
+
+•	As Harry, I will not be able to ask questions on my own listing.
+
+•	As Robbie, I would like to answer questions posted by potential buyers.
+
+•	As Niraj, I will not be able to answer questions on someone else’s listing.
+
+---
 #### [R13] Wireframes
 
 The completed wireframes (9 pages for 3 different screen sizes: desktop, tablet & mobile) in one single PDF can also be viewed on GitHub: [Marketplace - Wireframes](https://github.com/EllieChen-Git/Aussie-Beauty-Market/blob/master/docs/wireframes/Wireframes_ABM.pdf)
 
-- Wireframes - 1. Landing 
+- __Wireframes - 1. Landing__
 ![Marketplace - Wireframes](./docs/wireframes/1_Landing.png)
 ![Marketplace - Wireframes](./docs/wireframes/1_Landing(tablet).png)
 
-- Wireframes - 2. Sign up (tablet)
+- __Wireframes - 2. Sign up__
 
 ![Marketplace - Wireframes](./docs/wireframes/2_Sign_up.png)
 ![Marketplace - Wireframes](./docs/wireframes/2_Sign_up(tablet).png)
 
-- Wireframes - 5. User Profile (desktop & mobile)
+- __Wireframes - 5. User Profile__
 
 ![Marketplace - Wireframes](./docs/wireframes/5_User_Profile.png)
 ![Marketplace - Wireframes](./docs/wireframes/5_User_Profile(tablet).png)
 
-- Wireframes - 6. All listings (desktop & mobile)
+- __Wireframes - 6. All listings__
 
 ![Marketplace - Wireframes](./docs/wireframes/6_All_Listings.png)
 ![Marketplace - Wireframes](./docs/wireframes/6_All_Listings(tablet).png)
 
-- Wireframes - 7. New Listing (desktop & mobile)
+- __Wireframes - 7. New Listing__
 
 ![Marketplace - Wireframes](./docs/wireframes/7_New_Listing.png)
 ![Marketplace - Wireframes](./docs/wireframes/7_New_Listing(tablet).png)
 
-- Wireframes - 8. Show Listing (desktop & mobile)
+- __Wireframes - 8. Show Listing__
 
 ![Marketplace - Wireframes](./docs/wireframes/8_Show_Listing.png)
 ![Marketplace - Wireframes](./docs/wireframes/8_Show_Listing(tablet).png)
 
-- Wireframes - 9. Edit Listing (tablet)
+- __Wireframes - 9. Edit Listing__
 ![Marketplace - Wireframes](./docs/wireframes/9_Edit_Listing.png)
 ![Marketplace - Wireframes](./docs/wireframes/9_Edit_Listing(tablet).png)
 
+---
 ## [R20] Project Management & Timeline
 
 Trello board for this site can be found here: [Marketplace - Project Management](https://trello.com/b/YCQRqyra/marketplace-abm)
@@ -329,116 +529,183 @@ __07-Nov | Day 14 Frontend Coding (Styling) & Documentation__
 __08-Nov | Day 15 Frontend Coding (Styling)/Documentation/Deployment__
 - only available listings will be shown on all_listing page
 - styled payment success page  (basic)
-- completed heroku deployment (changed background image tag to Rails way, added heroku endpoint at stripe/webhook)
+- completed Heroku deployment (changed background image tag to Rails way, added Heroku endpoint at stripe/webhook)
 - styled user profile page (basic)
 - styled show_adv_search/new_adv_search (basic)
 - completed basic spelling check MVC & SCSS
-- uploaded wireframs images
+- uploaded wireframes images
 
 __09-Nov | Day 16 Debugging & Documentation__ (refer to Trello screenshots)
-<!-- !! Last day of actual coding (only fix minor coding issues) -->
 - arranged images and Q & A for presentation purpose
 - turned on user authentication on view
 - fixed issues: search bug
 - added 'dependent: :destroy' to user-purchase, listing-purchase
 - added alt tag to all the images, ran accessibility test
-
-
-
-README
-
-slides/presentation -->
-
-
+- modified textarea sizes & user bio default value
+- worked on documentation 
+- completed slides
 
 __10-Nov | Day 17 Presentation Preparation & Final Check__
-<!-- Final check: spelling check on README
-slides & presentation preparation 
-Submission (2200 Due) -->
+- completed documentation
+- completed final spelling check
+- completed presentation preparation 
 
+
+---
 
 ## Database Planning & Structure
 
-#### [R14] ERD
+#### R14 ERD
 
 The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - ERD](https://github.com/EllieChen-Git/Aussie-Beauty-Market/blob/master/docs/ERD.jpg)
 
 ![Marketplace - ERD](./docs/ERD.jpg)
 
-<!-- #### Data Structure -->
+#### [R15] High-level components (abstractions)
 
-<!-- 考慮不用列，反正ERD上都有了
-<u>Users</u> 
-•	Id – integer (automatically created)
-•	Username: string 
-•	Email: string
-•	encrypted_password: string
-•	Bio: text
-•	Skin_type: integer (enum: 0 Oily, 1 Normal, 2 Dry, 3 Combo)
+Ruby on Rails uses the architecture of MVC patterns (Model-View-Controller) and follows the rule of 'convention over configuration'. In terms of the design principle, we follow 'separation of concerns' so each component (model, view and controller) should only handle a specific set of actions for an application.
 
-<u>Listings</u>  
-•	Id – integer (automatically created)
-•	Title: string 
-•	Brand: string
-•	Price: integer (cents)
-•	Description: text
-•	category: integer (enum: 0 face, 1 eyes , 2 lips , 3 accessories)
-•	User_id: references [clickable button]
-•	Location_id: references 
+- __Models__: Model deals with the data storage in our Rails app. Rails uses Active Record in the model layer, which is responsible for creating and maintaining persistent data required for an application by interacting with the database. The beauty of using models on Rails is that we are not required to write the language of a database. Instead, we can write Ruby code on models to interact (i.e. create, update, delete) with all the data in our database.
 
-<u>Locations</u>  
-•	Id – integer (automatically created)
-•	Suburb: string
-•	Postcode: string
-•	state: string 
+- __Views__: View is how we interact with the user and the code placed in views is usually what the user can see on the website (e.g. webpages). Views take data instantiated by controllers and add styling on it before sending it to our web server, which will later pass the information to the user's browser. For example, if we want to explain something to the user or receive information from users, the code will be placed inside view. Our goal is to only present minimal logic in our view layer, which means that we will only place simple logics like 'control flow (e.g. if/else statement)' and loops in our views.
 
-<u>Purchases</u> 
-•	Id – integer (automatically created)
-•	Listing_id: references
-•	User_id: references
-•	Purchase_id: string
+- __Controllers__: Controller is the glue that connects our models and views together and is also the place we store our business logic of our Rails app. We usually declare instance variables in our controllers and use them in our views to display information to users. Our controllers communicate with both our view and model components.
 
-<u>Questions</u>  
-•	Id – integer (automatically created)
-•	Listing_id: references
-•	User_id: references
-•	Body: text
+Other basic architecture components in our Rails app are server, routes, assets: 
 
-<u>Answers</u> 
-•	Id – integer (automatically created)
-•	Question_id: references
-•	Body: text
+- __Server__: Our default server in Rails is Puma. A server allows a directory within our local machine (i.e. our computers) to be accessible by the Internet. 
 
-<u>Searches</u> 
-•	Id – integer (automatically created)
-•	Brand: string
-•	category: integer (enum: 0 face, 1 eyes , 2 lips , 3 accessories)
-•	Min-price: integer (cents)
-•	Max-Price: integer (cents)
+- __Routes__: Routes are more like a traffic controller. Our server will read the routes.rb file and decide where we should send the http request to and what methods on our controller will be responsible. The routes are arranged in rails using RESTful API architecture.
 
-<u>Active Storage Attachments(images)</u> 
-•	Id – integer (automatically created)
-•	Name: string
-•	Record_type: string
-•	Record_id: integer
-•	Blob_id: integer
--->
+- __Assets__: The assets are usually our JavaScript code, styling code (e.g. CSS, SASS) and other media file we used in our Rails app such as images.
 
-####  [R15] High-level components (abstractions)
-<!-- Explain the different high-level components (abstractions) in your app -->
+Important high-level component outside Rails:
+
+- __Database__: Frankly speaking, database is actually not part of Rails, but I think we should definitely include it when we talk about the high-level components in Rails app. Database is the place that we permanently store data (models are just an interface for us to communicate with database), compared to some other temporary data storing functions like sessions. Database is just like a spreadsheet with different tables, and data is stored in the rows and columns of the tables.
+
 
 ####  [R17] Projects Models & Relationships
-<!-- Describe your projects models in terms of the relationships (active record associations) they have with each other -->
 
-####  [R18] Database
-<!-- Discuss the database relations to be implemented in your application [remember to mention PostgreSQL R2]-->
+The models exited in ABM and their relationships are as follow:
+
+__User Model - Stores user information__
+
+```ruby
+  has_many :listings, dependent: :destroy
+  has_many :questions, dependent: :destroy
+  has_many :purchases, dependent: :destroy
+  has_one_attached :pic
+```
+-	The relationships between users with (1) listings, (2) questions and (3) purchases are the ‘has many’ relationships. Users hold the forging keys of (1) listings, (2) questions and (3) purchases. 
+-	Users also have their user profile attached to active storage. 
+
+__Listing Model - Stores details of each listing__
+
+```ruby
+  belongs_to :user
+  belongs_to :location
+  accepts_nested_attributes_for :location, reject_if: :all_blank, allow_destroy: true
+  has_many :questions, dependent: :destroy
+  has_one_attached :pic
+  has_one :purchase, dependent: :destroy
+```
+-	Listings belong to (1) users and (2) locations, listings only accept nested attributes for locations (suburbs, postcode and states).
+-	Every listing can have many questions, and once a listing is deleted, the questions attached to it will also be removed.
+-	Listing can only have one purchase as every listing on ABM is a unique item. Once it is purchased, it is no longer available.
+-	Listings also have its listing picture attached to active storage.
+
+__Question Model – Stores questions to a listing__
+
+```ruby
+  belongs_to :listing
+  belongs_to :user
+  has_one :answer, dependent: :destroy
+```
+-	Questions belong to (1) users and (2) listings.
+-	Each question can only have one answer. Once a question is deleted, the answer attached to it will also be removed.
+
+__Answer Model - Stores answers of questions__
+
+```ruby
+  belongs_to :question
+```
+-	Answers only belong to questions. I did not make answers belong to listings or users in order to maintain a simpler and cleaner database structure.
+
+__Location Model – Stores details of listing locations__
+
+```ruby
+  has_many :listings, dependent: :destroy 
+```
+-	One location can have many listings as the location in ABM here only include attributes of suburbs, postcodes and states. I did not want to add more detailed columns like street numbers or streets into the location table, as the locations are only used as an indication of the approximate geo locations of the listings (I did not want to show the detailed street address of each item on the page). Users can exchange more details addresses information for listing pick-up via private communication like email. 
+
+__Purchase Model – Stores important purchase details__
+
+```ruby
+  belongs_to :user
+  belongs_to :listing
+```
+-	Purchases belong to (1) users and (2) listings.
+
+__Search Model – Stores advanced search results__ 
+
+-	Searches table is not associated with any other tables. Every search will be conducted independently without referring to foreign keys in other tables.
+
+
+####  [R18] Database Relations
+
+ABM uses the PostgreSQL database for the persistent storage of data. 
+
+Among the nine tables, ABM utilises several types of relations: one and only one, polymorphic, zero or many, zero or one, many. 
+Please also refer to the [R14] ERD above for the database relations diagram [ERD](#r14-erd).
+
+__One and Only One__
+
+- 'answers to questions', 'questions to listings', 'questions to users', 'purchase to listings', 'purchases to users', 'listings to locations', 'listings to users'  ‘active storage attachment to active storage blobs’ are one and only one relations. In other words, the former table belongs to the later table and the former tables hold the foreign keys to the later ones.
+
+__Polymorphic__
+
+- ‘active storage attachment to users’ and ‘active storage attachment to listings’ are polymorphic relationships, as images for both user profiles and makeup listings are saved in the same active storage attachment table.
+
+__Zero or Many__
+
+- 'users to questions', 'users to purchases', 'users to listings', 'listings to questions' are zero or many relations, as the former can either have 0 or many of the latter.
+
+__Zero or One__
+- ‘Questions to answers', 'listings to purchase' are zero or one relations. One question only has one answer, and one listing can only be purchased once.
+
+__Many__
+- 'locations to listings': Same locations can have several listings, but will not have zero listing as the location fields are mandatory fields when creating a new listing.
+
 
 ####  [R19] Database Schema Design
-<!-- Provide your database schema design -->
+
+ABM uses PostgreSQL as the database and the data is stored in columns and rows of several tables. The relationship between tables and field types is called a schema.
+
+The complete schema code can also be found on [Schema.rb](https://github.com/EllieChen-Git/Aussie-Beauty-Market/blob/master/db/schema.rb)
+
+Please also refer to the [R14] ERD above for the database schema diagram [ERD](#r14-erd).
+
+Below is a brief explanation on ABM’s database schema design:
+
+- Tables 'users' and 'listings' are the two major tables of ABM. The rest of the tables are linked at least one of them. ‘Searches’ table is the only exception.  
+
+I intentionally kept all the users in one single table, instead of dividing them to buyers and sellers, as all the users share the same data fields (e.g. username, email etc). The ‘identity’ of a user is changeable, and a user can be both a buyer and a seller at the same time. I used user authentication in views to separate their actions (1. edit, delete and purchase a makeup listing, 2. Ask a question or answer a question)
+
+- Tables 'active_storage_attachments' and 'active_storage_blobs' are automatically created when installing active storage. Active storage is a polymorphic table to store user profile images and makeup listing images. On 'active_storage_attachments', we can see which image is belong to which record type (User/Listing). 'active_storage_blobs' is only connected to 'active_storage_attachments' are used to store metadata of the images.
+
+- Table 'purchases' is linked to 'users' and 'listings' and is used to store important and non-sensitive payment data (sensitive payment data like credit card details are handled by Stripe).
+
+- Tables 'locations' has many 'listings. I intentionally created the relationship between locations and listings, instead of between locations and users. I believe that users should be able to post listings in different locations (for example, users might be posting makeups for their families and friends, whom are not necessarily living in the same suburbs as themselves).
+
+- Tables 'questions' and 'answers' are designed for the Q & A section on the listing pages. I tried to simplify the relationships between 'questions' and 'answers' to avoid duplicate data entries, so answers are only linked to 'question_id'  and are not linked to 'user_id' or 'listing_id'. 
+
+- Table 'searches' (for advanced search function only) is independent from all the other tables and is used to store the advanced search results. The data in the 'searches'  table will be cleaned regularly to avoid accumulation of data storing here permanently.
+
 ---
 ## Future Improvements
 
 - Improved website styling
 - Added 3rd party services: Mailgun - transaction email (https://github.com/mailgun/mailgun-ruby)
+- Added Review function: buyers and sellers can rate and review each other on the transactions completed
 
 Copyright © 2019 Ellie Chen. All Rights Reserved.

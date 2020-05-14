@@ -11,6 +11,43 @@ Aussie Beauty Market (ABM) is a two-sided marketplace application on Rails that 
 - __[R10] GitHub Repo__: https://github.com/EllieChen-Git/Aussie-Beauty-Market
 
 ---
+
+### Website Screenshots
+
+- __Landing page__
+
+![Screenshot](./docs/screenshots/landing.png)
+
+- __All makeups__
+
+![Screenshot](./docs/screenshots/all_listings.png)
+
+- __New listing__
+
+![Screenshot](./docs/screenshots/new_listing.png)
+
+- __Edit listing__
+
+![Screenshot](./docs/screenshots/edit_listing.png)
+
+- __Show listing (when user is the listing owner: s/he will see 'Edit', 'Delete' and 'Answer a question' buttons)__
+
+![Screenshot](./docs/screenshots/show_listing_(listing_owner).png)
+
+- __Show listing (when users are NOT the listing owner: s/he will see 'Purchase' and 'Ask a question' buttons)__
+
+![Screenshot](./docs/screenshots/show_listing_(non_listing_owner).png)
+
+- __User sign up__
+
+![Screenshot](./docs/screenshots/users_sign_up.png)
+
+- __User profile__
+
+![Screenshot](./docs/screenshots/users_profiles.png)
+
+---
+
 ## [R7][R8] Problem Identification & Solution
 
 In a consumer society, so many new products are launched every single day. Nowadays, many people own stuffs either they do not like anymore or they will not be using in the near future. Makeups are no exception! 
@@ -205,44 +242,13 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Site
 ![Sitemap](./docs/sitemap.jpg)
 
 ---
-### Website Screenshots
-
-- __Landing page__
-
-![Screenshot](./docs/screenshots/landing.png)
-
-- __All makeups__
-
-![Screenshot](./docs/screenshots/all_listings.png)
-
-- __New listing__
-
-![Screenshot](./docs/screenshots/new_listing.png)
-
-- __Edit listing__
-
-![Screenshot](./docs/screenshots/edit_listing.png)
-
-- __Show listing (when user is the listing owner: s/he will see 'Edit', 'Delete' and 'Answer a question' buttons)__
-
-![Screenshot](./docs/screenshots/show_listing_(listing_owner).png)
-
-- __Show listing (when users are NOT the listing owner: s/he will see 'Purchase' and 'Ask a question' buttons)__
-
-![Screenshot](./docs/screenshots/show_listing_(non_listing_owner).png)
-
-- __User sign up__
-
-![Screenshot](./docs/screenshots/users_sign_up.png)
-
-- __User profile__
-
-![Screenshot](./docs/screenshots/users_profiles.png)
 
 ### Target Audience
 - People who would like to buy and sell second-hand makeups in Australia
 - Potential employers and recruiting agencies
 - People who are interested in my personal projects
+
+---
 
 ### Tech Stack
 
@@ -255,6 +261,7 @@ The sitemap of the marketplace can also be viewed on GitHub: [Marketplace - Site
 - Security: AWS - IAM
 
 ---
+
 ## [R16] Third-party Service
 
 There are plenty of third-party services used in this application to streamline the development and deployment process, including Ruby/Rails gems, third-party APIs and third-party platforms:

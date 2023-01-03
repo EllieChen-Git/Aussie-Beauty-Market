@@ -65,7 +65,7 @@ gem "devise", "~> 4.7"
 
 gem "faker", "~> 2.6"
 
-gem "httparty", "~> 0.17.1"
+gem "httparty", "~> 0.21.0"
 
 gem "simple_form", "~> 5.0"
 
